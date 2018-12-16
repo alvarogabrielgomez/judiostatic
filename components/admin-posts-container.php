@@ -2,7 +2,32 @@
                <div class="main-post">    
                  <h1 class="title-login">ADMIN DASHBOARD</h1>
 
-                    
+<?php
+
+    if(isset($_GET['signup'])){
+    if($_GET['signup']=="success"){
+        echo '<h3 class="success-signup">Listo!</h3>';
+    }
+    }
+
+    if(isset($_GET['login'])){
+        if($_GET['login']=="empty"){
+            echo '<h3 class="error-login">Llena todos los campos</h3>';
+        }
+        else if($_GET['login']=="no-user"){
+            echo '<h3 class="error-login">El usuario no existe</h3>';
+        }
+        else if($_GET['login']=="wrong-pwd"){
+            echo '<h3 class="error-login">Pass es incorrecto</h3>';
+        }
+        else if($_GET['login']=="sqlerror"){
+            echo '<h3 class="error-login">Error desconocido</h3>';
+        }
+    }
+
+    
+
+?>
 
                     <div class="main-box admin-login">
 

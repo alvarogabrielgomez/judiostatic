@@ -23,7 +23,7 @@ if( isset($_POST['signup-submit']) ){
     }
     if(empty($first) || empty($last) || empty($username) || empty($email) || empty($password) || empty($passwordRepeat)){
         // error("error"."&uid=".$username."&email=".$email."&first=".$first."&last=".$last);
-        error("error"."&uid=".$username."&email=".$email."&first=".$first."&last=".$last);
+        error("empty"."&uid=".$username."&email=".$email."&first=".$first."&last=".$last);
 
     }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
         error("mail-invalid"."&uid=".$username."&first=".$first."&last=".$last);
@@ -31,7 +31,18 @@ if( isset($_POST['signup-submit']) ){
     }else if($password !== $passwordRepeat){
         error("password-check"."&uid=".$username."&email=".$email."&first=".$first."&last=".$last);
 
-    }else{
+    }
+
+    else{
+        
+
+        $sql = "SELECT * FROM users WHERE user_email = '$email';";
+        $result = mysqli_query($conn,$sql);
+        $resultCheck = mysqli_num_rows($result);
+        if($resultCheck>0){
+            error('email-taken');
+        }
+
         $sql = "SELECT user_uid FROM users WHERE user_uid = ?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){

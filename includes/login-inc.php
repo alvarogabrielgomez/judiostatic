@@ -17,9 +17,20 @@ if(isset($_POST['login-submit'])){
         $sql = "SELECT * FROM users WHERE user_uid=? OR user_email=?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            error("sql-error");
+            error("sqlerror");
         }
         else{
+
+            $sql = "SELECT * FROM users WHERE user_uid = '$mailuid' OR user_email = '$mailuid' AND active = 1;";
+            $result = mysqli_query($conn,$sql);
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck<1){
+                error('user-unactive');
+            }
+
+
+
+
             mysqli_stmt_bind_param($stmt, "ss", $mailuid, $mailuid);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
