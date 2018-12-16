@@ -13,7 +13,7 @@
                          echo '<form  action="includes/logout-inc.php" method="POST">';
                          echo '<button type="submit" class="button" name="logout-submit">Logout</button>';
                          echo '</form>';
-                         echo '<a href="signup.php">Olvide el password</a>';
+                         echo '<h1>Marico el que lo lea, ay mariquito</h1>';
                          
                     }else{
                     echo    '<form  action="includes/login-inc.php" method="POST">';
@@ -22,6 +22,7 @@
                     echo    '<button type="submit" class="button" name="login-submit">Login</button>';
                     echo    '</form>';
                     echo '<a href="signup.php">Crear Cuenta</a>';
+                    echo '<a href="signup.php">Olvide el password</a>';
             
                     }
 
