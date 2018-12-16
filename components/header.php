@@ -12,8 +12,17 @@
                     <li><a onClick="cargarContenido('landing.html')"  href="#main">Inicio</a></li>
                     <li><a onClick="cargarContenido('about.html')"  href="#main">About</a></li>
                     <li><a onClick="cargarContenido('contact.html')"  href="#main">Contacto</a></li>
-                    <li class="login-status"><span>No estas en sesion</span>
-                        <span>Iniciaste sesion</span></li>
+                    <li class="login-status">
+                    
+                        <?php
+
+
+                        if(isset($_SESSION['userID'])){
+                            echo '<span>Iniciaste sesion</span>';
+                        }else{
+                            echo '<span>No estas en sesion</span>';
+                        }
+                        ?>
                 </ul>
                 
             </nav>
