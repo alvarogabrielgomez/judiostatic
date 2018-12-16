@@ -17,7 +17,7 @@
                         <?php
 
 
-                        if(isset($_SESSION['userID'])){
+                        if(isset($_SESSION['user_ID'])){
                             echo '<span>Iniciaste sesion</span>';
                         }else{
                             echo '<span>No estas en sesion</span>';

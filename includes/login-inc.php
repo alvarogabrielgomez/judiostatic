@@ -31,7 +31,7 @@ if(isset($_POST['login-submit'])){
                 }
                 else if($pwdCheck == true){
                     session_start();
-                    $_SESSION['user_ID']=$row['user_ui'];
+                    $_SESSION['user_ID']=$row['user_id'];
                     $_SESSION['user_UID']=$row['user_uid'];
                     error("success");
                 }

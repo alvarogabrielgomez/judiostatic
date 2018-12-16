@@ -7,16 +7,28 @@
                     <div class="main-box admin-login">
 
                     <div class="nav-login">
-                    <form  action="includes/login-inc.php" method="POST">
-                        <input type="text" name="mailuid" placeholder="Username/email">
-                        <input type="password" name="pwd" placeholder="password">
-                        <button type="submit" class="button" name="login-submit">Login</button>
-                    </form>
-                    <a href="signup.php">Crear Cuenta</a>
 
-                    <form  action="includes/logout-inc.php" method="POST">
-                        <button type="submit" class="button" name="logout-submit">Logout</button>
-                    </form>
+                    <?php
+                     if(isset($_SESSION['user_ID'])){
+                         echo '<form  action="includes/logout-inc.php" method="POST">';
+                         echo '<button type="submit" class="button" name="logout-submit">Logout</button>';
+                         echo '</form>';
+                         echo '<a href="signup.php">Olvide el password</a>';
+                         
+                    }else{
+                    echo    '<form  action="includes/login-inc.php" method="POST">';
+                    echo    '<input type="text" name="mailuid" placeholder="Username/email">';
+                    echo    '<input type="password" name="pwd" placeholder="password">';
+                    echo    '<button type="submit" class="button" name="login-submit">Login</button>';
+                    echo    '</form>';
+                    echo '<a href="signup.php">Crear Cuenta</a>';
+            
+                    }
+
+
+                    
+                    ?>
+
 
                     </div>
 

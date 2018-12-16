@@ -60,7 +60,8 @@ if( isset($_POST['signup-submit']) ){
 
                 mysqli_stmt_bind_param($stmt, "sssss", $username, $first, $last, $email, $HashedPassword);
                 mysqli_stmt_execute($stmt);
-                error("success");
+                header("Location: ../admin.php?signup=success");
+                exit();
             }
         
         }
