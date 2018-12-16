@@ -5,8 +5,8 @@
  
  
 $serverName = "localhost";
-$dbUsername = "root";   
-$dbPassword = "root";
+$dbUsername = "admin";   
+$dbPassword = "A8qFQIz8haQlWQpx";
 $dbName = "login_system";
 
 $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
