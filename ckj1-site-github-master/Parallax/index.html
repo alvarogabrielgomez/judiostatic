@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)https://lrangelc.github.io/parallax/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DParallax</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+
+<body>
+	<section class="container">
+		<figure class="iphone" id="iphone" style="transform: rotate(-1.08deg);">
+			<img src="image/iphone.jpg" alt="">
+			<div class="shape" id="mask" style="background-position: -54px center;"></div>
+		</figure>
+	</section>
+	<script>
+		const $iphone = document.getElementById('iphone');
+		const $mask = document.getElementById('mask');
+		window.addEventListener('scroll', function (e) {
+			console.log(window.scrollY);
+			var position = 54 + window.scrollY;
+			$mask.style.backgroundPosition = '-' + position + 'px';
+			$iphone.style.transform = 'rotate(-' + position * 0.02 + 'deg)';
+		});
+	</script>
+
+
+</body></html>

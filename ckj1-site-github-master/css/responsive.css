@@ -1,0 +1,295 @@
+@media (min-width: 800px) and (max-width: 1045px) {
+
+    #contenedor-header {margin-left:0!important;}
+    header nav{padding: 0px 5% 0px 5%!important;}
+    .bloquetexto1 {margin-left: 5%!important;}
+    .bloquetexto2 {margin-left: 5%!important;}
+    #flecha-portada {margin-left: 5%!important;}
+    #ckj1-gal{width: 970px!important;}
+    #ckj1-gal div{ transition: all .2s ease-in-out!important;
+    margin: -14px -24px !important;
+    transform: scale(0.9)!important;
+    }
+
+    .mapa-caracas{
+        width: 100%;
+    }
+
+    
+
+    .cajita-cajita{
+        height: 452px;
+        width: 31%;
+    }
+    .contenedor-cajita{
+        max-width: 886px;
+    }
+
+    .caja01{
+      padding-right: 10px;
+      margin:0px;
+    }
+    .img-caja01{
+      width: 63.562%;
+      background-position: -109px 9px;
+
+    }
+    .caja01-info{
+      width: 32%;
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 800px) {
+#preloader{
+    transform: scale(0.7);
+}
+#header{
+position:relative;
+
+}
+.cajita-cajita span.cajita-info{
+font-size: 14px;
+}
+.boton-juego{
+  position: absolute;
+  bottom: 0;
+  margin:0!important;
+  left: 0;
+  width: 100%
+}
+.contenedor-informacion{
+  position: absolute;
+  width: 380px;
+  height: 268px;
+  margin-left:calc(50% - 222px) !important;
+  background-color:rgba(214, 214, 214, 0.17);
+  padding: 25px;
+  box-sizing: border-box;
+
+}
+
+.formulario-contenedor{
+    width: 90%;
+    min-width:240px;
+}
+
+.comentarios textarea{
+    width: 90%;
+}
+
+.info{
+    flex-direction: column;
+}
+
+.info input{
+  width: 83%; 
+}
+
+
+.mapa-caracas{
+    width: 100%;
+}
+
+.caja01{
+  padding-right: 10px;
+  margin:0px;
+}
+.img-caja01{
+  width: 102.79%;
+  background-position: -25 px 21px;
+  float: right;
+}
+.caja01-info{
+    width: 100%!important;
+    padding: 0px!important;
+    margin: 0px!important;
+    margin-top: 2em!important;
+    color:#cdcdcd!important;
+}
+.caja01-name{
+  width: 237px;
+  padding: 0px!important;
+  margin: 0.5em 0 0 0!important;
+  color:#cdcdcd!important;
+}
+
+
+
+.cajita-cajita{
+    height: 420px;
+width: 100%;
+margin: 0;
+margin-bottom: 10px;
+}
+.contenedor-cajita{
+    max-width: 886px
+    clear: both;
+}
+#service-1{width: 100%;}
+#service-3{margin-bottom: 20px;}
+    #contenedor-header {margin-left:calc(50% - 50%)!important;}
+    header nav{padding: 0px 5% 0px 5%!important;}
+
+    #logo{margin-left: calc(50% - 60px);}
+    #ckj1{display: none;}
+    #LetraLogo{display: none;}
+    #Menu{padding:0!important;margin-top: 20px;background-color: rgba(48, 48, 48, 0.48); width: 100%;}
+    #Menu ul li {margin-left: 30px;}
+    #botones li{line-height: 69px!important;}
+    #hellodarkness{height: 450px;}
+    .bloquetexto1 {margin-top:0.5em;margin-left: 5%!important;}
+    .bloquetexto2 {margin-left: 5%!important;}
+    #flecha-portada {margin-left: 5%!important;}
+    #Foto_portada{
+        height: 610px;
+    }
+
+#ckj1-gal{width: 573px !important;}
+
+#ckj1-gal div{ transition: all .2s ease-in-out;
+    margin: -27px -43px !important;
+    transform: scale(0.798) !important
+}
+
+
+}
+
+
+@media (min-width: 241px) and (max-width: 650px) {
+
+        #flecha-portada{margin-top: 6em; position:relative!important;}
+}
+
+
+
+
+
+@media only screen and (min-width: 240px) and (max-width: 360px) {
+    footer{height: 310px!important;}
+#container-footer{height: 270px;}
+.b1{ padding:0; clear: both;margin: auto;width: 100%;text-align: center;}
+.b1 img{transform: scale(0.8); margin: 0; padding: 0; }
+.b2{background-color:#414141;padding: 21px;    box-sizing: border-box;width: 100%;clear: both;}
+ .creditos{background-color: #353535;}
+    #contenedor-header {margin-left:0!important;}
+    header nav{padding: 0px 5% 0px 5%!important;}
+
+    #logo{margin-left: calc(50% - 37px);}
+    #ckj1{display: none;}
+    #LetraLogo{display: none;}
+    #Menu{padding:0!important;margin-top: 20px;background-color: rgba(48, 48, 48, 0.48); width: 100%;}
+    #Menu ul li {margin-left: 9px;}
+    #botones li{line-height: 60px!important;}
+
+    .contenedor-informacion{
+      width: 321px;
+  margin-left: calc(50% - 185px) !important;
+    }
+
+    .caja01{
+      padding-right: 10px;
+      margin:0px;
+    }
+    .img-caja01{
+      width: 125.562%;
+      background-position: -109px 9px;
+
+    }
+    .caja01-info{
+      width: 32%;
+    }
+
+        #flecha-portada{  }
+        .bloquetexto1 p{
+            font-size: 38px;
+            line-height: 44px;
+        }
+
+
+#ckj1-gal{width: 100%!important;}
+
+#ckj1-gal div{ transition: all .2s ease-in-out;
+    margin: 0 !important;
+    transform: scale(1.1) !important
+}
+}
+
+@media only screen and (min-width: 280px) and (max-width: 319px) {
+    h1{font-size:42px;}
+    #contenedor-header {margin-left:0!important;}
+    header nav{padding: 0px 5% 0px 5%!important;}
+
+    #logo{margin-left: calc(50% - 37px);}
+    #ckj1{display: none;}
+    #LetraLogo{display: none;}
+    #Menu{padding:0!important;margin-top: 20px;background-color: rgba(48, 48, 48, 0.48); width: 100%;}
+    #Menu ul li {margin-left: 9px;}
+    #botones li{line-height: 60px!important;}
+    #hellodarkness{height: 430px;}
+    #flecha-portada {margin-left: 5%!important;}
+        #flecha-portada{margin-top: 23px;}
+        .bloquetexto1 {
+            margin-top: 1em;
+            padding-left: 15px;
+        }
+        .bloquetexto1 p{
+            font-size: 38px;
+            line-height: 44px;
+        }
+        .bloquetexto2{
+            margin-top: -2em;
+            padding-left: 15px;
+        }
+
+
+
+        .boton-juego{
+          position: absolute;
+          bottom: 0;
+          margin:0!important;
+          left: 0;
+          width: 100%
+        }
+        .contenedor-informacion{
+          position: absolute;
+      width: 84%;
+      height: 268px;
+      margin-left: calc(55% - 173px) !important;
+      background-color: rgba(214, 214, 214, 0.17);
+      padding: 13px;
+      box-sizing: border-box;
+        }
+        .caja01{
+          padding-right: 10px;
+          margin:0px;
+        }
+        .img-caja01{
+          width: 173.79%;
+          background-position: -25 px 21px;
+          float: right;
+        }
+        .caja01-info{
+            width: 100%!important;
+            padding: 0px!important;
+            margin: 0px!important;
+            margin-top: 2em!important;
+            color:#cdcdcd!important;
+        }
+        .caja01-name{
+          width: 237px;
+          padding: 0px!important;
+          margin: 0.5em 0 0 0!important;
+          color:#cdcdcd!important;
+        }
+
+
+
+#ckj1-gal{width: 100%!important;}
+
+#ckj1-gal div{ transition: all .2s ease-in-out;
+    margin: 0 !important;
+    transform: scale(1) !important
+    margin-left: -10px;
+}
+}

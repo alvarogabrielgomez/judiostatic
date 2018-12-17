@@ -1,0 +1,13 @@
+{
+"companyName": "Merw's Hardwood",
+"productName": "One Touch Game",
+"dataUrl": "TEST4.0.2.data.unityweb",
+"asmCodeUrl": "TEST4.0.2.asm.code.unityweb",
+"asmMemoryUrl": "TEST4.0.2.asm.memory.unityweb",
+"asmFrameworkUrl": "TEST4.0.2.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#000000"
+}

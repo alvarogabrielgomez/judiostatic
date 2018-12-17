@@ -9,18 +9,18 @@
         <div id="header-container-menu">
             <nav id="header-menu">
                 <ul id="header-menu-buttoms">
-                    <li><a onClick="cargarContenido('landing.html')"  href="#main">Inicio</a></li>
-                    <li><a onClick="cargarContenido('about.html')"  href="#main">About</a></li>
-                    <li><a onClick="cargarContenido('contact.html')"  href="#main">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="#main">About</a></li>
+                    <li><a href="#main">Contacto</a></li>
                     <li class="login-status">
                     
                         <?php
 
 
                         if(isset($_SESSION['user_ID'])){
-                            echo '<span>Iniciaste sesion</span>';
+                            echo '<span><a href="admin.php">Iniciaste sesion</a></span>';
                         }else{
-                            echo '<span>No estas en sesion</span>';
+                            echo '<span><a href="admin.php">No estas en sesion</a></span>';
                         }
                         ?>
                 </ul>

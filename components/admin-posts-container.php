@@ -20,6 +20,10 @@
         else if($_GET['login']=="wrong-pwd"){
             echo '<h3 class="error-login">Pass es incorrecto</h3>';
         }
+
+        else if($_GET['login']=="user-unactive"){
+            echo '<h3 class="error-login">El usuario no esta activo</h3>';
+        }
         else if($_GET['login']=="sqlerror"){
             echo '<h3 class="error-login">Error desconocido</h3>';
         }
