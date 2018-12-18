@@ -25,7 +25,7 @@
                     }
 
                     ?>
-                    <div class="main-box admin-signup">
+                    <div class="main-box admin-signup main-box-simple">
 
                     <div class="nav-signup">
                     <form action="includes/signup-inc.php" method="POST">
@@ -35,7 +35,7 @@
                         <input type="text" name="uid"  placeholder="Nombre de Usuario">
                         <input type="password" name="pwd"  placeholder="Contraseña">
                         <input type="password" name="pwd-repeat" placeholder="Repite la Contraseña">
-                        <button type="submit" class="button" name="signup-submit">Signup</button>
+                        <button type="submit" class="button-red" name="signup-submit">Signup</button>
                     </form>
                     <a href="admin.php">Volver</a>
 

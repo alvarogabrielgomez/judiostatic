@@ -1,5 +1,5 @@
 <footer class="footer">
-
+<div id="ir-arriba"><a href="#">Ir Arriba</a></div>
     <div class="b1">
 
         <img src="" alt="">
@@ -10,6 +10,7 @@
 	<div class="b2">
 
         <div id="footer-container">
+           
             <p class="enlaces">ENLACES</p>
             <nav class="enlaces">
                 <ul>

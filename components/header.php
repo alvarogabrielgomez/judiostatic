@@ -18,9 +18,9 @@
 
 
                         if(isset($_SESSION['user_ID'])){
-                            echo '<span><a href="admin.php">Iniciaste sesion</a></span>';
+                            echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i>  Admin</a></span>';
                         }else{
-                            echo '<span><a href="admin.php">No estas en sesion</a></span>';
+                            echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-ninja" ></i></a></span>';
                         }
                         ?>
                 </ul>
