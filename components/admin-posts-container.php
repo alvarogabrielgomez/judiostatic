@@ -38,7 +38,7 @@
                     <div class="nav-login">
 
                     <?php
-                     if(isset($_SESSION['user_ID'])){
+                     if(isset($_SESSION['admin_ID'])){
                          echo '<form  action="includes/logout-inc.php" method="POST">';
                          echo '<button type="submit" class="button-red" name="logout-submit">Logout</button>';
                          echo '</form>';

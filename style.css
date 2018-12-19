@@ -8,10 +8,14 @@ body{
 
 }
 
+
 a{
+	color: #424242;  
 	text-decoration: none;
 }
-
+a:hover{
+	text-decoration-line: underline;
+}
 
 h1{
 
@@ -72,7 +76,7 @@ height: inherit;
 	width: auto;
 }
 #header-menu ul li a:hover{
-	text-decoration-line: underline; ;
+	text-decoration-line: underline; 
 }
 
 #header-menu-buttoms{
@@ -624,7 +628,7 @@ margin: 0;
 	position: relative;
 	width: 100%;
 	min-height: 213px;
-	background-color: #FFFCF0;
+	background-color: #fbfbf2;
 }
 
 #hero-deals{
@@ -636,7 +640,7 @@ margin: 0;
 	width: 100%;
 	max-width: 1000px;
 	min-height: 213px;
-	background-color: #FFFCF0;
+	background-color: #fbfbf2;
 }
 
 .col1{
@@ -746,6 +750,7 @@ max-width: 40%;
     color: #000;
     margin-left: 4px;
 }
+
 .cupon-desc{
     padding: 6px 23px 6px 28px;
     font-size: 15px;

@@ -1,5 +1,6 @@
 <?php
  error_reporting(E_ALL);
+ session_start();
  ini_set('display_errors', '1');
 function error($message){
     header("Location: ../signup.php?signup=".$message);
@@ -36,14 +37,14 @@ if( isset($_POST['signup-submit']) ){
     else{
         
 
-        $sql = "SELECT * FROM users WHERE user_email = '$email';";
+        $sql = "SELECT * FROM admins WHERE admin_email = '$email';";
         $result = mysqli_query($conn,$sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck>0){
             error('email-taken');
         }
 
-        $sql = "SELECT user_uid FROM users WHERE user_uid = ?";
+        $sql = "SELECT admin_uid FROM admins WHERE admin_uid = ?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             error("sqlerror");
@@ -59,7 +60,7 @@ if( isset($_POST['signup-submit']) ){
         }
 
         else{
-            $sql = "INSERT INTO users (user_uid, user_first, user_last, user_email, user_pwd) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO admins (admin_uid, admin_first, admin_last, admin_email, admin_pwd) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 error("sqlerror");

@@ -14,7 +14,7 @@ if(isset($_POST['login-submit'])){
         error("empty");
     }
     else{
-        $sql = "SELECT * FROM users WHERE user_uid=? OR user_email=?";
+        $sql = "SELECT * FROM admins WHERE admin_uid=? OR admin_email=?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             error("sqlerror");
@@ -29,21 +29,21 @@ if(isset($_POST['login-submit'])){
             $result = mysqli_stmt_get_result($stmt);
             
             if($row = mysqli_fetch_assoc($result)){
-                $sql = "SELECT * FROM users WHERE user_uid = '$mailuid' AND active = 1 OR user_email = '$mailuid' AND active = 1;";
+                $sql = "SELECT * FROM admins WHERE admin_uid = '$mailuid' AND active = 1 OR admin_email = '$mailuid' AND active = 1;";
                 $result = mysqli_query($conn,$sql);
                 $resultCheck = mysqli_num_rows($result);
                 if($resultCheck<1){
                     error('user-unactive');
                 }else if($resultCheck>=1){
     
-                    $pwdCheck = password_verify($password, $row['user_pwd']);
+                    $pwdCheck = password_verify($password, $row['admin_pwd']);
                     if($pwdCheck == false){
                         error("wrong-pwd");
                     }
                     else if($pwdCheck == true){
                         session_start();
-                        $_SESSION['user_ID']=$row['user_id'];
-                        $_SESSION['user_UID']=$row['user_uid'];
+                        $_SESSION['admin_ID']=$row['admin_id'];
+                        $_SESSION['admin_UID']=$row['admin_uid'];
                         error("success");
                     }
                 }

@@ -152,3 +152,9 @@ JOIN authors AS a
 ON a.author_id = b.author_id
 WHERE a.nationality IS NOT NULL
 GROUP BY nationality
+
+SELECT p.title, p.description, p.price_from, p.price_new, p.offer_end_at, p.created_at, p.updated_at, p.buss_id, p.post_hero_img_url, b.cover_url, CONCAT(YEAR(p.updated_at),'-', MONTH(p.updated_at),'-', DAY(p.updated_at)) AS data
+    FROM posts as p
+    JOIN buss as b
+        on b.buss_id = p.buss_id
+    WHERE p.post_id = $post_url_id

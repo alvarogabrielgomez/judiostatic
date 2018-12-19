@@ -6,7 +6,8 @@
                 <h3>Las mejores experiencias gastronómicas</h3>
                
             <div id="main-items">
-                    <a href="deals.php" class="main-box">
+                <?php
+                   echo '<a href="deals.php?id=1" class="main-box">
 
                             <div class="main-img">
                                 <img src="img/tumb1.jpg" alt="">
@@ -31,7 +32,7 @@
                   
                             </p>
                         
-                        </a>
-
+                    </a>';
+                ?>
                     
             </div>
