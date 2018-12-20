@@ -1,38 +1,75 @@
+<?php
+require 'includes/dbh-inc.php';
+?>
 
 
-                
-                
-                <h1>¿Si te das un gusto?</h1>
-                <h3>Las mejores experiencias gastronómicas</h3>
-               
-            <div id="main-items">
-                <?php
-                   echo '<a href="deals.php?id=1" class="main-box">
+<?php 
+$sql ="
+SELECT b.buss_name, b.buss_dir, b.buss_phone, b.buss_phone, b.buss_url, p.post_id, p.title, p.description, p.price_from, p.price_new, p.offer_end_at, p.created_at, p.updated_at, p.buss_id, p.post_hero_img_url, b.cover_url, CONCAT(YEAR(p.updated_at),'-', MONTH(p.updated_at), '-' , DAY(p.updated_at)) AS data
+FROM posts as p
+JOIN buss as b
+    on b.buss_id = p.buss_id
+    WHERE p.active <> 0
+ORDER BY p.updated_at
 
-                            <div class="main-img">
-                                <img src="img/tumb1.jpg" alt="">
-                            </div>
 
-                            <div class="buss-name"><span>Negocio criminal</span></div>
+";
 
-                            <div class="badge">
-                                    <span>OFERTA DE ULTIMA HORA</span>
-                            </div>
-                            <div class="box-title"><span>Lorem Ipsum dolor Sit</span></div>
-                            <div class="price-box">
-                            
-                                <div class="price-new"> <abbr title="BRL">R$</abbr><span>12,30</span>  </div>
-                                <div class="price-from"> <abbr title="BRL">R$</abbr> <span>20,00</span></div>
+
+
+?>                
+<h1>¿Si te das un gusto?</h1>
+<h3>Las mejores experiencias gastronómicas</h3>
+<div id="main-items">
+<?php
+
+$results=mysqli_query($conn, $sql);
+$resultsCheck=mysqli_num_rows($results);
+
+if($resultsCheck < 1){
+
+        require'404-ini.php';
+        exit();
+    }
+    else{
+
     
-                            </div>
-                        
-                            <p class="main-box-desc">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Mauris lobortis, purus nec mollis vehicula, magna tortor
-                  
-                            </p>
-                        
-                    </a>';
-                ?>
-                    
-            </div>
+
+while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
+    echo'
+    <a href="deals.php?id='.$row['post_id'].'" class="main-box">
+
+    <div class="main-img">
+        <img src="'.$row['post_hero_img_url'].'" alt="">
+    </div>
+
+    <div class="buss-name"><span>'.$row['buss_name'].'</span></div>
+    
+    <div class="badge">
+            <span>OFERTA DE ULTIMA HORA</span>
+    </div>
+
+    
+    <div class="box-title"><span>'.$row['title'].'</span></div>
+    <div class="price-box">
+    
+        <div class="price-new"> <abbr title="BRL">R$</abbr><span>'.$row['price_new'].'</span>  </div>
+        <div class="price-from"> <abbr title="BRL">R$</abbr> <span>'.$row['price_from'].'</span></div>
+
+    </div>
+
+    <p class="main-box-desc">
+    '.$row['description'].'
+
+    </p>
+
+</a>
+    
+    ';
+}
+
+}
+
+?>
+</div>
+

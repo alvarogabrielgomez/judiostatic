@@ -15,6 +15,7 @@ if(isset($_GET['id'])){
     JOIN buss as b
         on b.buss_id = p.buss_id
     WHERE p.post_id = $post_url_id
+    AND p.active <> 0
     
     
     ";
