@@ -23,6 +23,6 @@
         </div>
     </div>
 
-    <div id="creditos"><p><a href="#">Condiciones de Uso</a> <a href="#">Privacidad</a><a href="http://ckj1.site11.com"> © Alvaro Gabriel Gomez</a>. TODOS LOS DERECHOS RESERVADOS</p></div>
+    <div id="creditos"><div><a href="#">Condiciones de Uso</a> <a href="#">Privacidad</a><a href="http://ckj1.site11.com"> © Alvaro Gabriel Gomez</a>. TODOS LOS DERECHOS RESERVADOS</div></div>
 
 </footer>
