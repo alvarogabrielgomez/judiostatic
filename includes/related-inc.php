@@ -6,8 +6,9 @@ require 'includes/dbh-inc.php';
 <?php 
 $sql ="
 SELECT * FROM posts
- WHERE buss_id <> 2
+ WHERE buss_id = $post_buss_id
  AND active <> 0
+ AND post_id <> $post_url_id
  ORDER BY post_id ASC
 ";
 ?>
