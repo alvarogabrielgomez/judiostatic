@@ -12,6 +12,7 @@ require 'includes/deals-inc.php'; // deals php
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JUDIOSTATIC</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
@@ -86,6 +87,7 @@ require 'components/header.php'; // Header php
                 <div class="main-post">    
 
 <?php 
+require 'modalwindow/modalwindow.php';
 echo '<div class="cupon-std">
 <div class="cupon-col1">
 <div>VALIDO PARA UNA VEZ</div>
@@ -94,7 +96,7 @@ echo '<div class="cupon-std">
 <div class="cupon-titulo"><span>'.$row['title'].'</span></div>
 <div class="cupon-desc"><span>'.$row['description'].'</span>
 </div>
-<div class="cupon-boton button-red"><a href="#">VER OFERTA</a></div>
+<button id="modaltrigger"class="cupon-boton button-red ">VER OFERTA</button>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">
@@ -124,6 +126,8 @@ echo '<div class="cupon-std">
             require 'components/footer.php'; // footer php
         ?>
 
+
+<script type="text/javascript" src="modalwindow/modalwindow.js"></script>
 </body>
 
 </html>
