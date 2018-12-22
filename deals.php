@@ -17,6 +17,9 @@ require 'includes/deals-inc.php'; // deals php
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+type="text/javascript" charset="utf-8"></script>
+    <script src="js.js"></script>
 </head>
 
 <body>
@@ -56,10 +59,10 @@ require 'components/header.php'; // Header php
                 <div class="desc-art">
                     <p>Oferta Lorem ipsum dolor sit amer us nec mollis vehicula, magna tortor finibus libero, vitae posuere ante lectus in enim. mollis vehicula, magna tortor finibus libero, vitae<br>
                     <div class="buss-dir">
-                    <?php echo $post_buss_dir; ?>
+                    <i class="fas fa-map-marker-alt" style="margin-right:16px;"></i><?php echo $post_buss_dir; ?>
                     </div>
                     <div class="buss-phone">
-                    <?php echo $post_buss_phone; ?>
+                    <i class="fas fa-phone" style="margin-right:11px;"></i><?php echo $post_buss_phone; ?>
                     </div>
                 
                 </p>
@@ -126,8 +129,30 @@ echo '<div class="cupon-std">
             require 'components/footer.php'; // footer php
         ?>
 
+<script>
+window.onload = function() {
+  //funciones a ejecutar
+
+        // cargamos el icono en el div donde ira el contenido
+        $(".modal-body").html("<img src='img/icons/loading.svg' class='loader' border='0' />");
+        // cargamos la pagina en el div capa
+        $(".modal-body").load('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>');
+
+};
+
+
+  function cargarContenido(pagina)
+    {
+        // cargamos el icono en el div donde ira el contenido
+        $(".modal-body").html("<img src='img/loading.svg' class='loader' border='0' />");
+        // cargamos la pagina en el div capa
+        $(".modal-body").load(pagina);
+    }
+</script>
+
 
 <script type="text/javascript" src="modalwindow/modalwindow.js"></script>
+
 </body>
 
 </html>

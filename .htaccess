@@ -1,12 +1,4 @@
-<IfModule mod_rewrite.so>
-Options -MultiViews
-RewriteEngine On
 
-RewriteCond %{THE_REQUEST} \s/deals\.php\?id=([0-9]+)\s [NC]
-RewriteRule ^ /deals/id/%1? [R=301,L]
-
-RewriteRule ^deals/id/([0-9]+)$ /deals.php?id=$1 [L]
-</IfModule>
 
 
 

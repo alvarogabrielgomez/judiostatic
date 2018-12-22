@@ -81,3 +81,47 @@
     font-size: 16px;
     padding: 14px;
   }
+
+  .modal-body img{
+    overflow: hidden;
+    width: 35%;
+    height: 102px;
+    max-width: 155px;
+    max-height: 152px;
+    min-width: 156px;
+    float: left;
+
+  }
+  .buss-info-container{
+    display: block;
+    max-width: 467px;
+    padding: 15px;
+    margin: auto;
+    background-color: #efefef;
+    min-height: 101px;
+    overflow: auto;
+}
+  
+
+
+  .buss-info-metadata{
+    padding: 0px 10PX;
+    float: right;
+    BOX-SIZING: BORDER-BOX;
+    WIDTH: 64%;
+  }
+
+  .buss-info-name{
+    padding: 0px 18px;
+    font-size: 18px;
+    font-weight: 600;
+    word-wrap: break-word;
+
+  }
+  .buss-info-dir{
+    padding: 4px 18px;
+    font-size: 14px;
+    height: 70px;
+    overflow-y: auto;
+    word-wrap: break-word;
+  }
