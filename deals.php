@@ -144,7 +144,7 @@ window.onload = function() {
   function cargarContenido(pagina)
     {
         // cargamos el icono en el div donde ira el contenido
-        $(".modal-body").html("<img src='img/loading.svg' class='loader' border='0' />");
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' />");
         // cargamos la pagina en el div capa
         $(".modal-body").load(pagina);
     }

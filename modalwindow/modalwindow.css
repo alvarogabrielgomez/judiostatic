@@ -125,3 +125,63 @@
     overflow-y: auto;
     word-wrap: break-word;
   }
+
+  .deal-info1{
+    display: block;
+    max-width: 467px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 18px;
+    background-color: #efefef;
+    min-height: 101px;
+    overflow: auto;
+  }
+
+  .modal-continue{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 499px;
+    margin: auto;
+    margin-top: 18px;
+    
+  }
+
+  .modal-continue a {
+    color: #FFF!important;
+    text-decoration: none;
+  }
+
+  .deal-info-metadata{
+    padding: 0px 10PX;
+    float: right;
+    BOX-SIZING: BORDER-BOX;
+    WIDTH: 100%;
+  }
+
+  .deal-info-name{
+    padding: 0px 18px;
+    font-size: 18px;
+    font-weight: 600;
+    word-wrap: break-word;
+
+  }
+  .deal-info-box{
+    padding: 4px 18px;
+    font-size: 14px;
+    height: 70px;
+    overflow-y: auto;
+    word-wrap: break-word;
+  }
+
+  .deal-info2{
+    display: block;
+    max-width: 467px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 18px;
+    background-color: #efefef;
+    min-height: 101px;
+    overflow: auto;
+  }
