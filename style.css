@@ -394,19 +394,12 @@ abbr{
 	cursor: pointer;
 }
 
-.button-red {
-    background-color: #BC2D19;
-    border: none;
-    color: white;
-	padding: 12px 39px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-	font-size: 16px;
-	height: 44px;
-	box-sizing: border-box;
-	box-shadow: 0px 0px 4px 0px rgba(209,209,209,1);
-	cursor: pointer;
+.red {
+    background-color: #BC2D19!important;
+}
+
+.blue {
+    background-color: #1E4363!important;
 }
 
 

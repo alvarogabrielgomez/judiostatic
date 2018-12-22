@@ -6,7 +6,7 @@
                     <div class="cupon-titulo"><span><?php echo $post_title; ?></span></div>
                     <div class="cupon-desc"><span><?php echo $post_desc; ?></span>
                     </div>
-                    <div class="cupon-boton button-red"><a href="#">VER OFERTA</a></div>
+                    <div class="cupon-boton button red"><a href="#">VER OFERTA</a></div>
                     </div>
                     <div class="cupon-col3">
 

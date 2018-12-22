@@ -14,12 +14,12 @@ require 'includes/deals-inc.php'; // deals php
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
 type="text/javascript" charset="utf-8"></script>
     <script src="js.js"></script>
+    
 </head>
 
 <body>
@@ -99,7 +99,7 @@ echo '<div class="cupon-std">
 <div class="cupon-titulo"><span>'.$row['title'].'</span></div>
 <div class="cupon-desc"><span>'.$row['description'].'</span>
 </div>
-<button id="modaltrigger"class="cupon-boton button-red ">VER OFERTA</button>
+<button id="modaltrigger"class="cupon-boton button red"onClick="cargarContenido("modalwindow/deals_pages/continue.php?id='.$post_url_id.'")">VER OFERTA</button>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">
@@ -108,6 +108,8 @@ echo '<div class="cupon-std">
 </div>
 </div>
 </div>';
+
+
 
                 require 'includes/related-inc.php';
                 //ofertas relacionadas
@@ -153,6 +155,12 @@ window.onload = function() {
 
 <script type="text/javascript" src="modalwindow/modalwindow.js"></script>
 
+
+
+
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
 </body>
 
 </html>

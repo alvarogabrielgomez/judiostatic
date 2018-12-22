@@ -6,7 +6,7 @@ require 'deals_pages-inc.php';
 
 
 ?>
-
+<div class="animated fadeIn index">
 <div class = "buss-info-container">
         <img src="<?php echo $cover_url; ?>" alt="image deals">
         <div class="buss-info-metadata">
@@ -24,6 +24,7 @@ require 'deals_pages-inc.php';
         
         <div>
 
-        <div><a class="button-red modal-continue" a onClick="cargarContenido('modalwindow/deals_pages/continue.php?id=<?php echo $post_url_id;?>')"  href="#">Voy a continuar</a></div>
+        <div><a class="button blue modal-continue" onClick="cargarContenido('modalwindow/deals_pages/continue.php?id=<?php echo $post_url_id;?>')"  >Voy a continuar</a></div>
 
         </div>
+</div>

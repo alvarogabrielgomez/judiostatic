@@ -35,7 +35,7 @@
                         <input type="text" name="uid"  placeholder="Nombre de Usuario">
                         <input type="password" name="pwd"  placeholder="Contraseña">
                         <input type="password" name="pwd-repeat" placeholder="Repite la Contraseña">
-                        <button type="submit" class="button-red" name="signup-submit">Signup</button>
+                        <button type="submit" class="button red" name="signup-submit">Signup</button>
                     </form>
                     <a href="admin.php">Volver</a>
 

@@ -48,7 +48,7 @@
                     echo    '<form  action="includes/login-inc.php" method="POST">';
                     echo    '<input type="text" name="mailuid" placeholder="Username/email">';
                     echo    '<input type="password" name="pwd" placeholder="password">';
-                    echo    '<button type="submit" class="button-red" name="login-submit">Login</button>';
+                    echo    '<button type="submit" class="button red" name="login-submit">Login</button>';
                     echo    '</form>';
                     echo '<a href="signup.php">Crear Cuenta</a>';
                     echo '<a href="signup.php">Olvide el password</a>';

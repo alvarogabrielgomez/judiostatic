@@ -1,3 +1,9 @@
+*{
+	-webkit-transition: all .5s ease-in-out;
+transition: transform .5s ease-in-out;
+
+}
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -9,10 +15,15 @@
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.18);  }
-  
+    background-color: rgba(0, 0, 0, 0.18);  
+    transition: all .2s ease-in-out;
+  }
+  #modalwindow{
+    transition: all .2s ease-in-out;
+  }
   /* Modal Content */
   .modal-content {
+    transition: all .2s ease-in-out;
     position: relative;
     background-color: #fffefe;
     margin: auto;
@@ -22,7 +33,7 @@
     border-top: 0px;
     width: 80%;
     max-width: 677px;
-    height: 540px;
+    min-height: 527px;
 
     box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, 0.16), 1px 10px 20px 0px rgba(0, 0, 0, 0.1), 0px -3px 0px 0px #BC2D19;    animation-name: animatetop;
     animation-duration: 0.4s
@@ -62,7 +73,10 @@
   
   .modal-body {
     padding: 2px 16px;
-    height: 369px;
+    overflow: auto;
+    max-height: 392px;
+    
+    min-height: 355px;
   }
   
   .modal-footer {
@@ -81,8 +95,11 @@
     font-size: 16px;
     padding: 14px;
   }
-
+.modal-body{
+  transition: all .2s ease-in-out;
+}
   .modal-body img{
+    transition: all .2s ease-in-out;
     overflow: hidden;
     width: 35%;
     height: 102px;
@@ -145,7 +162,7 @@
     max-width: 499px;
     margin: auto;
     margin-top: 18px;
-    
+    margin-bottom: 15px;
   }
 
   .modal-continue a {
@@ -185,3 +202,9 @@
     min-height: 101px;
     overflow: auto;
   }
+
+.insert-page{
+  MARGIN: AUTO;
+  DISPLAY: BLOCK;
+  width: max-content;
+}

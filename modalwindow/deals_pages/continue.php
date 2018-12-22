@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require 'deals_pages-inc.php';
 ?>
-
+<div class="animated fadeIn continue">
 <div class = "buss-info-container">
         <div class="deal-info-metadata">
         <div class="deal-info-name"><?php echo $post_title; ?></div>
@@ -20,6 +20,7 @@ require 'deals_pages-inc.php';
         
         <div>
 
-        <div><a class="button-red modal-continue" a onClick="cargarContenido('modalwindow/deals_pages/continue.php?id=<?php echo $post_url_id;?>')"  href="#">Voy a continuar</a></div>
+        <div><a class="button blue modal-continue" onClick="cargarContenido('modalwindow/deals_pages/insert.php?id=<?php echo $post_url_id;?>')" >Voy a continuar</a></div>
 
         </div>
+</div>
