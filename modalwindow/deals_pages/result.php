@@ -2,7 +2,7 @@
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-require 'deals_pages-inc.php';
+require '../../includes/deals_pages-inc.php';
 $first = mysqli_real_escape_string($conn, $_SESSION['client_first']);
 $last = mysqli_real_escape_string($conn, $_SESSION['client_last']);
 $to_email = mysqli_real_escape_string($conn, $_SESSION['client_email']);

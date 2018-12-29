@@ -1,8 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-require 'deals_pages-inc.php';
-
+require '../../includes/deals_pages-inc.php';
 ?>
 <div class="animated fadeIn insert-page">
 
@@ -12,7 +11,7 @@ require 'deals_pages-inc.php';
 <div class="main-box admin-signup main-box-simple">
 
 <div class="nav-signup">
-<form method="POST" id="insert-form" action="modalwindow/deals_pages/insert-inc2.php?id=<?php echo $post_url_id;?>" >
+<form method="POST" id="insert-form" action="./includes/insert-inc.php?id=<?php echo $post_url_id;?>" >
     <input id="first" type="text" name="first"  placeholder="Nombre" autofocus>
     <input id="first" type="text" name="last"  placeholder="Apellido">
     <input id="first" type="email" name="email"  placeholder="E-mail">

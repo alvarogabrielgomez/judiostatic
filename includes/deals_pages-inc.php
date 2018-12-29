@@ -12,7 +12,7 @@ ini_set('display_errors', '1');
 //     die("Connection failed: ".mysqli_connect_error());
 // }
 
-require '../../includes/dbh-inc.php';
+require 'dbh-inc.php';
 $post_url_id = mysqli_real_escape_string($conn, $_GET['id']);
 
 $sql = "
