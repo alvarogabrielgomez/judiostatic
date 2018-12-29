@@ -194,13 +194,14 @@ transition: transform .5s ease-in-out;
 
   .deal-info2{
     display: block;
-    max-width: 467px;
-    padding: 15px;
+    max-width: 498px;
+    padding: 7px 27px;
     margin: auto;
-    margin-top: 18px;
+    margin-top: 12px;
     background-color: #efefef;
     min-height: 101px;
     overflow: auto;
+    box-sizing: border-box;
   }
 
 .insert-page{
@@ -208,3 +209,20 @@ transition: transform .5s ease-in-out;
   DISPLAY: BLOCK;
   width: max-content;
 }
+
+.codigo-final{
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #ffffd2;
+  padding: 8px;
+  font-size: 27px;
+}
+
+#dos-botones{
+  width: 497px;
+  display: flex;
+
+  margin: auto;
+  align-items: center;
+}
+

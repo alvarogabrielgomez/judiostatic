@@ -12,7 +12,7 @@ require 'deals_pages-inc.php';
 <div class="main-box admin-signup main-box-simple">
 
 <div class="nav-signup">
-<form method="POST" id="insert-form" action="modalwindow/deals_pages/insert-inc.php" >
+<form method="POST" id="insert-form" action="modalwindow/deals_pages/insert-inc2.php?id=<?php echo $post_url_id;?>" >
     <input id="first" type="text" name="first"  placeholder="Nombre" autofocus>
     <input id="first" type="text" name="last"  placeholder="Apellido">
     <input id="first" type="email" name="email"  placeholder="E-mail">
@@ -42,6 +42,22 @@ require 'deals_pages-inc.php';
                     $(".response").text(data.content);
                     if (data.response=="success") {
                         $(".response").css("color", "green");
+
+                        function success_redirect_load_delay(){
+                    
+                            $(".admin-signup").css("opacity", "0");
+                        }
+                        setTimeout(success_redirect_load_delay, 600);
+
+                        function success_redirect(){
+                            
+                            $(".admin-signup").css("display", "none");
+                            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
+                        }
+                        setTimeout(success_redirect, 2000);
+
+
+
                     }
                     else if (data.response!=="success") {
                         $(".response").css("color", "red");

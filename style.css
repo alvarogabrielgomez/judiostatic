@@ -433,6 +433,9 @@ abbr{
 	width: 100%;
 	max-width: 325px;
 	min-width: 300px;
+	transition-duration: 170ms;
+    transition-property:visibility, opacity;
+    transition-delay:1s;
 }
 
 .nav-login form{

@@ -18,7 +18,6 @@ require 'includes/deals-inc.php'; // deals php
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
 type="text/javascript" charset="utf-8"></script>
-    <script src="js.js"></script>
     
 </head>
 
@@ -99,7 +98,7 @@ echo '<div class="cupon-std">
 <div class="cupon-titulo"><span>'.$row['title'].'</span></div>
 <div class="cupon-desc"><span>'.$row['description'].'</span>
 </div>
-<button id="modaltrigger"class="cupon-boton button red"onClick="cargarContenido("modalwindow/deals_pages/continue.php?id='.$post_url_id.'")">VER OFERTA</button>
+<button id="modaltrigger"class="cupon-boton button red"onClick="cargarContenido("modalwindow/deals_pages/continue.php?id='.$post_url_id.'")">TOMAR OFERTA</button>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">

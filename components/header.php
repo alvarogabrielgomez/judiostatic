@@ -22,7 +22,10 @@
 
                         if(isset($_SESSION['admin_ID'])){
                             echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i>  Admin</a></span>';
-                        }else{
+                        }else if(isset($_SESSION['client_id'])){
+                            echo '<span><a href="profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i>'.$_SESSION['client_first'].'</a></span>';
+                        }
+                        else{
                             echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-ninja" ></i></a></span>';
                         }
                         ?>

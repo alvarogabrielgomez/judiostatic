@@ -33,8 +33,29 @@ if ($error == false) {
 
                          mysqli_stmt_bind_param($stmt, "sss", $first, $last, $email);
                          mysqli_stmt_execute($stmt);
-                         $data['response'] = "success"; 
-                         $data['content'] = "Todo bien el mio";
+                         session_start();
+                         $sql = "SELECT * FROM clients WHERE client_email=?";
+                         $stmt = mysqli_stmt_init($conn);
+                         if(!mysqli_stmt_prepare($stmt, $sql)){
+                            $data['response'] = "error"; 
+                            $data['content'] = "SQL ERROR.";
+                         }else{
+                            mysqli_stmt_bind_param($stmt, "s", $email);
+                            mysqli_stmt_execute($stmt);
+                            $result = mysqli_stmt_get_result($stmt);
+                            if($row = mysqli_fetch_assoc($result)){
+                                $_SESSION['client_id']=$row['client_id'];
+                                $_SESSION['client_email']=$row['client_email'];
+                                $_SESSION['client_first']=$row['client_first'];
+                                $_SESSION['client_last']=$row['client_last'];
+                                $data['response'] = "success"; 
+                                $data['content'] = "Success";
+                            }
+                         }
+
+
+
+
                          
                      }
             }
