@@ -26,14 +26,14 @@ $mail_message .= "<style>
     display: block;
     font-size: 16px;
     font-family: helvetica;
-    background-color: #efefef;
+    background-color: #fbfbf2;
     border: 1px solid rgba(151, 37, 21, 0.29);
     border-top: 4px solid rgb(151, 37, 21);
 }
 #code{
     text-align: center;
     box-sizing: border-box;
-    background-color: #ffffd2;
+    background-color: #ffffd6;
     padding: 8px;
     font-size: 27px;
 }

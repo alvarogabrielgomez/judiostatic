@@ -66,7 +66,7 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
 var qr = new QRious({
     element: document.getElementById('qr'),
     value: '<?php echo $transqr; ?>',
-    background: '#efefef', // background color
+    background: '#fbfbf2', // background color
     foreground: 'black', // foreground color
     backgroundAlpha: 1,
     foregroundAlpha: 1,

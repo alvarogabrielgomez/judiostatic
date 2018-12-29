@@ -114,7 +114,7 @@ transition: transform .5s ease-in-out;
     max-width: 467px;
     padding: 15px;
     margin: auto;
-    background-color: #efefef;
+    background-color: #fbfbf2;
     min-height: 101px;
     overflow: auto;
 }
@@ -149,7 +149,7 @@ transition: transform .5s ease-in-out;
     padding: 15px;
     margin: auto;
     margin-top: 18px;
-    background-color: #efefef;
+    background-color: #fbfbf2;
     min-height: 101px;
     overflow: auto;
   }
@@ -198,7 +198,7 @@ transition: transform .5s ease-in-out;
     padding: 7px 27px;
     margin: auto;
     margin-top: 12px;
-    background-color: #efefef;
+    background-color: #fbfbf2;
     min-height: 101px;
     overflow: auto;
     box-sizing: border-box;
@@ -213,7 +213,7 @@ transition: transform .5s ease-in-out;
 .codigo-final{
   text-align: center;
   box-sizing: border-box;
-  background-color: #ffffd2;
+  background-color: #ffffd6;
   padding: 8px;
   font-size: 27px;
 }
