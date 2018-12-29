@@ -98,7 +98,7 @@ echo '<div class="cupon-std">
 <div class="cupon-titulo"><span>'.$row['title'].'</span></div>
 <div class="cupon-desc"><span>'.$row['description'].'</span>
 </div>
-<button id="modaltrigger"class="cupon-boton button red"onClick="cargarContenido("modalwindow/deals_pages/continue.php?id='.$post_url_id.'")">TOMAR OFERTA</button>
+<button id="modaltrigger"class="cupon-boton button red"onClick="cargarContenido("modalwindow/deals_pages/continue.php?id='.$post_url_id.'")"><span>TOMAR OFERTA</span></button>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">

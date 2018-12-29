@@ -41,7 +41,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     <div class="cupon-titulo"><span><a href="deals.php?id='.$row['post_id'].'">'.$row['title'].'</a></span></div>
     <div class="cupon-desc"><span>'.$row['description'].'</span>
     </div>
-    <div class="cupon-boton button red"><a href="deals.php?id='.$row['post_id'].'">VER OFERTA</a></div>
+    <div class="cupon-boton button l-grey"><a href="deals.php?id='.$row['post_id'].'">VER OFERTA</a></div>
     </div>
     <div class="cupon-col3">
     <div class="cupon-descuento">
