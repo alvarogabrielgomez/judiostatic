@@ -52,5 +52,6 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
 echo $qruri;
 require 'email-mailer.php';
     unset($transqr);
+unlink($output_file_md5) or die("Couldn't delete file");
 ?>
 
