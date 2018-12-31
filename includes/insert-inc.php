@@ -72,13 +72,13 @@ if ($error == false) {
                            $result = mysqli_stmt_get_result($stmt);
                            if($row = mysqli_fetch_assoc($result)){
                             session_start();
-                               $_SESSION['client_id']=$row['client_id'];
-                               $_SESSION['client_email']=$row['client_email'];
-                               $_SESSION['client_first']=$row['client_first'];
-                               $_SESSION['client_last']=$row['client_last'];
-                               $data['response'] = "success"; 
-                               $data['content'] = "Bienvenido!";
-                               $data['transqr'] = $transqr;
+                            $_SESSION['client_id']=$row['client_id'];
+                            $_SESSION['client_email']=$row['client_email'];
+                            $_SESSION['client_first']=$row['client_first'];
+                            $_SESSION['client_last']=$row['client_last'];
+                            $data['response'] = "success"; 
+                            $data['content'] = "Bienvenido!";
+
                             //    transaction_insert();
                             $sql = "INSERT INTO transactions (post_id, client_id, transaction_qr) VALUES (?, ?, ?)";
                             $stmt = mysqli_stmt_init($conn);

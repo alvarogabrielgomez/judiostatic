@@ -52,7 +52,7 @@ $mail_message .= "<style>
   .deal-info-box{
     padding: 4px 18px;
     font-size: 16px;
-    height: 70px;
+    height: fit-content;
     overflow-y: auto;
     word-wrap: break-word;
   }
@@ -65,6 +65,7 @@ $mail_message .= "<style>
     margin-top: 25px;
     background-color: #ffffff;
     min-height: 101px;
+    height: fit-content;
     overflow: auto;
     border: 1px solid rgba(151,37,21,0.29);
 
