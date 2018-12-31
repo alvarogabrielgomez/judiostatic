@@ -15,8 +15,8 @@ require '../../includes/deals_pages-inc.php';
     <input id="first" type="text" name="first"  placeholder="Nombre" autofocus>
     <input id="first" type="text" name="last"  placeholder="Apellido">
     <input id="first" type="email" name="email"  placeholder="E-mail">
-    <span class="response"></span>
     <button id="btn_send" type="submit" class="button red" name="signup-submit">Completar pedido</button>
+    <span style='' class="response"></span>
     <div><a class="cancelar">Cancelar</a></div>
 <div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Volver</a></div>
 
@@ -43,7 +43,7 @@ require '../../includes/deals_pages-inc.php';
                     $(".response").text(data.content);
                     if (data.response=="success") {
                         $(".response").css("color", "green");
-
+                        $(".response").css("margin-top", "10px");
                         function success_redirect_load_delay(){
                     
                             $(".admin-signup").css("opacity", "0");
@@ -83,7 +83,7 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
         type: 'POST', 
         data: { qruri: qruri },
         success: function(data) {
-            console.log(data);
+            console.log("Email Sended, Ckj1");
             cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
   
         }
