@@ -11,6 +11,7 @@ ini_set('display_errors', '1');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JUDIOSTATIC</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="components/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="components/slick/slick-theme.css"/>
 

@@ -12,6 +12,7 @@ require 'includes/deals-inc.php'; // deals php
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JUDIOSTATIC</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
