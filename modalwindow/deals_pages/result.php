@@ -8,7 +8,6 @@ $last = mysqli_real_escape_string($conn, $_SESSION['client_last']);
 $to_email = mysqli_real_escape_string($conn, $_SESSION['client_email']);
 
 $transqr = mysqli_real_escape_string($conn, $_SESSION['actual_transaction']);
-
 $sql = "
 SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_url_id
 
@@ -17,6 +16,7 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
     $resultsCheck=mysqli_num_rows($results);
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
     if($resultsCheck < 1){
+        echo 'ERROR SQL';
         echo $transqr;
         echo $post_url_id;
         exit();
@@ -74,8 +74,8 @@ var qr = new QRious({
     mime: 'image/png', // MIME type used to render the image for the QR code
     size: 150, // Size of the QR code in pixels.
     padding: null // padding in pixels
+    
 })
-
 
 
 
@@ -86,14 +86,22 @@ cerrar.onclick = function() {
     }
 
 
-var canvas = document.getElementById("qr");
-var qruri = canvas.toDataURL("image/png");
-// document.write(qruri);
+// var canvas = document.getElementById("qr");
+// var qruri = canvas.toDataURL("image/png");
+// // document.write(qruri);
+// canvas.toBlob(function(blob) {
+//     var newImg = document.createElement("img"),
+//     url = URL.createObjectURL(blob);    
+//     window.newImg.src = url;
+    
+// });
 
 
 </script>
 <?php
-require 'email-mailer.php';
+
+
+// require 'email-mailer.php';
 // require 'send-email-inc.php';
     unset($transqr);
     

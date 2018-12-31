@@ -206,7 +206,7 @@ width: 100%;
 	max-width: 300px;
 	height: auto;
 	max-height: 500px;
-	border-radius: 4px;
+	border-radius: 10px;
 	color: #5d5d5d;
 	background-color: #fff;
 	padding: 12px;
@@ -380,6 +380,7 @@ abbr{
 }
 
 .button {
+    border-radius:50px;
     background-color: #22BA6A;
     border: none;
     color: white;
@@ -709,8 +710,17 @@ max-width: 40%;
 	overflow: hidden;
 	width: auto;
     height: auto;
-    max-width: 338px;
+	max-width: 338px;
+	border-radius: 6px;
+	transition: all 0.6s ease;
 }
+
+.col2 img:hover{
+	filter: saturate(120%);
+	
+	transition: all 0.6s ease;
+}
+
 #home-icon{
 	background-image: url("img/icons/home-icon.svg");
     background-size: 18px 18px;

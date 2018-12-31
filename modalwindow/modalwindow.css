@@ -34,7 +34,7 @@ transition: transform .5s ease-in-out;
     width: 80%;
     max-width: 677px;
     min-height: 527px;
-
+    border-radius: 10px 10px 0px 0px;
     box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, 0.16), 1px 10px 20px 0px rgba(0, 0, 0, 0.1), 0px -3px 0px 0px #BC2D19;    animation-name: animatetop;
     animation-duration: 0.4s
   }

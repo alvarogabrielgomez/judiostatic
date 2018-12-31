@@ -19,8 +19,10 @@ require '../../includes/deals_pages-inc.php';
     <button id="btn_send" type="submit" class="button red" name="signup-submit">Completar pedido</button>
     <div><a class="cancelar">Cancelar</a></div>
 <div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Volver</a></div>
-</form>
 
+</form>
+<canvas id="qr" style="margin: auto;display:none;"></canvas>
+<script src="./js/qrious.min.js"></script>
 <script>
     var cancelar = document.getElementsByClassName("cancelar")[0];
     cancelar.onclick = function() {
@@ -51,7 +53,43 @@ require '../../includes/deals_pages-inc.php';
                         function success_redirect(){
                             
                             $(".admin-signup").css("display", "none");
-                            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
+                            var transqr = data.transqr;
+
+var qr = new QRious({
+    element: document.getElementById('qr'),
+    value: transqr,
+    background: '#fbfbf2', // background color
+    foreground: 'black', // foreground color
+    backgroundAlpha: 1,
+    foregroundAlpha: 1,
+    level: 'L', // Error correction level of the QR code (L, M, Q, H)
+    mime: 'image/png', // MIME type used to render the image for the QR code
+    size: 150, // Size of the QR code in pixels.
+    padding: null // padding in pixels
+    
+})
+
+var canvas = document.getElementById("qr");
+var qruri = canvas.toDataURL("image/png");
+
+function loadgif(pagina)
+    {
+        // cargamos el icono en el div donde ira el contenido
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Casi esta listo</span>");
+
+    }
+loadgif();
+$.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
+        type: 'POST', 
+        data: { qruri: qruri },
+        success: function(data) {
+            console.log(data);
+            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
+  
+        }
+    })
+
+                            
                         }
                         setTimeout(success_redirect, 2000);
 

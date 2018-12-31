@@ -1,4 +1,6 @@
 <?php
+
+
 require '../../script/phpmailer/PHPMailerAutoload.php';
 $mail_message = "<html>";
 $mail_message .= "<head>";
@@ -8,7 +10,8 @@ $mail_message .= "<style>
     width:150px;
     height:150px;
     margin:auto;
-    background-color:#eaeaea;}
+    background-color:#eaeaea;
+}
 
     .deal-info-metadata{
         padding: 0px 10PX;
@@ -26,6 +29,7 @@ $mail_message .= "<style>
     display: block;
     font-size: 16px;
     font-family: helvetica;
+    border-radius: 10px 10px 0px 0px;
     background-color: #fbfbf2;
     border: 1px solid rgba(151, 37, 21, 0.29);
     border-top: 4px solid rgb(151, 37, 21);
@@ -76,7 +80,7 @@ $mail_message .= "<style>
 <p>Tu codigo promocional es:</p>
 <p id='code'>$transqr</p>
 <div id='qr-canvas'>
-<img src='../../temp/qr.png' ></img>
+<img id='imagecode' src=\"cid:qrcode\" />
 </div>
 
 <div class = 'buss-info-container'>
@@ -90,6 +94,7 @@ $mail_message .= "<style>
 <p>Puede revisar otros cupones mas en su perfil.</p>
 <p>Muchisimas gracias,</p>
 <p>Judiostatic.</p>
+
 </div>
     </body>
 </html>
@@ -115,7 +120,10 @@ $mail->Password = $password;
 $mail->setFrom('noreply.ckj.cupon@gmail.com', 'Judiostatic Cupon');
 $mail->addAddress($to_id);
 $mail->Subject = $subject;
-$mail->msgHTML($message);
+$mail->IsHTML(true);
+$mail->AddAttachment($output_file_md5, 'qrcode');
+$mail->AddEmbeddedImage($output_file_md5, 'qrcode', 'qrcode.jpg');
+$mail->Body = $message;
 if (!$mail->send()) {
 $error = "Mailer Error: " . $mail->ErrorInfo;
 echo '<p id="para">'.$error.'</p>';

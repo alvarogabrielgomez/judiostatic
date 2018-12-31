@@ -33,6 +33,7 @@ if ($error == false) {
                 $_SESSION['client_last']=$row['client_last'];
                 $data['response'] = "success"; 
                 $data['content'] = "Bienvenido de nuevo";
+
                 // transaction_insert();
                 $sql = "INSERT INTO transactions (post_id, client_id, transaction_qr) VALUES (?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
@@ -46,6 +47,7 @@ if ($error == false) {
                     mysqli_stmt_bind_param($stmt, "sss", $post_url_id, $client_id, $transqr);
                     mysqli_stmt_execute($stmt);
                     $_SESSION['actual_transaction']=$transqr;
+                    $data['transqr'] = $transqr;
             
                 }
                 }else{
@@ -76,6 +78,7 @@ if ($error == false) {
                                $_SESSION['client_last']=$row['client_last'];
                                $data['response'] = "success"; 
                                $data['content'] = "Bienvenido!";
+                               $data['transqr'] = $transqr;
                             //    transaction_insert();
                             $sql = "INSERT INTO transactions (post_id, client_id, transaction_qr) VALUES (?, ?, ?)";
                             $stmt = mysqli_stmt_init($conn);
@@ -89,7 +92,8 @@ if ($error == false) {
                                 mysqli_stmt_bind_param($stmt, "sss", $post_url_id, $client_id, $transqr);
                                 mysqli_stmt_execute($stmt);
                                 $_SESSION['actual_transaction']=$transqr;
-                        
+                                $data['transqr'] = $transqr;
+                                 
                             }
                          }else{
                             $data['response'] = "error"; 
@@ -108,6 +112,7 @@ if ($error == false) {
     $data['response'] = "error";
     $data['content'] = "Campos Vacios.";
 }
+
 
 
 echo json_encode($data);
