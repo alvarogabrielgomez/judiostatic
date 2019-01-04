@@ -3,6 +3,7 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require 'includes/scan-code-inc.php'; // scan code php
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,20 +25,21 @@ require 'includes/scan-code-inc.php'; // scan code php
 </head>
 <body>
 <header id="header">
-   <div id="header-container">
+   <div id="header-container" style="height: 62px!important ;">
         <nav id="header-logo">
-            <ul>
+            <ul style = "line-height: 61px!important;">
                 <!-- <li id="header-logo-img"><a href="#"><img src="" alt=""></a></li> -->
                 <li id="header-logo-spam">JUDIOSTATIC Scan QR</li>
             </ul>
         </nav>
         <div id="header-container-menu">
             <nav id="header-menu">
-                <ul id="header-menu-buttoms">
-                    <!-- <li><a href="index.php">Inicio</a></li>
+                <ul id="header-menu-buttoms" style="line-height: 58px!important;">
+                    <li><a href="index.php">Inicio</a></li>
+                    <!-- 
                     <li><a href="#main">About</a></li>
                     <li><a href="#main">Contacto</a></li> -->
-                    <li class="login-status">
+                    <li class="login-status" style = "line-height: 59px!important;">
                     
                         <?php
 
@@ -64,10 +66,15 @@ require 'includes/scan-code-inc.php'; // scan code php
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
 type="text/javascript" charset="utf-8"></script>
 
-<section class ='section-body'>
-<!-- contenido ajax -->
-</section>
 
+<?php
+if(isset($_SESSION['buss_ID']) || isset($_SESSION['admin_ID']) ){
+
+echo"<section class ='section-body'>
+<!-- contenido ajax -->
+</section>";
+}
+?>
 
 <script>
       

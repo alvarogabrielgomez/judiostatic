@@ -891,3 +891,23 @@ max-width: 40%;
 	height: 100%;
 	margin: auto;
 }
+
+#preview span{
+	margin:0;
+}
+.client_name, .post_title, .post_price_new, .post_buss_name{
+    display: block;
+    font-size: 18px;
+    /* text-align: left; */
+    /* margin-left: 16px; */
+    padding: 5px 1px;
+}
+
+.client_name{
+	font-weight: 600;
+}
+
+.info-container{
+	border-bottom: 1px solid #ececec;
+    border-left: 5px solid #bc2d19;
+}

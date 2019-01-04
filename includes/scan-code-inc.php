@@ -25,7 +25,7 @@ ORDER BY t.transaction_id
     $resultsCheck=mysqli_num_rows($results);
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
     if($resultsCheck < 1){
-        $data['content'] = "Codigo No encontrado.";
+        $data['response'] = "Codigo no encontrado";
 
         exit();
     }else{
@@ -59,4 +59,3 @@ ORDER BY t.transaction_id
 
     echo json_encode($data);
 }
-

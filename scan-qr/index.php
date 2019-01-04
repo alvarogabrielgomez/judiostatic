@@ -1,16 +1,19 @@
 <div id="preview-container">
 <video id="preview"></video>
-<span style='' class="response"></span>
-<br>
-<span style='' class="client_name"></span>
-<br>
-<span style='' class="post_title"></span>
+<span style='' class="response">Esperando...</span>
+<div class='info-container'>
+<span style='' class="client_name">Nombre del Cliente</span>
 </div>
-
-
-
-
-
+<div class='info-container'>
+<span style='' class="post_title">Promocion</span>
+</div>
+<div class='info-container'>
+<span style='' class="post_price_new">Precio nuevo</span>
+</div>
+<div class='info-container'>
+<span style='' class="post_buss_name">Empresa</span>
+</div>
+</div>
 
 
 
@@ -37,22 +40,33 @@
         console.log(data.client_first+" "+data.client_last);
         console.log(data.post_price_new+" "+data.post_title); 
         console.log(data.post_buss_name); 
+
         $(".response").text(data.response);
         $(".response").css("color", "green");
         $(".response").css("margin-top", "10px");
+
         $(".client_name").text(data.client_first+" "+data.client_last);
         $(".post_title").text(data.post_title);
+        $(".post_price_new").text("R$"+data.post_price_new);
+        $(".post_buss_name").text(data.post_buss_name);
 
-    });
-
-
-        // success: function(data) {
-        //     console.log("QR Leido, Ckj1");  
-        //     // codigoenviado(data.code);
-        //     console.log(data.content);
-        // }
+        $(".client_name").css("display", "block");
+        $(".post_title").css("display", "block");
+        $(".post_buss_name").css("display", "block");
+        $(".post_price_new").css("display", "block");
+    })
+    .fail( function(data) {
+        console.log("QR Leido, Ckj1");  
+        $(".response").text("Codigo no encontrado");
+        $(".response").css("color", "red");
+        $(".response").css("margin-top", "10px");
         
-    
+        $(".client_name").css("display", "none");
+        $(".post_title").css("display", "none");
+        $(".post_buss_name").css("display", "none");
+        $(".post_price_new").css("display", "none");
+    })
+
     
       });
       Instascan.Camera.getCameras().then(function (cameras) {
