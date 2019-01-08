@@ -206,6 +206,7 @@ width: 100%;
 	max-width: 300px;
 	height: auto;
 	max-height: 500px;
+	min-height: 443px!important;
 	border-radius: 10px;
 	color: #5d5d5d;
 	background-color: #fff;
@@ -974,4 +975,17 @@ max-width: 40%;
 	margin: 10px 0px;
     font-size: 16px;
     height: 35px;
+}
+.span-img-post{
+	position: absolute;
+    width: 196px;
+    height: 28px;
+    box-sizing: border-box;
+    background-color: rgba(251, 251, 242, 0.54);
+    margin: auto;
+    text-align: center;
+    padding: 1px;
+    bottom: 15px;
+	color: black;
+	z-index:100000;
 }

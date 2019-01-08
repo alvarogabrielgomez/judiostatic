@@ -13,7 +13,6 @@ require 'includes/new-post-inc.php'; // deals php
     <title>JUDIOSTATIC</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
 
@@ -36,10 +35,19 @@ require 'components/header.php'; // Header php
 <!--Final main portada-->
         <?php
             require 'components/navbar.php'; // footer php
+
         ?>
 
 <h1>Modo Editor</h1>
-<h3>Rellene todo para publicar el nuevo post</h3>
+<?php
+if(isset($_GET['status'])){
+                if($_GET['status']=="success"){
+                    echo '<h3> Listo!, el post debe estar publicado ya.</h3>';
+                }
+                }else{
+                    echo'<h3>Rellene todo para publicar el nuevo post</h3>';
+                }
+?>
 
 <div id="time-bar">
     <div id="time-bar-container">
@@ -68,7 +76,7 @@ require 'components/header.php'; // Header php
                     <option value="">Buss Name</option>
 <?php 
 require 'includes/dbh-inc.php';
-$sql = "SELECT buss_name FROM buss";
+$sql = "SELECT * FROM buss";
 $results=mysqli_query($conn, $sql);
 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     echo '<option value="'.$row['buss_id'].'">'.$row['buss_name'].'</option>';
@@ -119,7 +127,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
 <div class="cupon-titulo"><span><input class="title_new" type="text" name="title"  placeholder="TITULO DEL CUPON"></span></div>
 <div class="cupon-desc"><span><textarea class="desc_new" name="description"  placeholder="Descripcion del Cupon" ></textarea></span>
 </div>
-<input type="submit" id="post_submit"class="cupon-boton button red" value="PUBLICAR POST"/>
+<input type="submit" id="post_submit"class="cupon-boton button red" name="post-submit" value="PUBLICAR POST"/>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">
@@ -153,34 +161,10 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
             require 'components/footer.php'; // footer php
         ?>
 
-<script>
-window.onload = function() {
-  //funciones a ejecutar
-
-        // cargamos el icono en el div donde ira el contenido
-        $(".modal-body").html("<img src='img/icons/loading.svg' class='loader' border='0' />");
-        // cargamos la pagina en el div capa
-        $(".modal-body").load('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>');
-
-};
-
-
-  function cargarContenido(pagina)
-    {
-        // cargamos el icono en el div donde ira el contenido
-        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' />");
-        // cargamos la pagina en el div capa
-        $(".modal-body").load(pagina);
-    }
-</script>
-
-
-<script type="text/javascript" src="modalwindow/modalwindow.js"></script>
 
 
 
 
-<link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
 </body>

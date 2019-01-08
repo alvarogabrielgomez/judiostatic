@@ -69,6 +69,7 @@ require 'components/header.php'; // Header php
                 </div>
             </div>
              <div class="col2">
+                 <div class="span-img-post"><span>Imagen real de la oferta</span></div>
                 <img src="<?php echo $post_hero_img; ?>" alt="image deals">
             </div>
         </div>
