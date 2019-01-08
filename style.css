@@ -519,7 +519,8 @@ abbr{
 	display: block;
 	margin: auto;
 	width: 100%;
-	height: auto;
+	height: 44px;
+    overflow: hidden;
 	color:#FFF;
 	text-align: center;
 	line-height: 80px;
@@ -860,15 +861,13 @@ max-width: 40%;
 }
 
 #preview-container{
-	width: 500px;
-	min-height: 325px;
-	margin: auto;
-	margin-top: 36px;
-
+    width: 100%;
+    max-height: 100vh;
+    margin: auto;
     box-sizing: border-box;
-	padding: 12px;
+    text-align: center;
 	
-	border-radius: 10px;
+/* 	border-radius: 10px;
 	color: #5d5d5d;
 	background-color: #fff;
 	padding: 12px;
@@ -883,7 +882,7 @@ max-width: 40%;
 	border-width: 1px;
 	transition: all 0.6s ease;
 	-webkit-box-shadow: 1px 1px 2px 0px rgba(204,204,204,0.7)!important;
-
+ */
 }
 
 #preview{
@@ -910,4 +909,69 @@ max-width: 40%;
 .info-container{
 	border-bottom: 1px solid #ececec;
     border-left: 5px solid #bc2d19;
+}
+
+.title_new{
+	border: 0px;
+    height: 29px;
+    font-size: 18px;
+	font-weight: 600;
+	font-family: 'Oxygen', sans-serif;
+	width: 441px;
+}
+
+.desc_new{
+	width: 435px;
+	height: 65px;
+	font-family: 'Oxygen', sans-serif;
+	font-size: 15px;
+	border:0px;
+}
+
+.new_price{
+	width: 139px;
+    text-align: center;
+	height: 43px;
+	font-size: 35px;
+	font-weight: 600;
+	background-color: transparent;
+    border: 0;
+}
+.p-before::before{
+	content: "New Price";
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.s-after::after{
+	content: "Old Price";
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+.old_price{
+    width: 139px;
+    text-align: center;
+    height: 34px;
+    font-size: 25px;
+    background-color: transparent;
+    border: 0;
+}
+
+.buss_name_select{
+    font-size: 26px;
+    line-height: 35px;
+    font-weight: 600;
+    text-align: left;
+    width: 100%;
+    background: transparent;
+    border: 0px;
+
+}
+
+.final_offer{
+	margin: 10px 0px;
+    font-size: 16px;
+    height: 35px;
 }

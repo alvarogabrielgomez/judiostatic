@@ -73,6 +73,9 @@ if(isset($_SESSION['buss_ID']) || isset($_SESSION['admin_ID']) ){
 echo"<section class ='section-body'>
 <!-- contenido ajax -->
 </section>";
+}else{
+    echo"Acceso Denegado";
+
 }
 ?>
 

@@ -13,7 +13,14 @@
             <nav id="header-menu">
                 <ul id="header-menu-buttoms">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#main">About</a></li>
+                    <?php if(isset($_SESSION['admin_ID'])){
+                            echo '<li><a href="new-post.php">New Post</a></li>';
+                    }else{
+                        echo '<li><a href="#main">About</a></li>';
+                    }
+                    ?>
+
+
                     <?php if(isset($_SESSION['admin_ID'])){
                             echo '<li><a href="scan-code.php">Scan QR</a></li>';
                     }else{

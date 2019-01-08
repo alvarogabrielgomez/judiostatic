@@ -28,7 +28,7 @@ ini_set('display_errors', '1');
 <div id="main-container">
         <?php
         if(isset($_SESSION['admin_ID'])){
-            require 'components/signup-posts-container.php'; // Main posts admin php
+            require 'components/signupbuss-posts-container.php'; // Main posts admin php
         }else{
             echo 'Acceso Denegado';
         }

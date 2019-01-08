@@ -40,17 +40,19 @@
                     <?php
                      if(isset($_SESSION['admin_ID'])){
                          echo '<form  action="includes/logout-inc.php" method="POST">';
-                         echo '<button type="submit" class="button-red" name="logout-submit">Logout</button>';
+                         echo '<button type="submit" class="button red" name="logout-submit">Logout</button>';
                          echo '</form>';
-                         echo '<h1>Marico el que lo lea, ay mariquito</h1>';
-                         
+                         echo '<h1>Sesion Iniciada.</h1>';
+                         echo '<a href="signup.php">Crear Cuenta</a>';
+                         echo '<a href="signupbuss.php">Nuevo Buss</a>';
+        
                     }else{
                     echo    '<form  action="includes/login-inc.php" method="POST">';
                     echo    '<input type="text" name="mailuid" placeholder="Username/email">';
                     echo    '<input type="password" name="pwd" placeholder="password">';
                     echo    '<button type="submit" class="button red" name="login-submit">Login</button>';
                     echo    '</form>';
-                    echo '<a href="signup.php">Crear Cuenta</a>';
+
                     echo '<a href="signup.php">Olvide el password</a>';
             
                     }

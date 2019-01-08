@@ -9,7 +9,7 @@ if(isset($_POST['codeScaned'])){
 
 
 $sql="
-SELECT c.client_first, c.client_last, t.transaction_qr, t.updated_at, t.finished, p.title, p.offer_end_at, p.price_new, b.buss_name
+SELECT c.client_first, c.client_last, c.client_email, t.transaction_qr, t.updated_at, t.finished, p.title, p.offer_end_at, p.price_new, b.buss_name
 FROM transactions as t
 JOIN posts as p
     ON  p.post_id = t.post_id
@@ -26,7 +26,6 @@ ORDER BY t.transaction_id
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
     if($resultsCheck < 1){
         $data['response'] = "Codigo no encontrado";
-
         exit();
     }else{
         
@@ -37,6 +36,17 @@ ORDER BY t.transaction_id
         $client_first = mysqli_real_escape_string($conn, $row['client_first']);
         $client_last = mysqli_real_escape_string($conn, $row['client_last']);
         $finished = mysqli_real_escape_string($conn, $row['finished']);
+        $client_email =  mysqli_real_escape_string($conn, $row['client_email']);
+        if($finished >= 1){
+            $data['response'] = "Codigo usado";
+            $data['client_first'] = $client_first;
+            $data['client_last'] = $client_last;
+            $data['post_buss_name'] = $post_buss_name;
+            $data['post_price_new'] = $post_price_new;
+            $data['post_title'] = $post_title;
+        }
+        else
+        {
 
         $sql= "UPDATE transactions SET finished = ? WHERE transaction_qr = ?";
         $stmt = mysqli_stmt_init($conn);
@@ -54,8 +64,13 @@ ORDER BY t.transaction_id
             $data['post_buss_name'] = $post_buss_name;
             $data['post_price_new'] = $post_price_new;
             $data['post_title'] = $post_title;
+            require 'email-mailer-codescaned.php';
         }
+
+    }
+
     }
 
     echo json_encode($data);
+
 }
