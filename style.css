@@ -206,7 +206,6 @@ width: 100%;
 	max-width: 300px;
 	height: auto;
 	max-height: 500px;
-	min-height: 443px!important;
 	border-radius: 10px;
 	color: #5d5d5d;
 	background-color: #fff;
@@ -988,4 +987,12 @@ max-width: 40%;
     bottom: 15px;
 	color: black;
 	z-index:100000;
+}
+
+.login-selector{
+
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 160px;
+    height: 61px;
 }
