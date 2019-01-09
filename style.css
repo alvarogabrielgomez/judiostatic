@@ -36,6 +36,27 @@ h3{
     margin: 0 auto 31px !important;
     font-weight: 300;
 }
+.navFooterHeader{
+	color: #FFF;
+    margin-bottom: 11px;
+    font-weight: 600;
+}
+.navFooter{
+	padding: 0;
+    margin: 0;
+    font-size: 13px;
+    list-style-type: none;
+}
+
+.navFooter li {
+	padding: 0;
+    margin-bottom: 6px;
+
+}
+
+.navFooter li a{
+color:#FFF;
+}
 
 #themoderfoquer{
     overflow: hidden;
@@ -519,6 +540,7 @@ abbr{
 	text-decoration: none;
 	overflow: hidden;
 }
+
 #creditos div{
 	display: block;
 	margin: auto;
@@ -530,6 +552,12 @@ abbr{
 	line-height: 80px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
+}
+
+.logo-creditos{
+	height: 65px!important;
+	font-size: 22px!important;
+	font-family: 'Oxygen', sans-serif!important;
 }
 #creditos div a{
 	color:#FFF;
@@ -545,22 +573,36 @@ abbr{
 	flex-direction: row;
 	flex-wrap: wrap;
 	margin-top: 63px;
+	background-color: #1E4363;
+}
+
+.f-container{
+max-width: 1000px;
+width: 100%;
+display: flex;
+margin: auto;
+justify-content: center;
+padding: 30px 11px;
 }
 
 .b1{
-    width: 50%;
+
     box-sizing: border-box;
-    background-color: #1E4363;
-	padding: 30px;
-	height: 216px;
+
+	flex: 50%;
 }
 .b2{
-    width: 50%;
     box-sizing: border-box;
-    background-color: #1E4363;
-    padding: 30px;
-    height: 216px;
+
+	flex: 50%;
 }
+
+.b3{
+	box-sizing: border-box;
+
+	flex: 50%;
+}
+
 #ir-arriba {
 	width: 100%;
 	height: 52px;
