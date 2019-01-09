@@ -1,15 +1,14 @@
 <section id="main-hero">
     <div id="main-hero-img">
-        <div id="main-hero-img-carousel" class="">
+        <div id="main-hero-img-carousel" class="animated fadeIn">
             <div id="main-hero-img-carousel-textcontainer">
 
-                <p id="textbloq1">Giv os ur money</p>
+                <p id="textbloq1">Las mejores ofertas en el momento correcto</p>
         
                 <p id="textbloq2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris lobortis, purus nec mollis vehicula, magna tortor
-                    finibus libero, vitae posuere ante lectus in enim. Praesent
+                    Cuenta con nosotros para resolver tu dia, y te puedas dar tu gusto cuando quieras.
                 </p>
+                <a href="#" class="herob button blue">Da un vistazo</a>
                 <a href="#main"><div id="main-hero-arrow"></div></a>
             </div>
         

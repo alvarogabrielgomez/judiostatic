@@ -98,7 +98,7 @@ height: inherit;
 #header-menu-buttoms li a {
 	margin-left: 10px;
 	color: #FFF;
-	font-size: 16px;
+	font-size: 17px;
 	vertical-align: middle;
 }
 
@@ -126,7 +126,7 @@ width: 100%;
 
 #main-hero{
 	width: 100vw;
-	height: 320px
+	height: 435px
 }
 #main-hero-img{
 	width: inherit;
@@ -139,6 +139,9 @@ width: 100%;
 	height: inherit;
 	display: flex;
 	flex-direction: column;
+	background-image: url("img/hero/hero-img.jpg");
+	background-size: cover;
+	background-position: center center;
 }
 
 #main-hero-img-carousel-textcontainer{
@@ -149,6 +152,7 @@ width: 100%;
 	display: flex !important;
 	flex-direction: column;
 	color: #FFF;
+	padding-top: 30px;
 }	
 
 #main-container{
@@ -995,4 +999,45 @@ max-width: 40%;
     margin: auto;
     margin-top: 160px;
     height: 61px;
+}
+
+#textbloq1{
+	text-align: center;
+	font-size: 24px;
+	text-shadow: 2px 6px 13px rgba(0, 0, 0, 0.46), 1px 1px 18px rgba(0, 0, 0, 0.54);
+}
+#textbloq2{
+	text-align: center;
+	text-shadow: 2px 6px 3px rgba(0, 0, 0, 0.46), 1px 1px 3px rgba(0, 0, 0, 0.54);
+	font-size: 16px;
+}
+
+
+.herob{
+	width: 211px;
+    margin: auto;
+    border: 1px solid #fff;
+    padding-left: 36px;
+    padding-top: 9px;
+	box-shadow: 1px 1px 9px 0px rgba(0, 0, 0, 0.46);
+	margin-top: 13px;
+}
+
+.index-h{
+	position: absolute;
+	background-color: transparent;
+	text-shadow: 4px 3px 3px rgba(0, 0, 0, 0.46), 1px 1px 3px rgba(0, 0, 0, 0.54);
+	background: rgba(0,0,0,0.41);
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.41) 0%, rgba(236,236,236,0) 89%, rgba(255,255,255,0) 96%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0.41)), color-stop(89%, rgba(236,236,236,0)), color-stop(96%, rgba(255,255,255,0)));
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.41) 0%, rgba(236,236,236,0) 89%, rgba(255,255,255,0) 96%);
+	background: -o-linear-gradient(top, rgba(0,0,0,0.41) 0%, rgba(236,236,236,0) 89%, rgba(255,255,255,0) 96%);
+	background: -ms-linear-gradient(top, rgba(0,0,0,0.41) 0%, rgba(236,236,236,0) 89%, rgba(255,255,255,0) 96%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0.41) 0%, rgba(236,236,236,0) 89%, rgba(255,255,255,0) 96%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ffffff', GradientType=0 );
+	border-color:#BC2D19;
+}
+
+#header-logo{
+	font-size: 22px;
 }
