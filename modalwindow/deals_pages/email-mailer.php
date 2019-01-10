@@ -94,7 +94,7 @@ $mail_message .= "<style>
 <p><br>Muestre este codigo al momento de llegar a $post_buss_name y su descuento se hara inmediatamente</p>
 <p>Puede revisar otros cupones mas en su perfil.</p>
 <p>Muchisimas gracias,</p>
-<p>Judiostatic.</p>
+<p>Omeleth.</p>
 
 </div>
     </body>
@@ -118,7 +118,7 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = $email;
 $mail->Password = $password;
-$mail->setFrom('noreply.ckj.cupon@gmail.com', 'Judiostatic Cupon');
+$mail->setFrom('noreply.ckj.cupon@gmail.com', 'Omeleth Cupon');
 $mail->addAddress($to_id);
 $mail->Subject = $subject;
 $mail->IsHTML(true);

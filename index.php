@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JUDIOSTATIC</title>
+    <title>Omeleth Cupon</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="components/slick/slick.css"/>
@@ -32,7 +32,7 @@ ini_set('display_errors', '1');
         <nav id="header-logo">
             <ul>
                 <!-- <li id="header-logo-img"><a href="#"><img src="" alt=""></a></li> -->
-                <li id="header-logo-spam">JUDIOSTATIC</li>
+                <li id=""><div id="header-logo-container" class="hero-logo"></div></li>
             </ul>
         </nav>
         <div id="header-container-menu">

@@ -81,7 +81,7 @@ $mail_message .= "<style>
 <p>Tu codigo promocional de <strong>$post_title</strong> fue escaneado, esperamos que disfrues tu promocion, y vuelve pronto :D</p>
 <p>Puede revisar otros cupones mas en su perfil.</p>
 <p>Muchisimas gracias,</p>
-<p>Judiostatic.</p>
+<p>Omeleth.</p>
 </div>
 
 
@@ -108,7 +108,7 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = $email;
 $mail->Password = $password;
-$mail->setFrom('noreply.ckj.cupon@gmail.com', 'Judiostatic Cupon');
+$mail->setFrom('noreply.ckj.cupon@gmail.com', 'Omeleth Cupon');
 $mail->addAddress($to_id);
 $mail->Subject = $subject;
 $mail->IsHTML(true);

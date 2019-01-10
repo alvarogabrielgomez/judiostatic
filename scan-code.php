@@ -29,7 +29,7 @@ require 'includes/scan-code-inc.php'; // scan code php
         <nav id="header-logo">
             <ul style = "line-height: 61px!important;">
                 <!-- <li id="header-logo-img"><a href="#"><img src="" alt=""></a></li> -->
-                <li id="header-logo-spam">JUDIOSTATIC Scan QR</li>
+                <li id="header-logo-spam">OMELETH Scan QR</li>
             </ul>
         </nav>
         <div id="header-container-menu">

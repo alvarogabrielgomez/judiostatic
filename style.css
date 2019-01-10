@@ -86,7 +86,7 @@ justify-content: space-between;
 max-width: 1000px;
 width: 100%;
 margin: auto;
-height: 79px;
+height: 100px;
 }
 
 #header-container-menu{
@@ -104,7 +104,7 @@ height: inherit;
 #header-menu-buttoms{
 	list-style: none;
 	display: flex;
-	line-height: 79px;
+    line-height: 100px;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	padding: 0px 10px;
@@ -133,6 +133,23 @@ height: inherit;
 #header-logo ul li{
 	list-style: none;
 	text-decoration: none;
+}
+
+#header-logo-container{
+	width: 175px;
+	height: 58px;
+	margin: 21px -22px;
+}
+
+.hero-logo{
+	background-image: url(img/omeleth_trans.png);
+	opacity: 0.96;
+
+}
+
+.classic-logo{
+	background-image: url(img/omeleth_red.gif);
+
 }
 
 nav ul li a{
@@ -249,7 +266,7 @@ width: 100%;
 }
 
 .main-box:hover{
-	background-color: #fff7f7;
+	_
 	border-color:rgb(204, 204, 204);
 	-webkit-box-shadow: 2px 2px 2px 0px rgba(204,204,204,0.7);
 	 transition: all 0.6s ease;
@@ -524,7 +541,8 @@ abbr{
     display: flex;
     padding: 0px;
     font-weight: 600;
-    line-height: 79px;
+    line-height: 100px;
+
 }
 .login-status a{
 	font-size: 14px!important;
@@ -537,6 +555,7 @@ abbr{
 	background-color: #1B3B57;
 	width: 100%;
 	height: 80px;
+	display: flex;
 	text-decoration: none;
 	overflow: hidden;
 }
@@ -549,16 +568,12 @@ abbr{
     overflow: hidden;
 	color:#FFF;
 	text-align: center;
-	line-height: 80px;
+    line-height: 44px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
 }
 
-.logo-creditos{
-	height: 65px!important;
-	font-size: 22px!important;
-	font-family: 'Oxygen', sans-serif!important;
-}
+
 #creditos div a{
 	color:#FFF;
 	margin-left: 14px;
@@ -575,6 +590,8 @@ abbr{
 	margin-top: 63px;
 	background-color: #1E4363;
 }
+
+
 
 .f-container{
 max-width: 1000px;
@@ -900,6 +917,14 @@ max-width: 40%;
 .carousel-container{
     box-shadow: 0px 1px 0px #d2d2d2;
 	padding-bottom: 30px;
+	background: rgba(255,255,255,0.01);
+background: -moz-linear-gradient(top, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
+background: -webkit-gradient(left top, left bottom, color-stop(5%, rgba(255,255,255,0.01)), color-stop(89%, rgba(251,251,242,0.87)));
+background: -webkit-linear-gradient(top, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
+background: -o-linear-gradient(top, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
+background: -ms-linear-gradient(top, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
+background: linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fbfbf2', GradientType=0 );
 }
 
 #code-scanned{
@@ -912,23 +937,7 @@ max-width: 40%;
     margin: auto;
     box-sizing: border-box;
     text-align: center;
-	
-/* 	border-radius: 10px;
-	color: #5d5d5d;
-	background-color: #fff;
-	padding: 12px;
- 	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    text-align: center;
-	text-decoration: none;
-	list-style: none;
-    border-color: #e9e9e9;
-    border-style: solid;
-	border-width: 1px;
-	transition: all 0.6s ease;
-	-webkit-box-shadow: 1px 1px 2px 0px rgba(204,204,204,0.7)!important;
- */
+
 }
 
 #preview{
@@ -943,8 +952,7 @@ max-width: 40%;
 .client_name, .post_title, .post_price_new, .post_buss_name{
     display: block;
     font-size: 18px;
-    /* text-align: left; */
-    /* margin-left: 16px; */
+
     padding: 5px 1px;
 }
 
@@ -1082,4 +1090,12 @@ max-width: 40%;
 
 #header-logo{
 	font-size: 22px;
+}
+
+.logo-creditos{
+	width: 175px!important;
+	height: 58px!important;
+	background-image: url(img/omeleth_blue.gif);
+	margin-top: 16px!important;
+	opacity: 0.93;
 }

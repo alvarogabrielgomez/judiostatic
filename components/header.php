@@ -6,7 +6,7 @@
         <nav id="header-logo">
             <ul>
                 <!-- <li id="header-logo-img"><a href="#"><img src="" alt=""></a></li> -->
-                <li id="header-logo-spam">JUDIOSTATIC</li>
+                <li id=""><div id="header-logo-container" class="classic-logo"></div></li>
             </ul>
         </nav>
         <div id="header-container-menu">
