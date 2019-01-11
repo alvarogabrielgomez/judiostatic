@@ -1,34 +1,52 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-require '../../includes/deals_pages-inc.php';
+require '../../includes/deals_pages-inc-test.php';
+$post_url_id = 1;
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ofertas Omeleth</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="../modalwindow.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+type="text/javascript" charset="utf-8"></script>
+    
+</head>
+
 <div class="animated fadeIn insert-page">
 
 
+<div class="modal-body" style="">
+   AJAX CONTENT
+</div>
+<div id="modaltrigger" style="">
+
+</div>
 
 
 <div class="main-box admin-signup main-box-simple">
 
 <div class="nav-signup">
-<form method="POST" id="insert-form" action="./includes/insert-inc.php?id=<?php echo $post_url_id;?>" >
-    <input id="first" type="text" name="first"  placeholder="Nombre" autofocus>
-    <input id="first" type="text" name="last"  placeholder="Apellido">
+<form method="POST" id="insert-form" action="../../includes/insert-inc.php?id=<?php echo $post_url_id;?>" >
+    <input id="first" type="text" name="first"  placeholder="Name" autofocus>
+    <input id="first" type="text" name="last"  placeholder="Surname">
     <input id="first" type="email" name="email"  placeholder="E-mail">
-    <button id="btn_send" type="submit" class="button red" name="signup-submit">Completar pedido</button>
+    <button id="btn_send" type="submit" class="button red" name="signup-submit">Next</button>
     <span style='' class="response"></span>
-    <div><a class="cancelar">Cancelar</a></div>
-<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Volver</a></div>
 
 </form>
 <canvas id="qr" style="margin: auto;display:none;"></canvas>
-<script src="./js/qrious.min.js"></script>
+<script src="../../js/qrious.min.js"></script>
 <script>
-    var cancelar = document.getElementsByClassName("cancelar")[0];
-    cancelar.onclick = function() {
-     modal.style.display = "none";
-     cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>');
-    }
     $(function(){
         var form = $("#insert-form");
         form.submit(function(e){
@@ -47,12 +65,14 @@ require '../../includes/deals_pages-inc.php';
                         function success_redirect_load_delay(){
                     
                             $(".admin-signup").css("opacity", "0");
+                            $(".main-body").css("display", "block");
                         }
                         setTimeout(success_redirect_load_delay, 600);
 
                         function success_redirect(){
                             
                             $(".admin-signup").css("display", "none");
+                            
                             var transqr = data.transqr;
 
 var qr = new QRious({
@@ -75,17 +95,19 @@ var qruri = canvas.toDataURL("image/png");
 function loadgif(pagina)
     {
         // cargamos el icono en el div donde ira el contenido
-        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Casi esta listo</span>");
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='../../img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Sending code QR</span>");
 
     }
 loadgif();
-$.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
+$.ajax({url: 'saveqrtest.php?id=<?php echo $post_url_id;?>',
         type: 'POST', 
         data: { qruri: qruri },
         success: function(data) {
             console.log("Email Sended, Ckj1");
-            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
-            
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='../../img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Sending Code QR</span>");
+        $(".modal-body").html("<span> EMAIL SENDED</span>");
+
+
         },
         error: function(data){
             console.log("Error Ajax, Ckj1");
@@ -113,6 +135,24 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
             });
         });
     });
+</script>
+
+
+
+<script>
+window.onload = function() {
+  //funciones a ejecutar
+  $(".main-body").css("display", "none");
+};
+
+
+  function cargarContenido(pagina)
+    {
+        // cargamos el icono en el div donde ira el contenido
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='../../img/icons/loading.svg' class='loader' border='0' />");
+        // cargamos la pagina en el div capa
+        $(".modal-body").load(pagina);
+    }
 </script>
 
 
