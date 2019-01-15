@@ -15,8 +15,8 @@ require '../../includes/deals_pages-inc.php';
 </div>
 
         <div class="deal-info1">
-        <p>Aceptas darme todo tu dinero?</p>
-      <p>Si no le das a "NO" se considera un si...</p>
+        <p>Anota bien o <strong>guarda el lugar</strong> a donde tienes que ir una vez tengas tu codigo</p>
+      <p>Si ya tienes todo listo puedes <strong>continuar</strong></p>
         </div>
 
 

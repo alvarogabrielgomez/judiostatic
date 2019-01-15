@@ -12,8 +12,10 @@ require '../../includes/deals_pages-inc.php';
 </div>
 
         <div class="deal-info2">
-        <p>Aceptas darme todo tu dinero?</p>
-      <p>Si no le das a "NO" se considera un si...</p>
+        <p><strong>Revisa</strong> que este todo en orden y sea la oferta que quieres. Si todo esta correcto puedes <strong>continuar</strong>*</p>
+      <p style="font-size: 13px;
+    color: #9a9a9a;
+    font-weight: 600;">*Una vez continues estaras aceptando los terminos y condiciones.</p>
         </div>
 
 

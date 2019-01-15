@@ -18,7 +18,7 @@ ORDER BY p.updated_at
 
 
 ?>                
-<h1>Aqui estan todas nuestros ofertas</h1>
+<h1>Aqui estan todas nuestras ofertas</h1>
 <h3>Las mejores experiencias gastronómicas</h3>
 <div id="main-items">
 <?php

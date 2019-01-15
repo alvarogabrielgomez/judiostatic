@@ -12,7 +12,7 @@ JOIN buss as b
     on b.buss_id = p.buss_id
     WHERE p.active <> 0
 ORDER BY p.updated_at DESC
-
+LIMIT 10
 
 ";
 ?> 

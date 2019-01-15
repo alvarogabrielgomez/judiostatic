@@ -6,7 +6,7 @@
                 <p id="textbloq1">Las mejores ofertas en el momento correcto</p>
         
                 <p id="textbloq2">
-                    Cuenta con nosotros para resolver tu dia, y te puedas dar tu gusto cuando quieras.
+                    Cuenta con nosotros para resolver tu dia, y te puedas dar tu gusto cuando quieras.<br><br> Cupones Online baratos y rapidos.
                 </p>
                 <a href="#" class="herob button blue">Da un vistazo</a>
                 <a href="#main"><div id="main-hero-arrow"></div></a>

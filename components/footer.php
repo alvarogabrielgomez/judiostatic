@@ -51,6 +51,6 @@
     </div>
     <div id="creditos"><div  class="logo-creditos"></div></div>
 
-    <div id="creditos"><div><a href="#">Condiciones de Uso</a> <a href="#">Privacidad</a><a href="http://ckj1.site11.com"> © Alvaro Gabriel Gomez</a>. TODOS LOS DERECHOS RESERVADOS</div></div>
+    <div id="creditos"><div><a href="#">Condiciones de Uso</a> <a href="documents/privacy-policy.html">Privacidad</a><a href="https://ckj.one" rel="external"> © Alvaro Gabriel Gomez</a>. TODOS LOS DERECHOS RESERVADOS</div></div>
 
 </footer>

@@ -53,11 +53,16 @@ require 'components/header.php'; // Header php
 <div id="main-container">
      <div id="main">
     <div id="hero-deals-container">
+    <div class="hero-deals-color">
+        </div>
         <div id="hero-deals">
+
             <div class="col1">
-                <div class="title-hero-deals"><?php echo $post_buss_name; ?></div>
+                <div class="title-hero-deals"><?php echo $row['title'] ?></div>
+                <div class="buss-title-hero-deals"><?php echo  $post_buss_name; ?></div>
+
                 <div class="desc-art">
-                    <p>Oferta Lorem ipsum dolor sit amer us nec mollis vehicula, magna tortor finibus libero, vitae posuere ante lectus in enim. mollis vehicula, magna tortor finibus libero, vitae<br>
+                    <p class="description-text">Oferta Lorem ipsum dolor sit amer us nec mollis vehicula, magna tortor <strong><?php echo $post_buss_name; ?></strong>, vitae posuere ante lectus in enim. mollis vehicula, magna tortor finibus libero, vitae<br></p>
                     <div class="buss-dir">
                     <i class="fas fa-map-marker-alt" style="margin-right:16px;"></i><?php echo $post_buss_dir; ?>
                     </div>
@@ -66,12 +71,21 @@ require 'components/header.php'; // Header php
                     </div>
                 
                 </p>
+
+                <div id="b-hero-buss">
+                <div class="buss-button button l-grey"><a href="deals.php?id='.$row['post_id'].'">Ver en Maps</a></div>
+                <div class="buss-button-o button red"><a href="#main-posts-container">Ver Oferta</a></div>
+                </div>
+
                 </div>
             </div>
              <div class="col2">
-                 <div class="span-img-post"><span>Imagen real de la oferta</span></div>
+                <div class="image-hero-container">
                 <img src="<?php echo $post_hero_img; ?>" alt="image deals">
+                 </div>
             </div>
+
+            
         </div>
     
     </div>

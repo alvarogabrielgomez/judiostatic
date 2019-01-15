@@ -5,12 +5,14 @@ require '../../includes/deals_pages-inc.php';
 ?>
 <div class="animated fadeIn insert-page">
 
+<div class="header-insert">A nombre de quien ira este increible cupon?</div>
 
 
 
 <div class="main-box admin-signup main-box-simple">
 
 <div class="nav-signup">
+
 <form method="POST" id="insert-form" action="./includes/insert-inc.php?id=<?php echo $post_url_id;?>" >
     <input id="first" type="text" name="first"  placeholder="Nombre" autofocus>
     <input id="first" type="text" name="last"  placeholder="Apellido">
@@ -21,6 +23,7 @@ require '../../includes/deals_pages-inc.php';
 <div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Volver</a></div>
 
 </form>
+
 <canvas id="qr" style="margin: auto;display:none;"></canvas>
 <script src="./js/qrious.min.js"></script>
 <script>
@@ -130,4 +133,11 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
 
 
         </div>
+
+        
 </div>
+
+<p style="font-size: 12px;
+    color: #a0a0a0;
+    font-weight: 600;
+    text-align: center;">Tus datos estan a salvo con nosotros, ni nosotros mismos tenemos acceso a ellos.</p>
