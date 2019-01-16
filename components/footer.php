@@ -24,10 +24,10 @@
     <div class="navFooterHeader">Venda con nosotros</div>
     <ul class="navFooter">
         <li class="">
-            <a href="" class="">Venda sus cupones en Omeleth</a>
+            <a href="documents/with-us.html" class="">Venda sus cupones en Omeleth</a>
         </li>
         <li>
-            <a href="" class="">Como comenzar con nosotros</a>
+            <a href="documents/lets-start.html" class="">Como comenzar con nosotros</a>
         </li>
 
 
@@ -51,6 +51,6 @@
     </div>
     <div id="creditos"><div  class="logo-creditos"></div></div>
 
-    <div id="creditos"><div><a href="#">Condiciones de Uso</a> <a href="documents/privacy-policy.html">Privacidad</a><a href="https://ckj.one" rel="external"> © Alvaro Gabriel Gomez</a>. TODOS LOS DERECHOS RESERVADOS</div></div>
+    <div id="creditos"><div><a href="documents/terms.html">Condiciones de Uso</a> <a href="documents/privacy-policy.html">Privacidad</a><a href="https://ckj.one" rel="external"> © Alvaro Gabriel Gomez</a>. TODOS LOS DERECHOS RESERVADOS</div></div>
 
 </footer>
