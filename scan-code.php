@@ -24,22 +24,22 @@ require 'includes/scan-code-inc.php'; // scan code php
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
 </head>
 <body>
-<header id="header">
-   <div id="header-container" style="height: 62px!important ;">
-        <nav id="header-logo">
-            <ul style = "line-height: 61px!important;">
+<header id="header"class="header-qr" >
+   <div id="header-container" class="header-container-qr" style="height: 62px;">
+        <nav id="header-logo"  class="header-logo-qr" >
+            <ul style = "line-height: 61px">
                 <!-- <li id="header-logo-img"><a href="#"><img src="" alt=""></a></li> -->
                 <li id="header-logo-spam">OMELETH Scan QR</li>
             </ul>
         </nav>
-        <div id="header-container-menu">
+        <div id="header-container-menu" class="header-container-menu-qr" >
             <nav id="header-menu">
-                <ul id="header-menu-buttoms" style="line-height: 58px!important;">
+                <ul id="header-menu-buttoms" style="line-height: 58px" class="header-menu-buttoms-qr">
                     <li><a href="index.php">Inicio</a></li>
                     <!-- 
                     <li><a href="#main">About</a></li>
                     <li><a href="#main">Contacto</a></li> -->
-                    <li class="login-status" style = "line-height: 59px!important;">
+                    <li class="login-status login-status-qr" style = "line-height: 59px">
                     
                         <?php
 

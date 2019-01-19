@@ -6,7 +6,7 @@
                     <li class="navbar-divisor">></li>
                     <li>Deals</li>
                     <li class="navbar-divisor">></li>
-                    <li>Codigo Promocionales</li>
+                    <li>Códigos Promocionais</li>
                 </ul>
             </nav>
 </div>

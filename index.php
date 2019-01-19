@@ -9,7 +9,22 @@ ini_set('display_errors', '1');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Omeleth Cupon - Las mejores ofertas en el momento correcto</title>
+    
+    <META NAME="Title" CONTENT="Omeleth Cupon - Cupons online baratos e rápidos.">
+    <META NAME="Keywords" CONTENT="Cupon, Barato, Gourmet, Online, Rapido, Prazer">
+    <META NAME="Subject" CONTENT="Cupon Business">
+    <META NAME="Language" CONTENT="Portuguese">
+
+    <title>Omeleth Cupon - Cupons online baratos e rápidos.</title>
+    
+<meta property="og:url"                content="https://omeleth.com" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="Omeleth Cupon" />
+<meta property="og:description"        content="Conte conosco para resolver o seu dia, e você pode dar o seu prazer quando quiser. Cupons online baratos e rápidos." />
+<meta property="og:image"              content="https://omeleth.com/img/omeleth_red_image.png" />
+<meta property="fb:app_id"             content="238563567095772" />
+
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="components/slick/slick.css"/>
@@ -21,10 +36,13 @@ ini_set('display_errors', '1');
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
 </head>
 
 <body>
-    
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
 <div id="themoderfoquer">
 
 <header id="header" class="index-h">
@@ -38,7 +56,7 @@ ini_set('display_errors', '1');
         <div id="header-container-menu">
             <nav id="header-menu">
                 <ul id="header-menu-buttoms">
-                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <?php if(isset($_SESSION['admin_ID'])){
                             echo '<li><a href="new-post.php">New Post</a></li>';
                     }
@@ -61,12 +79,12 @@ ini_set('display_errors', '1');
 
 
                         if(isset($_SESSION['admin_ID'])){
-                            echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i>  Admin</a></span>';
+                            echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">  Admin</div></a></span>';
                         }else if(isset($_SESSION['client_id'])){
-                            echo '<span><a href="profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i>'.$_SESSION['client_first'].'</a></span>';
+                            echo '<span><a href="profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">'.$_SESSION['client_first'].'</div></a></span>';
                         }
                         else if(isset($_SESSION['buss_ID'])){
-                            echo '<span><a href="buss-profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i>'.$_SESSION['buss_name'].'</a></span>';
+                            echo '<span><a href="buss-profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">'.$_SESSION['buss_name'].'</div</a></span>';
                         }
                         else{
                             echo '<span><a href="login.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-ninja" ></i></a></span>';
@@ -89,12 +107,32 @@ require 'components/main-hero.php'; // Header php
 <section>
 <div id="main-container">
      <div id='main'>
-     <h1>¿Si te das un gusto?</h1>
-<h3>Las mejores ofertas online al dia.</h3>
+     <h1>Se você se dá um gosto?</h1>
+<h3>As melhores ofertas online por dia.</h3>
 
-        <?php
-            require 'components/carousel.php'; // Main Items php
-        ?>
+
+
+<script>
+window.onload = function() {
+  //funciones a ejecutar
+  $("#onload-carousel").load("components/carousel.php");
+  $("#onload-carousel").css("background", "linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%");
+
+}
+
+
+</script>
+
+<div id="onload-carousel">
+    <!-- Aca carga el carousel -->
+    <div id='loader-carousel'>
+        <img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader'>
+        <span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Carregando Ofertas</span>
+    </div>
+    
+</div>
+
+<script type="text/javascript" src="components/slick/slick.min.js"></script>
 
 
         <?php

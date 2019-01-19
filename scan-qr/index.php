@@ -1,7 +1,7 @@
 <div id="preview-container">
 <video id="preview"></video>
 <audio id="audio" src="scan-qr/beep-07.wav" autoplay="false" ></audio>
-
+<div id="response-box">
 <span style='' class="response">Esperando...</span>
 <img style='float:none!important; display:none;margin:auto;' src='./img/icons/loading.svg' class='loader'/>
 <div class='info-container'>
@@ -15,6 +15,7 @@
 </div>
 <div class='info-container'>
 <span style='' class="post_buss_name">Empresa</span>
+</div>
 </div>
 </div>
 

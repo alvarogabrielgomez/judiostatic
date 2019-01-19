@@ -1,24 +1,24 @@
 <div id="main-posts-container">
             <div class="main-post">    
-                <h1>Consigue tu código promocional Omeleth y disfruta de todo al mejor precio</h1>
+                <h1>Adquira o seu código promocional Omeleth e aproveite tudo ao melhor preço</h1>
 
                 
 
                 <p style="margin-top: 38px;">
-                    Si te gustan las buenas ofertas, baratas, no dejes de visitar los diferentes cupones y códigos de descuento que Omeleth puede ofrecerte, acompañan a distintas promociones para que encuentres el ahorro que se ajusta a lo que tu quieras.
+                Se você gosta de bons negócios, barato, não se esqueça de visitar os diferentes cupons e códigos de desconto que o Omeleth pode lhe oferecer, acompanhe diferentes promoções para que você possa encontrar as economias que melhor se adequam ao que você deseja.
                 </p> 
 
-                <h1>Cómo utilizar un código promocional Omeleth</h1>
+                <h1>Como usar um código promocional do Omeleth</h1>
                 <p style="margin-top: 38px;">
-                ¿Ya te interesa de lo que hablamos? Muy bien, te explicamos  de manera muy sencilla cómo utilizar los cupones de descuento Omeleth:
+                Você está interessado no que estamos falando? Muito bem, explicamos de forma muito simples como usar os cupons de desconto Omeleth:
                 </p> 
 <p>
-Es muy sencillo, el proceso es un circulo que debe cerrarse, en 3 rapidos pasos:
+É muito simples, o processo é um círculo que deve ser fechado, em 3 etapas rápidas:
 </p>
 <ul>
-    <li>Decide qué comida quieres comprar online, ¿Hamburguesas? ¿una cajita feliz?, ¿cerveza?, ¿sandwichs?, ¿comida gourmet? Hay una gran varieded de cosas que te podrian interesar, decidir entre tanta oferta de productos sera la parte mas dificil.</li>
-    <li>Escoge el cupón online de descuento que quieres utilizar en tu compra, una vez escogida la promoción, apunta el cógido promocional o guarda tu codigo QR (lo necesitaremos después).</li>
-    <li>Realiza la compra en el lugar mostrando el código que copiaste o el codigo QR. El descuento será aplicado entonces.</li>
+    <li>Decida que comida você quer comprar online, hambúrgueres? Uma combinação de 2x1 ?, cerveja ?, sanduíches?, Comida gourmet? Há uma grande variedade de coisas que podem interessá-lo, decidir entre tantas ofertas de produtos será a parte mais difícil.</li>
+    <li>Escolha o cupom de desconto on-line que você deseja usar em sua compra, quando a promoção for escolhida, aponte para o código promocional ou salve seu código QR (precisaremos mais tarde).</li>
+    <li>Faça a compra no local mostrando o código copiado ou o código QR. O desconto será então aplicado.</li>
 </ul>
 
 

@@ -1,0 +1,18 @@
+User-Agent: *
+Disallow: /modalwindow
+Disallow: /scan-qr
+Disallow: /script
+Disallow: /temp
+Disallow: /components
+Disallow: /admin.php
+Disallow: /buss.php
+Disallow: /signup.php
+Disallow: /signupbuss.php
+Disallow: /scan-code.php
+Disallow: /new-post.php
+Disallow: /includes
+
+Allow: /deals.php
+Allow: /deals.php?id=*
+
+Sitemap: https://omeleth.com/sitemap.xml

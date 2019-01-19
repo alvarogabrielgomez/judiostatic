@@ -1,6 +1,5 @@
-
-  <?php
-require 'includes/dbh-inc.php';
+<?php
+require '../includes/dbh-inc.php';
 ?>
 
 
@@ -16,7 +15,8 @@ LIMIT 10
 
 ";
 ?> 
-  <div class="carousel-container">
+
+  <div class="animated fadeIn carousel-container">
   <div class="carousel">
 <?php 
 $results=mysqli_query($conn, $sql);
@@ -24,14 +24,16 @@ $resultsCheck=mysqli_num_rows($results);
 
 if($resultsCheck < 1){
 
-        require'404-ini.php';
+        require 'components/empty-space.php';
         exit();
 }else{
 
     
 
     while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
-        echo'    <a href="deals.php?id='.$row['post_id'].'" class="main-box">
+        echo'    
+        
+        <a href="deals.php?id='.$row['post_id'].'" class="main-box">
 
         <div class="main-img">
             <img src="'.$row['post_hero_img_url'].'" alt="">
@@ -59,7 +61,8 @@ if($resultsCheck < 1){
     
     </a>
         
-        ';
+    ';
+
     }
 }
 
@@ -70,9 +73,7 @@ if($resultsCheck < 1){
   </div>
 
 
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="components/slick/slick.min.js"></script>
+
 
   <script type="text/javascript">
     $(document).ready(function(){

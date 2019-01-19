@@ -10,16 +10,33 @@ require 'includes/deals-inc.php'; // deals php
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ofertas Omeleth</title>
+    <title><?php echo $row['title'] ?> - Omeleth Cupon</title>
+
+    <META NAME="Title" CONTENT="<?php echo $row['title']; ?> - Omeleth Cupon">
+    <META NAME="Keywords" CONTENT="Cupon, Barato, Gourmet, Online, Rapido, Prazer">
+    <META NAME="Subject" CONTENT="Cupon Business">
+    <META NAME="Language" CONTENT="Portuguese">
+
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">    
+    
+    
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
 type="text/javascript" charset="utf-8"></script>
-    
+
+<meta property="og:url"                content="https://omeleth.com/deals.php?id=<?php echo $post_url_id;?>" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="<?php echo $row['title']; ?>" />
+<meta property="og:description"        content="<?php echo $row['description']; ?>" />
+<meta property="og:image"              content="https://omeleth.com/<?php echo $post_hero_img; ?>" />
+<meta property="fb:app_id"             content="238563567095772" />
+
+
 </head>
 
 <body>
@@ -62,7 +79,8 @@ require 'components/header.php'; // Header php
                 <div class="buss-title-hero-deals"><?php echo  $post_buss_name; ?></div>
 
                 <div class="desc-art">
-                    <p class="description-text">Oferta Lorem ipsum dolor sit amer us nec mollis vehicula, magna tortor <strong><?php echo $post_buss_name; ?></strong>, vitae posuere ante lectus in enim. mollis vehicula, magna tortor finibus libero, vitae<br></p>
+                    <p class="description-text">
+                    Aproveite nossos cupons especiais (disponíveis por tempo limitado) para nossos clientes mais fiéis, não perca a oportunidade, você pode comprar em <strong><?php echo $post_buss_name; ?></strong> pagando menos, sabendo que o mais importante é a sua satisfação.<br></p>
                     <div class="buss-dir">
                     <i class="fas fa-map-marker-alt" style="margin-right:16px;"></i><?php echo $post_buss_dir; ?>
                     </div>
@@ -94,7 +112,7 @@ require 'components/header.php'; // Header php
                 <nav>
                     <ul> 
                         <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 14px 0px;" class="fas fa-share-alt" ></i></li>
-                        <li>Compartir</li>
+                        <li>Compartilhar</li>
                     </ul>
                 </nav>
             </div>
@@ -108,18 +126,18 @@ require 'components/header.php'; // Header php
 require 'modalwindow/modalwindow.php';
 echo '<div class="cupon-std">
 <div class="cupon-col1">
-<div>VALIDO PARA UNA VEZ</div>
+<div>VÁLIDO PARA UMA VEZ</div>
 </div>
 <div class="cupon-col2">
 <div class="cupon-titulo"><span>'.$row['title'].'</span></div>
 <div class="cupon-desc"><span>'.$row['description'].'</span>
 </div>
-<button id="modaltrigger"class="cupon-boton button red"onClick="cargarContenido("modalwindow/deals_pages/continue.php?id='.$post_url_id.'")"><span>TOMAR OFERTA</span></button>
+<button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">
 <div class="porcentaje"><span>'. abs(round((($row['price_new']/$row['price_from'])*100)-100))  .'%</span></div>
-<span class="s-porcentaje">AHORRA!</span>
+<span class="s-porcentaje">SALVE!</span>
 </div>
 </div>
 </div>';

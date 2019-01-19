@@ -47,7 +47,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     <div class="cupon-col3">
     <div class="cupon-descuento">
     <div class="porcentaje"><span>'. abs(round((($row['price_new']/$row['price_from'])*100)-100))  .'%</span></div>
-    <span class="s-porcentaje">AHORRA!</span>
+    <span class="s-porcentaje">SALVE!</span>
     </div>
     </div>
     </div>';
