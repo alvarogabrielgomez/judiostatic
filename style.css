@@ -151,7 +151,7 @@ height: inherit;
 }
 
 .classic-logo{
-	background-image: url(img/omeleth_red.gif);
+	background-image: url(img/omeleth_red.png);
 
 }
 
@@ -180,7 +180,7 @@ width: 100%;
 	height: inherit;
 	display: flex;
 	flex-direction: column;
-	background-image: url("img/hero/hero-img.jpg");
+	background-image: url(img/hero/hero-img-mobile.jpg);
 	background-size: cover;
 	background-position: center center;
 }
@@ -295,6 +295,8 @@ width: 100%;
 
 .main-img {
 	overflow: hidden;
+	background-color:#efefef;
+
 }
 
 
@@ -302,7 +304,9 @@ width: 100%;
 	width: auto;
     height: auto;
     max-width: 278px;
-    max-height: 226px;
+	max-height: 226px;
+	min-height: 180px;
+
 }
 
 
@@ -1133,7 +1137,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .logo-creditos{
 	width: 175px!important;
 	height: 58px!important;
-	background-image: url(img/omeleth_blue.gif);
+	background-image: url(img/omeleth_blue.png);
 	margin-top: 16px!important;
 	opacity: 0.93;
 }

@@ -2,10 +2,13 @@
 header("Content-type:application/json");
 require 'deals_pages-inc.php';
 
+
 $error=false;
 $first = mysqli_real_escape_string($conn,$_POST['first']);
 $last = mysqli_real_escape_string($conn,$_POST['last']);
 $email = mysqli_real_escape_string($conn,$_POST['email']);
+
+
 if(empty($first) || empty($last) || empty($email)){
     $error = true;
 }

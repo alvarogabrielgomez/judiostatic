@@ -29,7 +29,7 @@ ini_set('display_errors', '1');
 
 <!--Final main portada-->
 <section>
-<div id="main-container">
+<div id="main-container" class="main-container-nohome">
 
 
         <?php

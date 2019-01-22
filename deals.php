@@ -17,6 +17,22 @@ require 'includes/deals-inc.php'; // deals php
     <META NAME="Subject" CONTENT="Cupon Business">
     <META NAME="Language" CONTENT="Portuguese">
 
+    <link rel="preload" href="style.css" as= "style">
+    <link rel="preload" href="css/responsive.css" as= "style">
+    <link rel="preload" href="modalwindow/modalwindow.css" as= "style">
+
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#bc2b19">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#bc2b19">
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">    
@@ -26,9 +42,9 @@ require 'includes/deals-inc.php'; // deals php
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-type="text/javascript" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"type="text/javascript" charset="utf-8"></script>
 
+    <script src="js/qrious.min.js" async="async"></script>
 <meta property="og:url"                content="https://omeleth.com/deals.php?id=<?php echo $post_url_id;?>" />
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="<?php echo $row['title']; ?>" />

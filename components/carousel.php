@@ -16,6 +16,17 @@ LIMIT 10
 ";
 ?> 
 
+<script>
+function loaded() {
+  //funciones a ejecutar
+  $("#onload-carousel").css("background", "linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%");
+
+}
+
+loaded();
+
+</script>
+
   <div class="animated fadeIn carousel-container">
   <div class="carousel">
 <?php 

@@ -18,18 +18,39 @@ ini_set('display_errors', '1');
     <title>Omeleth Cupon - Cupons online baratos e rápidos.</title>
     
 <meta property="og:url"                content="https://omeleth.com" />
-<meta property="og:type"               content="article" />
+<meta property="og:type"               content="website" />
 <meta property="og:title"              content="Omeleth Cupon" />
 <meta property="og:description"        content="Conte conosco para resolver o seu dia, e você pode dar o seu prazer quando quiser. Cupons online baratos e rápidos." />
 <meta property="og:image"              content="https://omeleth.com/img/omeleth_red_image.png" />
 <meta property="fb:app_id"             content="238563567095772" />
 
+    <link rel="preload" href="img/icons/main-box-loading.svg" as="image">
+    <link rel="preload" href="style.css" as= "style">
+    <link rel="preload" href="css/responsive.css" as= "style">
+    <link rel="preload" href="img/hero/hero-img-mobile.jpg" as="image"  media="(max-width: 799px)">
+    <link rel="preload" href="img/hero/hero-img.jpg" as="image"  media="(min-width: 800px)">
+    <link rel="preload" href="components/slick/slick-theme.css" as= "style">
+    <link rel="preload" href="components/slick/slick.css" as= "style">
+    <link rel="preload" href="components/slick/slick.min.js" as="script">
+
+   
+<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#bc2b19">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#bc2b19">
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="components/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="components/slick/slick-theme.css"/>
-
+    <link rel="stylesheet" type="text/css" href="components/slick/slick-theme.css"/>
+    
 
 
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
@@ -116,7 +137,6 @@ require 'components/main-hero.php'; // Header php
 window.onload = function() {
   //funciones a ejecutar
   $("#onload-carousel").load("components/carousel.php");
-  $("#onload-carousel").css("background", "linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%");
 
 }
 

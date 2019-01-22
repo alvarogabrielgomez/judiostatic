@@ -29,7 +29,7 @@ ini_set('display_errors', '1');
 
 <!--Final main portada-->
 <section>
-<div id="main-container" style="height:100vh;">
+<div id="main-container" class="main-container-nohome" style="height:100vh;">
 <div class="login-selector">
 
 <div class="cupon-boton button red"><a href="admin.php">Admin Dashboard</a></div>

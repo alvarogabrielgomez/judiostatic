@@ -25,8 +25,9 @@ require '../../includes/deals_pages-inc.php';
 </form>
 
 <canvas id="qr" style="margin: auto;display:none;"></canvas>
-<script src="./js/qrious.min.js"></script>
+
 <script>
+    $.ajaxPrefilter(function( options, originalOptions, jqXHR ) { options.async = true; });
     var cancelar = document.getElementsByClassName("cancelar")[0];
     cancelar.onclick = function() {
      modal.style.display = "none";
@@ -81,7 +82,9 @@ function loadgif(pagina)
         $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Casi esta listo</span>");
 
     }
+
 loadgif();
+
 $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
         type: 'POST', 
         data: { qruri: qruri },
@@ -108,7 +111,7 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
                     else if (data.response!=="success") {
                         $(".response").css("color", "red");
                     }
-                    $("input:submit").removeAttr("disable");
+                    $(form).removeAttr("disabled");
                 },
                 error: function(data){
                     $(".response").text("Error arrecho");
