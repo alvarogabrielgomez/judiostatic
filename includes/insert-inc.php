@@ -130,17 +130,6 @@ if ($error == false) {
                     // NO Encontro el cliente en la tabla buylimits
 
                 
-
-
-
-                    if ($day_now < $lastday_updated_at){
-     
-
-                        $data['response'] = "error";
-                        $data['content']  = "Time Unknown Error";
-  
-                    }
-
                     $sql  = "INSERT INTO buylimits (buss_id, client_id, post_id) VALUES (?, ?, ?)";
                     $stmt = mysqli_stmt_init($conn);
                     if (!mysqli_stmt_prepare($stmt, $sql)) {

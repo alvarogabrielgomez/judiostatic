@@ -32,11 +32,12 @@ require '../../includes/deals_pages-inc.php';
     cancelar.onclick = function() {
      modal.style.display = "none";
      cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>');
+     $('#btn_send', this).removeAttr('disabled', 'disabled');
     }
     $(function(){
         var form = $("#insert-form");
         form.submit(function(e){
-            $(this).attr("disabled", "disabled");
+            $('#btn_send', this).attr('disabled', 'disabled');
             e.preventDefault();
             $.ajax({
                 type: form.attr("method"), //post
@@ -95,7 +96,7 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
         },
         error: function(data){
             console.log("Error Ajax, Ckj1");
-            
+            $('#btn_send').removeAttr('disabled', 'disabled');
         }
 
         
@@ -110,11 +111,13 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
                     }
                     else if (data.response!=="success") {
                         $(".response").css("color", "red");
+                        $('#btn_send').removeAttr('disabled', 'disabled');
                     }
-                    $(form).removeAttr("disabled");
+                    
                 },
                 error: function(data){
                     $(".response").text("Error arrecho");
+                    $('#btn_send').removeAttr('disabled', 'disabled');
                 }
             });
         });
