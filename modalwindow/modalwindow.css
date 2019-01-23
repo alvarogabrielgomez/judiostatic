@@ -208,7 +208,7 @@ transition: transform .5s ease-in-out;
 .insert-page{
   MARGIN: AUTO;
   DISPLAY: BLOCK;
-  width: max-content;
+  width: 100%;
 }
 
 .codigo-final{

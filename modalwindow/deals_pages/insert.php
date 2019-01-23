@@ -5,10 +5,10 @@ require '../../includes/deals_pages-inc.php';
 ?>
 <div class="animated fadeIn insert-page">
 
+
+
+
 <div class="header-insert">A nombre de quien ira este increible cupon?</div>
-
-
-
 <div class="main-box admin-signup main-box-simple">
 
 <div class="nav-signup">
@@ -71,7 +71,7 @@ var qr = new QRious({
     size: 150, // Size of the QR code in pixels.
     padding: null // padding in pixels
     
-})
+});
 
 var canvas = document.getElementById("qr");
 var qruri = canvas.toDataURL("image/png");

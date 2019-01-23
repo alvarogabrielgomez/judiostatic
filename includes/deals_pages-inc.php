@@ -29,7 +29,7 @@ AND p.active <> 0
     $resultsCheck=mysqli_num_rows($results);
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
     if($resultsCheck < 1){
-        echo 'SQL ERROR';
+        echo 'SQL ERROR C100';
         exit();
     }else{
         
