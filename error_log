@@ -1,0 +1,30 @@
+[11-Jan-2019 11:27:02 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/omeljwzp/public_html/includes/insert-inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/omeljwzp/public_html/includes/insert-inc.php on line 27
+[11-Jan-2019 11:28:28 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/omeljwzp/public_html/includes/insert-inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/omeljwzp/public_html/includes/insert-inc.php on line 27
+[11-Jan-2019 11:51:02 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/omeljwzp/public_html/includes/insert-inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/omeljwzp/public_html/includes/insert-inc.php on line 27
+[11-Jan-2019 12:03:10 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/omeljwzp/public_html/includes/insert-inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/omeljwzp/public_html/includes/insert-inc.php on line 27
+[11-Jan-2019 12:04:03 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_stmt_get_result() in /home/omeljwzp/public_html/includes/insert-inc.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/omeljwzp/public_html/includes/insert-inc.php on line 27
+[23-Jan-2019 02:15:56 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 83
+[23-Jan-2019 02:15:56 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 112
+[23-Jan-2019 02:16:00 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 83
+[23-Jan-2019 02:16:00 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 112
+[23-Jan-2019 02:18:03 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 83
+[23-Jan-2019 02:18:03 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 112
+[23-Jan-2019 02:18:18 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 83
+[23-Jan-2019 02:18:18 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 112
+[23-Jan-2019 02:19:07 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 83
+[23-Jan-2019 02:19:07 America/New_York] PHP Notice:  Undefined variable: buss_limits in /home/omeljwzp/public_html/includes/insert-inc.php on line 112

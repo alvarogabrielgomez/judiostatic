@@ -1,6 +1,10 @@
 
 @media (min-width: 800px){
 
+    .slick-track{
+    l
+    }
+
     #main-hero-img-carousel{
         background-image: url(../img/hero/hero-img.jpg);
 
@@ -52,6 +56,17 @@
 }
 
 @media only screen and (max-width: 800px) and (min-width: 100px){
+
+    .slick-dots{
+        margin: -17px 0px!important;
+    }
+    .carousel{
+        padding:0;
+    }
+
+    .slick-prev, .slick-next{
+        display: none!important;
+    }
 
     #response-box{
         position: absolute;
@@ -253,6 +268,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
 @media only screen and (max-width: 548px) and (min-width: 100px){
 
+    #empty-state-message span{
+     min-width: 100px;
+    flex: 100%;
+    }
     ul{
         margin-inline-start: -1.1em;
     }

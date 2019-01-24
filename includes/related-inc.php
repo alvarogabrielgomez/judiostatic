@@ -19,6 +19,14 @@ SELECT * FROM posts
 
 
 $results=mysqli_query($conn, $sql);
+$resultsCheck=mysqli_num_rows($results);
+
+if($resultsCheck < 1){
+
+        require 'components/empty-state-related.php';
+
+}else{
+
 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
 
 
@@ -52,7 +60,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     </div>
     </div>';
 }
-
+}
 ?>
 
 

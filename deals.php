@@ -21,6 +21,7 @@ require 'includes/deals-inc.php'; // deals php
     <link rel="preload" href="style.css" as= "style">
     <link rel="preload" href="css/responsive.css" as= "style">
     <link rel="preload" href="modalwindow/modalwindow.css" as= "style">
+    <link rel="preload" href="img/icons/cupon-std.svg" as="image">
 
 <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">

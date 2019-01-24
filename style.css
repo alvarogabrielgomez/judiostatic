@@ -953,13 +953,13 @@ margin: 0;
 
 .carousel{
     box-sizing: border-box!important;
-	padding: 3px 45px;
+	padding: 4px 0px 0px 0px
 	
 }
 
 .carousel-container{
-    /* box-shadow: 0px 1px 0px #d2d2d2;
-	padding-bottom: 30px; */
+
+	
 	background: rgba(255,255,255,0.01);
 background: -moz-linear-gradient(top, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
 background: -webkit-gradient(left top, left bottom, color-stop(5%, rgba(255,255,255,0.01)), color-stop(89%, rgba(251,251,242,0.87)));
@@ -1401,4 +1401,42 @@ padding: 0px 25px;
 	/* background-image: url(img/icons/main-box-loading.svg); */
 	background-position: left;
 	background-repeat: repeat-x;
+	position: relative;
+}
+
+#empty-state-container{
+	width: 100%;
+	margin: auto;
+	height: 100%;
+	min-height: 500px;
+}
+
+#empty-state-message{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	height: 100%;
+	min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#empty-state-message span{
+	margin: auto;
+    display: block;
+	width: fit-content;
+	font-size: 1.15em;
+	flex: 50%;
+	min-width: 355px;
+	text-align: center;
+}
+
+#empty-state-message-img{
+	background: url(img/Empty-State2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 300px;
+	height: 277px;
+	margin:auto;
+	flex: 50%;
 }

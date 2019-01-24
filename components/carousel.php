@@ -35,7 +35,7 @@ $resultsCheck=mysqli_num_rows($results);
 
 if($resultsCheck < 1){
 
-        require 'components/empty-space.php';
+        require 'empty-state.php';
         exit();
 }else{
 
@@ -97,7 +97,8 @@ if($resultsCheck < 1){
         autoplay:true,
         accessibility:true,
         pauseOnFocus:true,
-        pauseOnHover:false
+        pauseOnHover:false,
+        centerMode: true
       });
     });
   </script>

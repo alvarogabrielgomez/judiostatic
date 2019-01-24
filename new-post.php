@@ -97,7 +97,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
                 </div>
             </div>
              <div class="col2">
-                <img src="img/buss/placeholder.jpg" alt="image deals">
+                <img style="width: 100%;height: 100%;" src="img/buss/placeholder.jpg" alt="image deals">
             </div>
         </div>
     
