@@ -787,7 +787,7 @@ margin: 0;
     flex: 40%;
     box-sizing: border-box;
     padding: 2% 29px 15px 2.4%;
-
+	padding-top: 15px;
 }
 .col2{
 	flex:60%;

@@ -3,11 +3,7 @@
 <svg version="1.1" id="Camada_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 612 518" style="enable-background:new 0 0 612 518;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#XMLID_3_);stroke:#000000;stroke-miterlimit:10;}
+	.st0{stroke:#000000;stroke-miterlimit:10;}
 </style>
-<linearGradient id="XMLID_3_" gradientUnits="userSpaceOnUse" x1="89.4386" y1="259" x2="13.0208" y2="259">
-	<stop  offset="0" style="stop-color:#FFFFFF"/>
-	<stop  offset="1" style="stop-color:#000000"/>
-</linearGradient>
 <rect id="XMLID_1_" x="0" class="st0" width="612" height="518"/>
 </svg>

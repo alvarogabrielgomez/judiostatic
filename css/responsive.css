@@ -1,8 +1,9 @@
 
 @media (min-width: 800px){
 
-    .slick-track{
-    l
+    .slick-list{
+
+            clip-path: inset(0px 45px 0px 45px);
     }
 
     #main-hero-img-carousel{

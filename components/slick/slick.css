@@ -21,7 +21,10 @@
 .slick-list
 {
     position: relative;
-    clip-path: inset(0px 1px 0px -10px);
+    /* clip-path: inset(0px 45px 0px 45px); */
+
+    mask-composite: add;
+    
     display: block;
 
     margin: 0;
