@@ -168,6 +168,7 @@ width: 100%;
 #main-hero{
 	width: 100vw;
 	height: 435px
+	
 }
 #main-hero-img{
 	width: inherit;
@@ -248,6 +249,7 @@ width: 100%;
 
 
 .main-box{
+	position: relative;
 	width:100%;
 	max-width: 300px;
 	height: auto;
@@ -263,7 +265,7 @@ width: 100%;
 	text-decoration: none;
 	list-style: none;
     margin: 7px auto;
-    border-color: #e9e9e9;
+    border-color: rgba(173, 124, 124, 0.19);
     border-style: solid;
 	border-width: 1px;
 	transition: all 0.6s ease;
@@ -296,7 +298,7 @@ width: 100%;
 .main-img {
 	overflow: hidden;
 	background-color:#efefef;
-
+	position: relative;
 }
 
 
@@ -337,7 +339,7 @@ h3::after{
 .buss-name{
     font-size: 13px;
     color: rgb(85, 85, 85);
-    margin-top: -2px;
+    margin-top: 3px;
     margin-bottom: -1px;
     text-align: left;
     width: 100%;
@@ -401,7 +403,7 @@ abbr{
 .price-new{
 	font-weight: 600;
     font-size: 18px;
-    color: #FF8926;
+    color: rgb(227, 99, 80);
     display: inline-block;
 	font-variant: small-caps;
 }
@@ -414,6 +416,7 @@ abbr{
 	height: auto;
 	text-align: left;
 	margin: 4px 0px;
+	text-shadow: 1px 1px 0px rgba(209, 209, 209, 0.29);
 }
 
 .nav-login input{
@@ -1399,7 +1402,7 @@ padding: 0px 25px;
     background: rgba(255,255,255,0.01);
     background:  url(img/icons/main-box-loading.svg), linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%);
 	/* background-image: url(img/icons/main-box-loading.svg); */
-	background-position: left;
+
 	background-repeat: repeat-x;
 	position: relative;
 }
@@ -1418,7 +1421,7 @@ padding: 0px 25px;
 	height: 100%;
 	min-height: 500px;
     display: flex;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 #empty-state-message span{
@@ -1429,6 +1432,8 @@ padding: 0px 25px;
 	flex: 50%;
 	min-width: 355px;
 	text-align: center;
+	padding: 0px 22px;
+    box-sizing: border-box;
 }
 
 #empty-state-message-img{
@@ -1439,4 +1444,17 @@ padding: 0px 25px;
 	height: 277px;
 	margin:auto;
 	flex: 50%;
+}
+.clock-time{
+    position: absolute;
+    z-index: 10000;
+    width: 17px;
+    height: 21px;
+    right: 16px;
+    transform: translate(0, -18px);
+    background: url(img/icons/icon-cloc80.svg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+
 }

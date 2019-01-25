@@ -51,11 +51,34 @@ if($resultsCheck < 1){
         </div>
     
         <div class="buss-name"><span>'.$row['buss_name'].'</span></div>
+        ';
+
+
+        if(time() - strtotime($row['created_at']) <= 3 * 86400){
+        echo '<div class="badge">
+                <span>OFERTA DE ÚLTIMA HORA</span>
+
+        </div>';
+
+        }else if (time() - strtotime($row['created_at']) > 3 * 86400 && time() - strtotime($row['created_at']) <= 7 * 86400) {
+          echo '<div class="badge">
+          <span>OFERTA DESTA SEMANA</span>
+          </div>';
+          
+        }else if (strtotime($row['offer_end_at']) > 1) {
+          if (time() - strtotime($row['offer_end_at']) <= 3 * 86400) {
+            echo '<div class="badge">
+            <span>OFERTA POR ACABAMENTO</span>
+            </div>
+            <div class="clock-time"></div>
         
-        <div class="badge">
-                <span>OFERTA DE ULTIMA HORA</span>
-        </div>
-    
+            ';
+
+          }
+        }
+        
+        
+        echo'
         
         <div class="box-title"><span>'.$row['title'].'</span></div>
         <div class="price-box">
@@ -86,19 +109,35 @@ if($resultsCheck < 1){
 
 
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $('.carousel').slick({
+  <script>
+
+function createSlick(){
+      $('.carousel').not('.slick-initialized').slick({
         dots: true,
         infinite: true,
         variableWidth: true,
         dragable:true,
         mobileFirst:true,
-        autoplay:true,
+        autoplay:false,
         accessibility:true,
         pauseOnFocus:true,
         pauseOnHover:false,
-        centerMode: true
+        arrows: false,
+        centerMode: true,
+
+        responsive: [{ 
+        breakpoint: 800,
+        settings: {
+            arrows: true,
+            centerMode: false
+        } 
+    }]
       });
+}
+
+
+
+    $(document).ready(function(){
+    createSlick();
     });
   </script>

@@ -132,16 +132,7 @@ require 'components/main-hero.php'; // Header php
 <h3>As melhores ofertas online por dia.</h3>
 
 
-
-<script>
-window.onload = function() {
-  //funciones a ejecutar
-  $("#onload-carousel").load("components/carousel.php");
-
-}
-
-
-</script>
+<script type="text/javascript" src="components/slick/slick.min.js"></script>
 
 <div id="onload-carousel">
     <!-- Aca carga el carousel -->
@@ -152,7 +143,41 @@ window.onload = function() {
     
 </div>
 
-<script type="text/javascript" src="components/slick/slick.min.js"></script>
+
+<script>
+
+
+var isMobile;
+function widthpx(){
+    if($(document).width() <= 800){
+      isMobile = true;
+      $("#onload-carousel").css("background-position", "center");
+
+    }else if($(document).width() >= 801){
+      isMobile = false;
+      $("#onload-carousel").css("background-position", "left");
+
+    }
+
+  }
+
+
+widthpx();
+
+
+window.onload = function() {
+  //funciones a ejecutar
+  $("#onload-carousel").load("components/carousel.php");
+  window.addEventListener('resize', widthpx);
+
+
+}
+
+
+
+
+
+</script>
 
 
         <?php
