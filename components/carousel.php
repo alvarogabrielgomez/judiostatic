@@ -55,8 +55,10 @@ if($resultsCheck < 1){
         ';
 
 
-        if(abs(time() - strtotime($row['created_at'])) <= 3 * 86400){
+        if(time() - strtotime($row['created_at']) <= 3 * 86400){
           if(strtotime($row['offer_end_at']) > 1){
+            if(time() - strtotime($post_offer_end_at) <= 0){
+
             if (abs(time() - strtotime($row['offer_end_at'])) <= 3 * 86400) {
               echo '<div class="badge">
               <span>OFERTA SPEEDY</span>
@@ -77,14 +79,19 @@ if($resultsCheck < 1){
                   echo '<div class="clock-time clock-15"></div>';
               }
           }
-          }else{
+        }
+        else if (time() - strtotime($post_offer_end_at) > 1){
+          echo '<div class="clock-time clock-100"></div>';
+        }
+        }else{
             echo '<div class="badge">
             <span>OFERTA DE ÚLTIMA HORA</span> </div>';
           }
         }
 
-        if (abs(time() - strtotime($row['created_at'])) > 3 * 86400 && abs(time() - strtotime($row['created_at'])) <= 7 * 86400) {
+        if (time() - strtotime($row['created_at']) > 3 * 86400 && time() - strtotime($row['created_at']) <= 7 * 86400) {
           if(strtotime($row['offer_end_at']) > 1 ){
+            if(time() - strtotime($post_offer_end_at) <= 0){
             if (abs(time() - strtotime($row['offer_end_at'])) < 3 * 86400 && abs(time() - strtotime($row['offer_end_at'])) > 2 * 86400) {
               echo '<div class="badge">
               <span>OFERTA POR ACABAMENTO</span>
@@ -102,8 +109,12 @@ if($resultsCheck < 1){
               <span>OFERTA DESTA SEMANA</span>
               </div>';
             }
-
-          }else{
+          }else if (time() - strtotime($post_offer_end_at) > 1){
+            echo '<div class="clock-time clock-100"></div>';
+          }
+          }
+          
+          else{
             echo '<div class="badge">
             <span>OFERTA DESTA SEMANA</span>
             </div>';
@@ -113,7 +124,8 @@ if($resultsCheck < 1){
           
         }
 
-        if (strtotime($row['offer_end_at']) > 1 && abs(time() - strtotime($row['created_at'])) >= 8 * 86400) {
+        if (strtotime($row['offer_end_at']) > 1 && time() - strtotime($row['created_at']) >= 8 * 86400) {
+          if(time() - strtotime($post_offer_end_at) <= 0){
           
             if (abs(time() - strtotime($row['offer_end_at'])) < 3 * 86400 && abs(time() - strtotime($row['offer_end_at'])) > 2 * 86400) {
               echo '<div class="badge">
@@ -135,10 +147,13 @@ if($resultsCheck < 1){
               }
             }
 
-          
+          }else if (time() - strtotime($post_offer_end_at) > 1){
+            echo '<div class="clock-time clock-100"></div>';
+          }
         }
 
-        if (strtotime($post_offer_end_at) > 1 && abs(time() - strtotime($row['created_at'])) > 3 * 86400) {
+        if (strtotime($post_offer_end_at) > 1 && abs(time() - strtotime($row['created_at'])) >= 3 * 86400) {
+          if(time() - strtotime($post_offer_end_at) <= 0){
           if (abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400) {
               echo '<div class="clock-time"></div></li>';
           }else if(abs(time() - strtotime($post_offer_end_at)) >= 2 * 86400){
@@ -154,7 +169,11 @@ if($resultsCheck < 1){
                   echo '<div class="clock-time clock-15"></div>';
               }
           }
+      }else if (time() - strtotime($post_offer_end_at) > 1){
+        echo '<div class="clock-time clock-100"> <span class="span-clock">Oferta Acabou</span></div>';
+
       }
+    }
         
         
         echo'

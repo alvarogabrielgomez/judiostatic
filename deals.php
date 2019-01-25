@@ -79,6 +79,7 @@ require 'components/header.php'; // Header php
                 <ul><?php
                 $post_offer_formated=$post_offer_datatime->format('d-m');
                     if (strtotime($post_offer_end_at) > 1) {
+                 if(time() - strtotime($post_offer_end_at) <= 0){
                     if (abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400) {
                         echo '<li><div class="clock-time-deals"></div></li> <li style="color:red;">A oferta está prestes a terminar no dia '.$post_offer_formated.'</li>';
                     }else if(abs(time() - strtotime($post_offer_end_at)) >= 2 * 86400){
@@ -94,6 +95,10 @@ require 'components/header.php'; // Header php
                             echo '<li><div class="clock-time-deals clock-15"></div></li> <li style="">A oferta termina no dia '.$post_offer_formated.'</li>'; 
                         }
                     }
+                }else if(time() - strtotime($post_offer_end_at) > 1){
+                    echo '<li><div class="clock-time-deals clock-100"></div></li> <li style="">A oferta terminou</li>';    
+                }
+
                     }else{
                         echo '
                         <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 14px 0px;" class="far fa-clock" ></i></li>
@@ -175,8 +180,21 @@ echo '<div class="cupon-std">
 <div class="cupon-col2">
 <div class="cupon-titulo"><span>'.$row['title'].'</span></div>
 <div class="cupon-desc"><span>'.$row['description'].'</span>
-</div>
+</div>';
+if($post_offer_end_at > 1){
+if(time() - strtotime($post_offer_end_at) <= 0){
+    echo'
 <button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+';
+}else if (time() - strtotime($post_offer_end_at) > 1){
+echo' <button id="disable-button"class="cupon-boton button b-disabled" disabled="disabled"><span>Oferta concluída</span></button>';
+}
+}else{
+    echo'
+    <button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+    '; 
+}
+echo'
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">
