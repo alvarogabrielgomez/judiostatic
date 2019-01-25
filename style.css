@@ -1458,3 +1458,13 @@ padding: 0px 25px;
     background-repeat: no-repeat;
 
 }
+.clock-time-deals{
+    z-index: 10000;
+    width: 17px;
+    height: 21px;
+    transform: translate(0, 10px);
+    background: url(img/icons/icon-cloc80.svg);
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+}

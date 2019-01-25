@@ -76,9 +76,25 @@ require 'components/header.php'; // Header php
 <div id="time-bar">
     <div id="time-bar-container">
             <nav>
-                <ul> 
-                    <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 14px 0px;" class="far fa-clock" ></i></li>
-                    <li><?php echo $post_updated_at; ?></li>
+                <ul><?php
+                $post_offer_formated=$post_offer_datatime->format('d-m');
+                    if (strtotime($post_offer_end_at) > 1) {
+                    if (time() - strtotime($post_offer_end_at) <= 3 * 86400) {
+                        echo '<li><div class="clock-time-deals"></div></li> <li style="color:red;">A oferta está prestes a terminar no dia '.$post_offer_formated.'</li>';
+                    }else if(time() - strtotime($post_offer_end_at) >= 3 * 86400){
+                        echo '<li><div class="clock-time-deals"></div></li> <li style="color:red;">A oferta termina no dia '.$post_offer_formated.'</li>';     
+                    }
+                    }else{
+                        echo '
+                        <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 14px 0px;" class="far fa-clock" ></i></li>
+                        <li>'.$post_updated_at.'</li>';
+                    }
+                    ?>
+                    
+            
+
+
+
                 </ul>
             </nav>
     </div>

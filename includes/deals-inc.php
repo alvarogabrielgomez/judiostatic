@@ -34,6 +34,7 @@ if(isset($_GET['id'])){
         $post_price_from =mysqli_real_escape_string($conn,  $row['price_from']);
         $post_price_new =mysqli_real_escape_string($conn,  $row['price_new']);
         $post_offer_end_at = mysqli_real_escape_string($conn, $row['offer_end_at']);
+        $post_offer_datatime = new DateTime($row['offer_end_at']);
         $post_created_at =mysqli_real_escape_string($conn,  $row['created_at']);
         $post_updated_at =mysqli_real_escape_string($conn,  $row['data']);
         $post_buss_id = mysqli_real_escape_string($conn, $row['buss_id']);
