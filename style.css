@@ -412,7 +412,7 @@ abbr{
 	font-size: 18px!important;
     color: #3e3e3e;
 	float: left;
-	width: inherit;
+	width: 94%;
 	height: auto;
 	text-align: left;
 	margin: 4px 0px;
@@ -1452,7 +1452,7 @@ padding: 0px 25px;
     height: 21px;
     right: 16px;
     transform: translate(0, -18px);
-    background: url(img/icons/icon-cloc80.svg);
+    background: url(img/icons/clock-80.svg);
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
@@ -1463,8 +1463,29 @@ padding: 0px 25px;
     width: 17px;
     height: 21px;
     transform: translate(0, 10px);
-    background: url(img/icons/icon-cloc80.svg);
+    background: url(img/icons/clock-80.svg);
     background-position: center;
     background-size: auto;
     background-repeat: no-repeat;
+}
+
+.clock-7{
+    background: url(img/icons/clock-7.svg);
+}
+.clock-15{
+    background: url(img/icons/clock-15.svg);
+}
+.clock-25{
+    background: url(img/icons/clock-25.svg);
+}
+.clock-30{
+    background: url(img/icons/clock-30.svg);
+}
+.clock-70{
+    background: url(img/icons/clock-70.svg);
+}
+.clock-speedy{
+	background: url(img/icons/clock-speedy.svg);
+	width: 26px;
+	background-repeat: no-repeat;
 }
