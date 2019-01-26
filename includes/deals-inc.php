@@ -25,7 +25,8 @@ if(isset($_GET['id'])){
     $row = mysqli_fetch_array($results, MYSQLI_ASSOC);
 
     if($resultsCheck < 1){
-        header("Location:index.php?error=404");
+        header('HTTP/1.1 404 Not Found');
+        include '404.shtml'; 
         exit();
     }else{
         
@@ -51,7 +52,8 @@ if(isset($_GET['id'])){
 
     }
     }else{
-        header("Location:index.php");
+        header('HTTP/1.1 404 Not Found');
+        include '404.shtml'; 
         exit();
     }
 
@@ -60,6 +62,7 @@ if(isset($_GET['id'])){
 
 
 }else{
-    header("Location:index.php");
+    header('HTTP/1.1 404 Not Found');
+    include '404.shtml'; 
     exit();
 }

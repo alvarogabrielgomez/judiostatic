@@ -96,7 +96,7 @@ require 'components/header.php'; // Header php
                         }
                     }
                 }else if(time() - strtotime($post_offer_end_at) > 1){
-                    echo '<li><div class="clock-time-deals clock-100"></div></li> <li style="">A oferta terminou</li>';    
+                    echo '<li><div class="clock-time-deals clock-100"></div></li> <li style="">A oferta terminou no dia '.$post_offer_formated.'</li>';    
                 }
 
                     }else{
