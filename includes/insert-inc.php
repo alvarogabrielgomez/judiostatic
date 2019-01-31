@@ -59,7 +59,7 @@ if ($error == false) {
                 $_SESSION['client_first'] = $row['client_first'];
                 $_SESSION['client_last']  = $row['client_last'];
                 
-                $sql  = "SELECT buss_id, client_id, post_id, CONCAT(DAY(updated_at), '-' , date_format(updated_at , '%m'), '-' , YEAR(updated_at)) as data_unformated, CONCAT( date_format(`updated_at` , '%d'), date_format(`updated_at` , '%y') ) as updated_at, limit_count FROM buylimits WHERE client_id = ? AND buss_id = $post_buss_id AND DAY(updated_at) = DAY(NOW())";
+                $sql  = "SELECT buss_id, client_id, post_id, updated_at, limit_count FROM buylimits WHERE client_id = ? AND buss_id = $post_buss_id AND DAY(updated_at) = DAY(NOW())";
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt, $sql)) {
                     $data['response'] = "error";
@@ -72,14 +72,12 @@ if ($error == false) {
                     $result = mysqli_stmt_get_result($stmt);
                     if($row = mysqli_fetch_assoc($result)) {
 
-                    $day_now = date("d-m-Y");
-                    $day_updated_at = $row['data_unformated'];
-                    //$day_updated_at = $row['updated_at'];
+                    $day_now = time();
+                    $day_updated_at = strtotime($row['updated_at']);
                     $limit_count = $row['limit_count'];
-                    //$data_unformated = $row['data_unformated'];
 
 
-                        if($day_now == $day_updated_at){
+                        if($day_now >= $day_updated_at){
                             if($limit_count < $buss_limits) {
                                 $sql  = "UPDATE `buylimits` SET `limit_count` = $limit_count+1 WHERE client_id = ? AND DAY(updated_at) = DAY(NOW()) AND buss_id = $post_buss_id";
                                 $stmt = mysqli_stmt_init($conn);
@@ -115,7 +113,7 @@ if ($error == false) {
     
                             }
                         }// if $day_now == $day_updated_at 
-                        else if ($day_now !== $day_updated_at){
+                        else if ($day_now < $day_updated_at){
      
 
                                 $data['response'] = "error";

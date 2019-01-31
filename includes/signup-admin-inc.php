@@ -3,7 +3,7 @@
  session_start();
  ini_set('display_errors', '1');
 function error($message){
-    header("Location: ../signup.php?signup=".$message);
+    header("Location: ../signupadmin.php?signup=".$message);
     exit();
 }
 
@@ -37,14 +37,14 @@ if( isset($_POST['signup-submit']) ){
     else{
         
 
-        $sql = "SELECT * FROM clients WHERE client_email = '$email';";
+        $sql = "SELECT * FROM admins WHERE admin_email = '$email';";
         $result = mysqli_query($conn,$sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck>0){
             error('email-taken');
         }
 
-        $sql = "SELECT client_uid FROM clients WHERE client_uid = ?";
+        $sql = "SELECT admin_uid FROM admins WHERE admin_uid = ?";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             error("sqlerror");
@@ -60,7 +60,7 @@ if( isset($_POST['signup-submit']) ){
         }
 
         else{
-            $sql = "INSERT INTO clients (client_uid, client_first, client_last, client_email, client_pwd) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO admins (admin_uid, admin_first, admin_last, admin_email, admin_pwd) VALUES (?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 error("sqlerror");
@@ -72,7 +72,7 @@ if( isset($_POST['signup-submit']) ){
 
                 mysqli_stmt_bind_param($stmt, "sssss", $username, $first, $last, $email, $HashedPassword);
                 mysqli_stmt_execute($stmt);
-                header("Location: ../profile.php?signup=success");
+                header("Location: ../admin.php?signup=success");
                 exit();
             }
         

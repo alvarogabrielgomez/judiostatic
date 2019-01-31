@@ -1,6 +1,7 @@
 <?php
 
 ?>
+
 <header id="header">
    <div id="header-container">
         <nav id="header-logo">
@@ -29,23 +30,10 @@
                     }
                     ?>
                     
-                    <li class="login-status">
-                    
-                        <?php
+                    <?php
+                    require 'login-status.php';
+                    ?>
 
-
-                        if(isset($_SESSION['admin_ID'])){
-                            echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">  Admin</div></a></span>';
-                        }else if(isset($_SESSION['client_id'])){
-                            echo '<span><a href="profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">'.$_SESSION['client_first'].'</div></a></span>';
-                        }
-                        else if(isset($_SESSION['buss_ID'])){
-                            echo '<span><a href="buss-profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">'.$_SESSION['buss_name'].'</div></a></span>';
-                        }
-                        else{
-                            echo '<span><a href="login.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-ninja" ></i></a></span>';
-                        }
-                        ?>
                 </ul>
                 
             </nav>

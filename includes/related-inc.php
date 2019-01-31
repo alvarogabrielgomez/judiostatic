@@ -34,7 +34,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     <div id="time-bar-container">
             <nav>
                 <ul> 
-                    <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 14px 0px;" class="far fa-clock" ></i></li>
+                    <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 8px 0px;" class="far fa-clock" ></i></li>
                     <li>'.$row['updated_at'].'</li>
                 </ul>
             </nav>
@@ -44,7 +44,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     echo '
     <div class="cupon-std">
     <div class="cupon-col1">
-    <div>VALIDO PARA UNA VEZ</div>
+    <div>VÁLIDO PARA UMA VEZ</div>
     </div>
     <div class="cupon-col2">
     <div class="cupon-titulo"><span><a href="deals.php?id='.$row['post_id'].'">'.$row['title'].'</a></span></div>

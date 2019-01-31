@@ -62,7 +62,7 @@ if(isset($_GET['id'])){
 
 
 }else{
-    header('HTTP/1.1 404 Not Found');
-    include '404.shtml'; 
+// header('HTTP/1.1 404 Not Found');
+require 'components/all-deals.php'; // Main Items php
     exit();
 }

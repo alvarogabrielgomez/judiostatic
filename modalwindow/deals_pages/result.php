@@ -83,6 +83,7 @@ var qr = new QRious({
 var cerrar = document.getElementsByClassName("cerrar")[0];
 cerrar.onclick = function() {
      modal.style.display = "none";
+     location.reload();
     }
 
 

@@ -1,4 +1,4 @@
-<footer class="footer">
+<footer id="footer">
 <div id="ir-arriba"><a href="#">Subir</a></div>
 
 <div class="f-container">

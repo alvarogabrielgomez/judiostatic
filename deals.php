@@ -43,10 +43,14 @@ require 'includes/deals-inc.php'; // deals php
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"type="text/javascript" charset="utf-8"></script>
 
     <script src="js/qrious.min.js" async="async"></script>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    
 <meta property="og:url"                content="https://omeleth.com/deals.php?id=<?php echo $post_url_id;?>" />
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="<?php echo $row['title']; ?>" />
@@ -63,15 +67,10 @@ require 'includes/deals-inc.php'; // deals php
 
 <?php
 require 'components/header.php'; // Header php
-?>
+require 'components/navbar.php'; // footer php
+ ?>
 
 
-
-
-<!--Final main portada-->
-        <?php
-            require 'components/navbar.php'; // footer php
-        ?>
 
 <div id="time-bar">
     <div id="time-bar-container">
@@ -124,11 +123,24 @@ require 'components/header.php'; // Header php
         <div id="hero-deals">
 
             <div class="col1">
+ <?php if(time() - strtotime($row['created_at']) <= 3 * 86400){
+          if(strtotime($row['offer_end_at']) > 1){
+            if(time() - strtotime($post_offer_end_at) <= 0){
+
+              if (abs(strtotime($row['created_at']) - strtotime($row['offer_end_at'])) <= 3 * 86400) {
+              echo '
+              <div class="speedy-container"><div class="clock-time-deals clock-speedy"></div></div>';
+              }
+            }
+          }
+        }
+ ?>
                 <div class="title-hero-deals"><?php echo $row['title'] ?></div>
                 <div class="buss-title-hero-deals"><?php echo  $post_buss_name; ?></div>
 
                 <div class="desc-art">
                     <p class="description-text">
+
                     Aproveite nossos cupons especiais (disponíveis por tempo limitado) para nossos clientes mais fiéis, não perca a oportunidade, você pode comprar em <strong><?php echo $post_buss_name; ?></strong> pagando menos, sabendo que o mais importante é a sua satisfação.<br></p>
                     <div class="buss-dir">
                     <i class="fas fa-map-marker-alt" style="margin-right:16px;"></i><?php echo $post_buss_dir; ?>
@@ -252,10 +264,6 @@ window.onload = function() {
 
 
 
-
-<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
 </body>
 
 </html>

@@ -570,8 +570,7 @@ abbr{
     display: flex;
     padding: 0px;
     font-weight: 600;
-    line-height: 100px;
-
+	line-height: 100px;
 }
 .login-status a{
 	font-size: 14px!important;
@@ -611,7 +610,7 @@ abbr{
 	text-decoration-line: underline; 
 }
 
-.footer{
+#footer{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -689,6 +688,7 @@ padding: 30px 11px;
 #nav-bar{
 	background-color:#1E4363;
 	color:#FFF;
+	height: 45px;
 }
 
 .navbar-divisor {
@@ -718,7 +718,7 @@ margin: 0;
 #nav-bar nav ul li {
     margin-left: 19px;
     vertical-align: middle;
-	font-size: 14px;
+    font-size: 0.85em;
 
 }
 #nav-bar nav ul li a{	
@@ -798,6 +798,7 @@ margin: 0;
     box-sizing: border-box;
     padding: 2% 29px 15px 2.4%;
 	padding-top: 15px;
+	position: relative;
 }
 .col2{
 	flex:60%;
@@ -1508,4 +1509,171 @@ padding: 0px 25px;
     left: -90px;
     width: 89px;
     font-size: 0.7em;
+}
+
+.speedy-container{
+    width: 26px;
+    height: auto;
+    position: absolute;
+    right: 0px;
+    margin-right: 6%;
+    margin-top: 5px;
+
+}
+
+.selecting-user{
+	border: none;
+	cursor: pointer;
+	background-color: #f3f2ee;
+	border-radius: 4px;
+	
+}
+.selecting-user:hover{
+    background-color: #eaeaea;
+}
+
+
+
+.selecting-user span{
+	font-size: 1.1em;
+    text-align: left;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: rgba(15, 15, 15, 0.08);
+    color: white;
+    padding: 0em 1em;
+    /* font-size: 16px; */
+    border: none;
+    cursor: pointer;
+  }
+
+
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+	background-color: rgba(0, 0, 0, 0.15);
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+	position: relative;
+	display: inline-block;
+	z-index: 100000000;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #fbfbf2;
+	min-width: 285px;
+	box-shadow: 0px 0px 4px 0px rgba(209,209,209,1);
+	z-index: 1;
+	margin-top: -21px;
+	font-weight: 200;
+	line-height: 1.6em;
+	right: 1px;
+	box-sizing: border-box;
+	padding-bottom:2px;
+	border-radius: 4px;
+	text-shadow: none;
+  }
+  .dropdown-content::before{
+	content: '';
+    position: absolute;
+	right: 12px;
+	top: -10px;
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	
+	border-bottom: 10px solid rgba(243, 242, 238, 1)	;
+    clear: both;
+  }
+
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+	color: #666!important;
+	margin:0!important;
+    padding: 5px 16px;
+	text-decoration: none!important;
+	display: block;
+
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+	  background-color: #EDEDED;
+	  border-radius: 4px;
+	}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+  #dropdown-o-container{
+	box-sizing: border-box;
+	padding:8px;
+  }
+
+  .divider{
+    content: " ";
+    position: relative;
+    width: 100%;
+    border-bottom: solid 1px #d7d7d7;
+    box-shadow: 0px 1px 0px 0px #fff;
+    display: block;
+    clear: both;
+	margin: 7px 1px;
+	
+  }
+
+  #whoisyou{
+width: 100%;
+height: 80px;
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+overflow: hidden;
+background-color: rgba(243, 242, 238, 1);
+color:#666;
+border-radius: 4px 4px 0px 0px;
+  }
+  #whoisyou-img{
+    width: 50px;
+    height: inherit;
+    border-radius: 4px 0px 0px 0px;
+    flex: 10%;
+    padding-top: 27px;
+    box-sizing: border-box;
+ }
+ #whoisyou-name{
+	box-sizing: border-box;
+    padding: 10px;
+	font-size: 15px;
+	text-align: left;
+	flex:70%;
+	line-height: 27px;
+}
+#whoisyou-email{
+	font-size: 0.86em;
+}
+
+.logout-b{
+border:none;
+cursor:pointer;
+background:transparent;
+color: #666!important;
+margin:0;
+padding: 0;
+font-size: 1em;
+}
+
+.dropbtn span{
+	margin-left: 7px;
+
 }

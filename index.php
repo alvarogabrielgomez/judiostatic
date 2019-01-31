@@ -50,7 +50,9 @@ ini_set('display_errors', '1');
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="components/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="components/slick/slick-theme.css"/>
-    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"type="text/javascript" charset="utf-8"></script>
 
 
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
@@ -58,11 +60,10 @@ ini_set('display_errors', '1');
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+    
 </head>
 
 <body>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <div id="themoderfoquer">
 
@@ -94,23 +95,12 @@ ini_set('display_errors', '1');
                     }
                     ?>
                     
-                    <li class="login-status">
+                
                     
                         <?php
-
-
-                        if(isset($_SESSION['admin_ID'])){
-                            echo '<span><a href="admin.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">  Admin</div></a></span>';
-                        }else if(isset($_SESSION['client_id'])){
-                            echo '<span><a href="profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">'.$_SESSION['client_first'].'</div></a></span>';
-                        }
-                        else if(isset($_SESSION['buss_ID'])){
-                            echo '<span><a href="buss-profile.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-tie" ></i><div id="text-login">'.$_SESSION['buss_name'].'</div</a></span>';
-                        }
-                        else{
-                            echo '<span><a href="login.php"><i style="font-size: 1.35em;color: #FFF;margin: 14px 0px;letter-spacing: 16px;" class="fas fa-user-ninja" ></i></a></span>';
-                        }
+                        require 'components/login-status.php';
                         ?>
+                    
                 </ul>
                 
             </nav>

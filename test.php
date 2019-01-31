@@ -33,19 +33,82 @@ if (strtotime($post_offer_end_at) > 1) {
         <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 14px 0px;" class="far fa-clock" ></i></li>
         <li>'.$post_updated_at.'</li>';
     }
+
+
+
     
-    $test = '1538630000';
+    
+    $test = '1548605000';
 
     echo time().' HOY <br>';
     echo strtotime($post_offer_end_at).' OFFER END AT <br>';
+    echo strtotime($row['created_at']).' Created at <br>';
+    $mierda = time() - strtotime($row['created_at']);
+    
+    echo $mierda.' DIFERENCIA ENTRE HOY Y Created at <br>';
+    echo round($mierda/(60 * 60 * 24)).' Hace cuantos dias<br>';
+
+
     echo $test.' OFFER END AT TEST<br>';
     echo time() - strtotime($post_offer_end_at).' DIFERENCIA ENTRE HOY Y OFFER END AT <br>';
     echo time() - $test.' DIFERENCIA ENTRE HOY Y OFFER END AT TEST <br>';
-    echo (2 * 86400).' DOS DIAS <br>';
+    
 
-    if(time() - strtotime($test) <= 0){
-        echo 'Esta en el futuro';
+    echo $test.' TEST <br>';
+    echo strtotime($test).' TEST Strtotime<br>';
 
-    }else if(time() - strtotime($test) > 1){
-        echo 'Esta en el pasado';
-    }
+    echo (3 * 86400).' TRES DIAS <br>';
+
+    echo strtotime($row['created_at']) - strtotime($row['offer_end_at']);
+
+
+    
+
+
+
+    if(time() - strtotime($row['created_at']) <= 3 * 86400){
+        echo '<br>la oferta fue creada hace menos de 3 dias<br><br>';
+        if(strtotime($row['offer_end_at']) > 1){
+
+        if(time() - strtotime($post_offer_end_at) <= 0){
+            echo 'Esta en el futuro';
+            
+            if (abs(strtotime($row['created_at']) - strtotime($row['offer_end_at'])) <= 3 * 86400) {
+                echo '<div class="badge">
+                <span>OFERTA SPEEDY</span>
+                </div>
+                <div class="clock-time clock-speedy"></div>';
+            }else if(time() - strtotime($post_offer_end_at) > 3 * 86400){
+                echo '<div class="badge">
+                <span>OFERTA DE ÚLTIMA HORA</span> </div>';
+                if(abs(time() - strtotime($post_offer_end_at)) >= 8 * 86400){
+                    echo '<div class="clock-tim clock-7"></div>'; 
+                }else if(abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400){
+                    echo '<div class="clock-time clock-70"></div>'; 
+                }else if(abs(time() - strtotime($post_offer_end_at)) <= 3 * 86400 && abs(time() - strtotime($post_offer_end_at)) > 2 * 86400){
+                    echo '<div class="clock-time clock-30"></div>'; 
+                }else if(abs(time() - strtotime($post_offer_end_at)) <= 4 * 86400 && abs(time() - strtotime($post_offer_end_at)) > 3 * 86400){
+                    echo '<div class="clock-time clock-25"></div>'; 
+                }else if(abs(time() - strtotime($post_offer_end_at)) <= 7 * 86400 && abs(time() - strtotime($post_offer_end_at)) > 4 * 86400){
+                    echo '<div class="clock-time clock-15"></div>';
+                }
+            }
+
+
+
+
+        }else if(time() - strtotime($post_offer_end_at) > 1){
+            echo 'Esta en el pasado';
+            echo '<div class="clock-time clock-100"></div>';
+        }
+
+        }else{
+            echo '<div class="badge">
+            <span>OFERTA DE ÚLTIMA HORA</span> </div>';
+          }
+
+
+
+
+      }
+      

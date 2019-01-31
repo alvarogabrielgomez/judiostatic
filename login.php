@@ -1,49 +1,124 @@
 <?php
-session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JUDIOSTATIC</title>
+    <title>Tu cuenta Omeleth</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="components/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="components/slick/slick-theme.css"/>
+
+
+
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
 </head>
 
 <body>
     
 <div id="themoderfoquer">
 
-        <?php
-            require 'components/header.php'; // Main Items php
-        ?>
+<?php
+require 'components/header.php'; // Header php
+?>
+
 
 
 <!--Final main portada-->
 <section>
-<div id="main-container" class="main-container-nohome" style="height:100vh;">
-<div class="login-selector">
+<div id="main-container">
+     <div id='main'>
+    
 
-<div class="cupon-boton button red"><a href="admin.php">Admin Dashboard</a></div>
-<div class="cupon-boton button l-grey"><a href="buss.php">Business Dashboard</a></div>
-
-</div>
-
-        </div> 
-    </section>
-</div>
-
+     <div id="main-posts-container">
+               <div class="main-post">    
+                 <h1 class="title-login">Inicia sesion  </h1>
 
 <?php
-            require 'components/footer.php'; // Main Items php
+
+    if(isset($_GET['signup'])){
+    if($_GET['signup']=="success"){
+        echo '<h3 class="success-signup">Listo!</h3>';
+    }
+    }
+
+    if(isset($_GET['login'])){
+        if($_GET['login']=="empty"){
+            echo '<h3 class="error-login">Llena todos los campos</h3>';
+        }
+        else if($_GET['login']=="no-user"){
+            echo '<h3 class="error-login">El usuario no existe</h3>';
+        }
+        else if($_GET['login']=="wrong-pwd"){
+            echo '<h3 class="error-login">Pass es incorrecto</h3>';
+        }
+
+        else if($_GET['login']=="user-unactive"){
+            echo '<h3 class="error-login">El usuario no esta activo</h3>';
+        }
+        else if($_GET['login']=="sqlerror"){
+            echo '<h3 class="error-login">Error desconocido</h3>';
+        }
+    }
+
+    
+
+?>
+
+                    <div class="main-box admin-login main-box-simple" style ="padding: 15px;">
+
+                    <div class="nav-login">
+
+                    <?php
+                     if(isset($_SESSION['client_id'])){
+                         echo '<form  action="includes/logout-inc.php" method="POST">';
+                         echo '<button type="submit" class="button red" name="logout-submit">Logout</button>';
+                         echo '</form>';
+                         echo '<h1>Sesion Iniciada.</h1>';
+                         echo '<a href="signup.php">Crear Cuenta</a>';
+                         echo '<a href="signupbuss.php">Nuevo Buss</a>';
+        
+                    }else{
+                    echo    '<form  action="includes/login-inc.php" method="POST">';
+                    echo    '<input type="text" name="mailuid" placeholder="Username/email">';
+                    echo    '<input type="password" name="pwd" placeholder="password">';
+                    echo    '<button type="submit" class="button red" name="login-submit">Login</button>';
+                    echo    '</form>';
+
+                    echo '<a href="signup.php">Olvide el password</a>';
+            
+                    }
+
+
+                    
+                    ?>
+
+
+                    </div>
+
+            </div>   
+                
+</div> 
+
+
+    </div>  
+</div> 
+
+</section>
+
+</div>
+        <?php
+            require 'components/footer.php'; // footer php
         ?>
 
 </body>

@@ -28,7 +28,7 @@
                     <div class="main-box admin-signup main-box-simple">
 
                     <div class="nav-signup">
-                    <form action="includes/signup-inc.php" method="POST">
+                    <form action="includes/signup-admin-inc.php" method="POST">
                         <input type="text" name="first"  placeholder="Nombre" autofocus>
                         <input type="text" name="last"  placeholder="Apellido">
                         <input type="email" name="email"  placeholder="E-mail">
