@@ -35,14 +35,38 @@ require 'components/header.php'; // Header php
 
 
 
-<!--Final main portada-->
 <section>
-<div id="main-container">
-     <div id='main'>
+<div id="whoisyou" class="profile-whois">
+  <div id="whoisyou-img" class="profile-whois-img">
+  <i style="font-size: 1.35em;color: #666;display: block;margin: auto;width: 23px;height: 25px;" class="
+fas fa-user"></i>
+  </div>
+  <div id="whoisyou-name" class="profile-whois-name"><span>
+  <?php echo $client_first." ".$client_last;?>  
+    </span>
+  <div id="whoisyou-email"><span>
+  <?php echo $client_email;?>
+</span>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div id="main-container" class="main-container-profile" >
+     <div id='main' class="main-profile">
     
+        <div class="content-profile-container">
+        <div class="content-profile">
+        <?php 
+        require 'components/content-profile.php';
+        ?>
+        </div>
+        </div>
+        <div class="side-profile-container">
 
-              Estas logueado menor
-
+        </div>
+          
 
     </div>  
 </div> 

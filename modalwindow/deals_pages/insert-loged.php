@@ -14,10 +14,10 @@
 fas fa-user"></i>
   </div>
   <div id="whoisyou-name"><span>
-Alvaro Gabriel  
+  <?php echo $_SESSION["client_first"];?>  
     </span>
   <div id="whoisyou-email"><span>
-alvarogabrielgomez@gmail.com  
+  <?php echo $_SESSION["client_email"];?>
 </span>
 </div>
 </div>

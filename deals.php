@@ -214,13 +214,18 @@ echo'
 <span class="s-porcentaje">SALVE!</span>
 </div>
 </div>
-</div>';
+</div>
 
-
-
-                require 'includes/related-inc.php';
-                //ofertas relacionadas
+';
 ?>
+
+
+
+<?php
+require 'includes/related-inc.php';
+//ofertas relacionadas
+?>
+
 
 
 
