@@ -1,5 +1,5 @@
 
-<div class="header-insert">Oi de novo,<?php echo $_SESSION["client_first"];?>!</div>
+<div class="header-insert">Oi de novo, <?php echo $_SESSION["client_first"];?>!</div>
 
 <div class="main-box admin-signup main-box-simple">
 
