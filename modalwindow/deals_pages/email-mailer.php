@@ -77,8 +77,8 @@ $mail_message .= "<style>
 
 <body>
 <div id='email-container'>
-<p>Hola, $first $last,</p>
-<p>Tu codigo promocional es:</p>
+<p>Oi, $first $last,</p>
+<p>Seu código promocional é:</p>
 <p id='code'>$transqr</p>
 <div id='qr-canvas'>
 <img id='imagecode' src=\"cid:qrcode\" />
@@ -91,10 +91,14 @@ $mail_message .= "<style>
         </div>
 </div>
 
-<p><br>Muestre este codigo al momento de llegar a $post_buss_name y su descuento se hara inmediatamente</p>
-<p>Puede revisar otros cupones mas en su perfil.</p>
-<p>Muchisimas gracias,</p>
-<p>Omeleth.</p>
+<p><br>Você pode mostrar este código quando chegar a $post_buss_name e seu desconto será feito imediatamente</p>
+<p>Você pode conferir outros cupons em nosso site</p>
+<div class='deal-map-box'>O endereço do lugar é
+ <a href='https://www.google.com.br/maps/search/$post_buss_dir'>$post_buss_dir</a></div>
+<p>Muito obrigado</p>
+<p>Omeleth Cupon.</p>
+<br>
+<p style='text-align:center;font-size:12px;'>Você recebeu este e-mail porque fez um pedido no <a href='https://omeleth.com'>Omeleth.com</a></p>
 
 </div>
     </body>
@@ -109,7 +113,7 @@ $email = 'noreply.ckj.cupon@gmail.com';
 $password = 'cupon123456';
 $to_id = $to_email;
 $message = $mail_message;
-$subject = 'Su cupon de descuento';
+$subject = 'Seu cupom de desconto';
 $mail = new PHPMailer;
 $mail->isSMTP();
 $mail->Host = 'smtp.gmail.com';
