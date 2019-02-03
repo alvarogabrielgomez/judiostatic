@@ -19,6 +19,7 @@ LIMIT 25
 <script>
 function loaded() {
   //funciones a ejecutar
+  // Probando el commit en bugfix
   $("#onload-carousel").css("background", "linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%");
 
 }
