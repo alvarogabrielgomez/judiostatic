@@ -17,7 +17,7 @@ toggle between hiding and showing the dropdown content */
 // }
     
 function dropdownShow() {
- // document.getElementById("dropdown-menu").classList.toggle("show");
+     document.getElementById("dropdown-menu").classList.toggle("show");
 }
 
 
