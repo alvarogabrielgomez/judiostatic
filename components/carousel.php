@@ -11,7 +11,7 @@ JOIN buss as b
     on b.buss_id = p.buss_id
     WHERE p.active <> 0
 ORDER BY p.updated_at DESC
-LIMIT 10
+LIMIT 25
 
 ";
 ?> 
@@ -42,6 +42,10 @@ if($resultsCheck < 1){
     
 
     while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
+      if(strtotime($row['offer_end_at']) > 1){
+
+      if(time() - strtotime($row['offer_end_at']) <= 1.5 * 86400){
+
       $post_offer_end_at = $row['offer_end_at'];
         echo'    
         
@@ -198,6 +202,44 @@ if($resultsCheck < 1){
     ';
 
     }
+  }else if (strtotime($row['offer_end_at']) < 1){
+
+
+    echo' <a href="deals.php?id='.$row['post_id'].'" class="main-box">
+
+    <div class="main-img">
+        <img src="'.$row['post_hero_img_url'].'" alt="">
+    </div>
+
+    <div class="buss-name"><span>'.$row['buss_name'].'</span></div>
+    
+    <div class="box-title"><span>'.$row['title'].'</span></div>
+    <div class="price-box">
+    
+        <div class="price-new"> <abbr title="BRL">R$</abbr><span>'.$row['price_new'].'</span>  </div>
+        <div class="price-from"> <abbr title="BRL">R$</abbr> <span>'.$row['price_from'].'</span></div>
+
+    </div>
+
+    <p class="main-box-desc">
+    '.$row['description'].'
+
+    </p>
+
+</a>
+    
+';
+
+
+
+
+
+    
+  }
+
+  }
+
+
 }
 
 
