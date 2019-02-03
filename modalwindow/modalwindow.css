@@ -220,7 +220,7 @@ transition: transform .5s ease-in-out;
 }
 
 #dos-botones{
-  width: 497px;
+  width: 100%;
   display: flex;
 
   margin: auto;
