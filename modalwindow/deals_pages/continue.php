@@ -12,17 +12,17 @@ require '../../includes/deals_pages-inc.php';
 </div>
 
         <div class="deal-info2">
-        <p><strong>Revisa</strong> que este todo en orden y sea la oferta que quieres. Si todo esta correcto puedes <strong>continuar</strong>*</p>
+        <p><strong>Verifique</strong> se tudo está em ordem e é a oferta que você deseja. Se tudo estiver correto, você pode <strong>continuar</strong>*</p>
       <p style="font-size: 13px;
     color: #9a9a9a;
-    font-weight: 600;">*Una vez continues estaras aceptando los terminos y condiciones.</p>
+    font-weight: 600;">*Depois de continuar, você estará aceitando os termos e condições.</p>
         </div>
 
 
         
         <div>
 
-        <div><a class="button blue modal-continue" onClick="cargarContenido('modalwindow/deals_pages/insert.php?id=<?php echo $post_url_id;?>')" >Voy a continuar</a></div>
+        <div><a class="button blue modal-continue" onClick="cargarContenido('modalwindow/deals_pages/insert.php?id=<?php echo $post_url_id;?>')" >Vou continuar</a></div>
 
         </div>
 </div>

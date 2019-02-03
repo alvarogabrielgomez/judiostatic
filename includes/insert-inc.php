@@ -51,7 +51,7 @@ if ($error == false) {
                 $client_id = $row['client_id'];
                 if($active !== 1){
                     $data['response'] = "error";
-                    $data['content']  = "Usuario Baneado o desactivado";
+                    $data['content']  = "Usuário Banido ou desativado";
                 } else if ($active == 1){
                 session_start();
                 $_SESSION['client_id']    = $row['client_id'];
@@ -89,7 +89,7 @@ if ($error == false) {
                                     mysqli_stmt_bind_param($stmt, "s", $client_id);
                                     mysqli_stmt_execute($stmt);
                                     $data['response']         = "success";
-                                    $data['content']          = "Bienvenido de nuevo";
+                                    $data['content']          = "Bem vindo de novo";
                                     // transaction_insert();
                                      $sql  = "INSERT INTO transactions (post_id, buss_id, client_id, transaction_qr) VALUES (?, ?, ?, ?)";
                                      $stmt = mysqli_stmt_init($conn);
@@ -109,7 +109,7 @@ if ($error == false) {
     
                             }else if ($limit_count >= $buss_limits){
                                 $data['response'] = "error";
-                                $data['content']  = "Has pedido muchos cupones de un mismo lugar, prueba otro dia.";
+                                $data['content']  = "Você pediu muitos cupons do mesmo lugar, tente outro dia.";
     
                             }
                         }// if $day_now == $day_updated_at 
@@ -139,7 +139,7 @@ if ($error == false) {
                         mysqli_stmt_execute($stmt);
 
                         $data['response']         = "success";
-                        $data['content']          = "Bienvenido este nuevo dia";
+                        $data['content']          = "Bem vindo este novo dia";
                         $sql  = "INSERT INTO transactions (post_id, buss_id, client_id, transaction_qr) VALUES (?, ?, ?, ?)";
                         $stmt = mysqli_stmt_init($conn);
                        if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -190,7 +190,7 @@ if ($error == false) {
                             $_SESSION['client_first'] = $row['client_first'];
                             $_SESSION['client_last']  = $row['client_last'];
                             $data['response']         = "success";
-                            $data['content']          = "Bienvenido!";
+                            $data['content']          = "Bem vindo!";
 
                             $sql  = "INSERT INTO buylimits (buss_id, client_id, post_id) VALUES (?, ?, ?)";
                             $stmt = mysqli_stmt_init($conn);
@@ -221,7 +221,7 @@ if ($error == false) {
                         } //$row = mysqli_fetch_assoc($result)
                         else {
                             $data['response'] = "error";
-                            $data['content']  = "Error al registrar.";
+                            $data['content']  = "Erro ao registrar.";
                         }
                     }
                     
@@ -235,7 +235,7 @@ if ($error == false) {
 } //$error == false
 else {
     $data['response'] = "error";
-    $data['content']  = "Campos Vacios.";
+    $data['content']  = "Campos vazios";
 }
 
 

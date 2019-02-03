@@ -26,8 +26,8 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
 ?>
 <div class="animated fadeIn result">
         <div class="deal-info2" style="margin-top:0px!important;">
-        <p> <i style="font-size: 1.5em;color: #7fbf4e;margin-right: 10px;" class="fas fa-check-circle" ></i> Hola, <?php echo $_SESSION['client_first']; ?>!.</p> 
-        <p>Aqui esta tu codigo:</p>
+        <p> <i style="font-size: 1.5em;color: #7fbf4e;margin-right: 10px;" class="fas fa-check-circle" ></i> Oi, <?php echo $_SESSION['client_first']; ?>!.</p> 
+        <p>Aqui está o seu código:</p>
         <p class="codigo-final">  <?php echo $transqr; ?>
         </p>
 
@@ -38,7 +38,7 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
               
        
     
-        <p>Listo!, se enviara su codigo por <strong>Email</strong> tambien, muestre este codigo al momento de hacer su compra en  <strong><?php echo $post_buss_name; ?></strong> </p>
+        <p>Pronto, seu código será enviado por <strong>Email</strong> também, mostre este código ao fazer sua compra em <strong><?php echo $post_buss_name; ?></strong> </p>
     </div>  
         <div>
 
@@ -53,8 +53,8 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
     </div>
 </div>
         <div id="dos-botones">
-            <div style="flex:50%;margin-right: 18px;"><a class="cerrar button blue modal-continue" >Listo!</a></div>
-            <div style="flex:50%;"><a class="button blue modal-continue" href="profile.php" >Ver mis cupones</a></div>
+            <div style="flex:50%;margin-right: 18px;"><a class="cerrar button blue modal-continue" >Pronto!</a></div>
+            <!-- <div style="flex:50%;"><a class="button blue modal-continue" href="profile.php" >Veja meus cupons</a></div> -->
         </div>
         </div>
 </div>
