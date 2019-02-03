@@ -1,17 +1,17 @@
-<div class="header-insert">A nombre de quien ira este increible cupon?</div>
+<div class="header-insert">Em nome de quem este cupom incrível vai?</div>
 
 <div class="main-box admin-signup main-box-simple">
 
 <div class="nav-signup">
 
 <form method="POST" id="insert-form" action="./includes/insert-inc.php?id=<?php echo $post_url_id;?>" >
-    <input id="first" type="text" name="first"  placeholder="Nombre" autofocus>
-    <input id="first" type="text" name="last"  placeholder="Apellido">
+    <input id="first" type="text" name="first"  placeholder="Nome" autofocus>
+    <input id="first" type="text" name="last"  placeholder="Apelido">
     <input id="first" type="email" name="email"  placeholder="E-mail">
-    <button id="btn_send" type="submit" class="button red" name="signup-submit">Completar pedido</button>
+    <button id="btn_send" type="submit" class="button red" name="signup-submit">Ordem completa</button>
     <span style='' class="response"></span>
     <div><a class="cancelar">Cancelar</a></div>
-<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Volver</a></div>
+<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Voltar</a></div>
 
 </form>
 
@@ -71,7 +71,7 @@ var qruri = canvas.toDataURL("image/png");
 function loadgif(pagina)
     {
         // cargamos el icono en el div donde ira el contenido
-        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Casi esta listo</span>");
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Está quase pronto ;)</span>");
 
     }
 
@@ -137,5 +137,5 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
 <p style="font-size: 12px;
     color: #a0a0a0;
     font-weight: 600;
-    text-align: center;">Tus datos estan a salvo con nosotros, ni nosotros mismos tenemos acceso a ellos.</p>
+    text-align: center;">Seus dados estão seguros conosco e nós mesmos não temos acesso a eles.</p>
 

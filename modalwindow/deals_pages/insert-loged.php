@@ -1,5 +1,5 @@
 
-<div class="header-insert">Hola de nuevo, <?php echo $_SESSION["client_first"];?>!</div>
+<div class="header-insert">Oi de novo,<?php echo $_SESSION["client_first"];?>!</div>
 
 <div class="main-box admin-signup main-box-simple">
 
@@ -30,7 +30,7 @@ fas fa-user"></i>
     <input style="display:none;"  id="first" type="email" name="email"  value="<?php echo $_SESSION["client_email"]; ?>">
     <span style='' class="response"></span>
     <div><a class="cancelar">Cancelar</a></div>
-<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Volver</a></div>
+<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Voltar</a></div>
 
 </form>
 
@@ -90,7 +90,7 @@ var qruri = canvas.toDataURL("image/png");
 function loadgif(pagina)
     {
         // cargamos el icono en el div donde ira el contenido
-        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Casi esta listo</span>");
+        $(".modal-body").html("<img style='float:none!important; display:block;margin:auto;' src='img/icons/loading.svg' class='loader' border='0' /><span style='text-align:center;margin:auto; display:block;font-size: 16px;'>Está quase pronto ;)</span>");
 
     }
 
@@ -139,9 +139,9 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
 </div>
 
 <p style="font-size: 12px;color: #a0a0a0;font-weight: 600;text-align: center;">
-Tus datos estan a salvo con nosotros, ni nosotros mismos tenemos acceso a ellos.
+Seus dados estão seguros conosco e nós mesmos não temos acesso a eles.
     <a><form id="logout" style="text-align: center;font-size: 0.9em;" action="./includes/logout-inc.php?id=<?php echo $post_url_id;?>" method="POST">
-    <button type="submit" class="logout-b" name="logout-submit-noreload">No soy yo</button>
+    <button type="submit" class="logout-b" name="logout-submit-noreload">Não sou eu</button>
  </form></a>
 </p>
 
