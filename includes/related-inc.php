@@ -12,7 +12,7 @@ SELECT * FROM posts
  ORDER BY post_id ASC
 ";
 ?>
-<div id="related-cupons"></div>
+<div id="related-cupons">
 <div><h3 style="margin-top:56px!important;">Ofertas Relacionadas</h3></div>
 
 <?php
@@ -63,4 +63,4 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
 }
 ?>
 
-
+</div>

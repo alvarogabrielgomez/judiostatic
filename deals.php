@@ -181,55 +181,102 @@ require 'components/navbar.php'; // footer php
          
          
          <div id="main-posts-container">
-                <div class="main-post">    
+
+
+<div class="main-post">
 
 <?php 
 require 'modalwindow/modalwindow.php';
-echo '<div class="cupon-std">
-<div class="cupon-col1">
+?>
+
+<div class="main-post-deals-container">    
+<div class="main-post-deals-main"> 
+<?php
+if (isset($row['highlight'])){
+   echo'
+   
+   <div class="main-post-deals-highlights"> 
+    <h2 class="h2-low">O que nós oferecemos a você?</h2>
+    <p>';
+
+    echo $post_high;
+    echo'</p></div>'; 
+}else{
+    echo '';
+}
+?>
+
+<div class="main-post-deals-about"> 
+<h2 class="h2-low">About <?php echo $post_buss_name; ?></h2>
+<p>
+    <?php echo $post_buss_about; ?>
+
+    <?php
+    if(isset($row['buss_url'])){
+        echo '
+        <br>
+        <br>
+        <a href="'.$post_buss_url.'">Vá para o site</a>';
+    }
+    ?>
+
+</p>
+
+</div>
+
+
+<div class="main-post-deals-maps"> 
+</div>
+
+
+
+</div>
+
+<div class="main-post-deals-sidebar"> 
+
+<div class="cupon-std-small-vertical principal-small">
+<div class="cupon-col1-small-vertical">
 <div>VÁLIDO PARA UMA VEZ</div>
 </div>
-<div class="cupon-col2">
-<div class="cupon-titulo"><span>'.$row['title'].'</span></div>
-<div class="cupon-desc"><span>'.$row['description'].'</span>
-</div>';
+<div class="cupon-col2-small-vertical">
+<div class="cupon-titulo-small-vertical"><span><?php echo $row['title'];?></span></div>
+<div class="cupon-desc-small-vertical"><span><?php echo $row['description'];?></span>
+</div>
+
+</div>
+<div class="cupon-col3-small-vertical">
+<?php
 if($post_offer_end_at > 1){
 if(time() - strtotime($post_offer_end_at) <= 0){
     echo'
-<button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+<button id="modaltrigger"class="cupon-boton-small-vertical button red"><span>TOMAR OFERTA</span></button>
 ';
 }else if (time() - strtotime($post_offer_end_at) > 1){
-echo' <button id="disable-button"class="cupon-boton button b-disabled" disabled="disabled"><span>Oferta concluída</span></button>';
+echo' <button id="disable-button"class="cupon-boton-small-vertical button b-disabled" disabled="disabled"><span>Oferta concluída</span></button>';
 }
 }else{
     echo'
-    <button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+    <button id="modaltrigger"class="cupon-boton-small-vertical button red"><span>TOMAR OFERTA</span></button>
     '; 
 }
-echo'
-</div>
-<div class="cupon-col3">
-<div class="cupon-descuento">
-<div class="porcentaje"><span>'. abs(round((($row['price_new']/$row['price_from'])*100)-100))  .'%</span></div>
-<span class="s-porcentaje">SALVE!</span>
-</div>
-</div>
-</div>
-
-';
 ?>
+<div class="cupon-descuento-small-vertical">
+<span class="s-porcentaje-small-vertical">SALVE!</span>
+<div class="porcentaje-small-vertical"><span><?php echo abs(round((($row['price_new']/$row['price_from'])*100)-100));?>%</span></div>
 
+</div>
+</div>
+</div>
+</div>
 
-
+</div>
 <?php
 require 'includes/related-inc.php';
 //ofertas relacionadas
 ?>
 
 
-
-
-            </div>
+</div>
 
 
 

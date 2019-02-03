@@ -90,6 +90,9 @@ max-width: 1000px;
 width: 100%;
 margin: auto;
 height: 100px;
+
+
+
 }
 
 #header-container-menu{
@@ -223,13 +226,26 @@ width: 100%;
     flex-direction: column;
     width: inherit;
     margin: auto;
-    max-width: 1000px;
+    max-width: 1125px;
 	height: auto;
 	padding: 0px 38px;
 	box-sizing: border-box
 }
 
+.main-post-deals-container{
+display: flex;
+flex-direction: row;
+}
 
+.main-post-deals-sidebar{
+min-width: 300px;
+flex: 30%;
+border-left: 1px solid #f2f2f2;
+}
+.main-post-deals-main{
+	min-width: 500px;
+	flex: 70%;
+}
 
 .main-post{
 	margin:auto;
@@ -960,24 +976,12 @@ margin: 0;
     font-weight: 400;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .cupon-std-small-vertical{
     background-image: url(img/icons/cupon-std-small-vertical.svg);
     background-size: 284px 431px;
     width: 284px;
     height: 431px;
-	margin: 13px auto;
+	margin: 0px auto;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
@@ -1052,20 +1056,10 @@ margin: 0;
 	margin-right: 10px;
 }
 
+.principal-small{
+margin-right: 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 .carousel{
@@ -1944,4 +1938,49 @@ padding: 17px 0px;
     font-size: 0.8em;
     bottom: 6px;
     color: #838383;
+}
+
+.h2-low{
+    font-size: 0.95em;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.h2-low::after{
+    content: " ";
+    position: relative;
+    width:calc(100% + 8px);
+    border-bottom: 1px solid #f2f2f2;
+    display: block;
+    clear: both;
+    margin: 14px 0px;
+}
+
+.main-post-deals-highlights, .main-post-deals-about{
+    box-sizing: border-box;
+    padding-right: 40px;
+}
+.main-post-deals-highlights p, .main-post-deals-about p{
+	line-height: 1.76em;
+    font-size: 0.96em;
+}
+
+.main-post-deals-about{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.main-post-deals-about a{
+	color:#BC2D19;
+}
+
+.main-post-deals-about a::before{
+	content: "•";
+	margin-right: 10px;
+	text-decoration: none;
+}
+
+.main-post-deals-about a::before:hover{
+	text-decoration: none!important;
 }

@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
         
 
     $sql = "
-    SELECT b.buss_name, b.buss_dir, b.buss_phone, b.buss_phone, b.buss_url, p.title, p.description, p.price_from, p.price_new, p.offer_end_at, p.created_at, p.updated_at, p.buss_id, p.post_hero_img_url, b.cover_url, CONCAT(YEAR(p.updated_at),'-', MONTH(p.updated_at), '-' , DAY(p.updated_at)) AS data
+    SELECT b.buss_name, b.buss_dir, b.buss_phone, b.buss_phone, b.about_buss ,b.buss_url, p.title, p.description, p.highlight ,p.price_from, p.price_new, p.offer_end_at, p.created_at, p.updated_at, p.buss_id, p.post_hero_img_url, b.cover_url, CONCAT(YEAR(p.updated_at),'-', MONTH(p.updated_at), '-' , DAY(p.updated_at)) AS data
     FROM posts as p
     JOIN buss as b
         on b.buss_id = p.buss_id
@@ -32,6 +32,8 @@ if(isset($_GET['id'])){
         
         $post_title = mysqli_real_escape_string($conn, $row['title']);
         $post_desc = mysqli_real_escape_string($conn, $row['description']);
+        $post_high = mysqli_real_escape_string($conn, $row['highlight']);
+
         $post_price_from =mysqli_real_escape_string($conn,  $row['price_from']);
         $post_price_new =mysqli_real_escape_string($conn,  $row['price_new']);
         $post_offer_end_at = mysqli_real_escape_string($conn, $row['offer_end_at']);
@@ -43,6 +45,8 @@ if(isset($_GET['id'])){
         $post_buss_dir = mysqli_real_escape_string($conn, $row['buss_dir']);
         $post_buss_phone =mysqli_real_escape_string($conn,  $row['buss_phone']);
         $post_buss_url = mysqli_real_escape_string($conn, $row['buss_url']);
+        $post_buss_about = mysqli_real_escape_string($conn, $row['about_buss']);
+
         $post_hero_img = mysqli_real_escape_string($conn, $row['post_hero_img_url']);
         $cover_url = mysqli_real_escape_string($conn, $row['cover_url']);
         $post_porcent_offer = round(($post_price_new/$post_price_from)*100);
