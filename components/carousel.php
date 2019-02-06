@@ -1,3 +1,37 @@
+<script>
+
+function createSlick(){
+      $('.carousel').not('.slick-initialized').slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true,
+        dragable:true,
+        mobileFirst:true,
+        autoplay:false,
+        accessibility:true,
+        pauseOnFocus:true,
+        pauseOnHover:false,
+        arrows: false,
+        centerMode: true,
+
+        responsive: [{ 
+        breakpoint: 800,
+        settings: {
+            arrows: true,
+            centerMode: false
+        } 
+    }]
+      });
+}
+
+
+
+    $(document).ready(function(){
+    createSlick();
+    });
+  </script>
+
+
 <?php
 require '../includes/dbh-inc.php';
 ?>
@@ -18,10 +52,7 @@ LIMIT 25
 
 <script>
 function loaded() {
-  //funciones a ejecutar
-  // Probando el commit en bugfix
   $("#onload-carousel").css("background", "linear-gradient(to bottom, rgba(255,255,255,0.01) 5%, rgba(251,251,242,0.87) 89%");
-
 }
 
 loaded();
@@ -230,20 +261,12 @@ if($resultsCheck < 1){
 </a>
     
 ';
-
-
-
-
-
     
   }
-
   }
-
 
 }
 
-// Probando No se que lo que 
 ?>
 
   </div>
@@ -252,35 +275,3 @@ if($resultsCheck < 1){
 
 
 
-  <script>
-
-function createSlick(){
-      $('.carousel').not('.slick-initialized').slick({
-        dots: true,
-        infinite: true,
-        variableWidth: true,
-        dragable:true,
-        mobileFirst:true,
-        autoplay:false,
-        accessibility:true,
-        pauseOnFocus:true,
-        pauseOnHover:false,
-        arrows: false,
-        centerMode: true,
-
-        responsive: [{ 
-        breakpoint: 800,
-        settings: {
-            arrows: true,
-            centerMode: false
-        } 
-    }]
-      });
-}
-
-
-
-    $(document).ready(function(){
-    createSlick();
-    });
-  </script>
