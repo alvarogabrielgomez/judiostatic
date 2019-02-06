@@ -269,7 +269,7 @@ border-left: 1px solid #f2f2f2;
 	width:100%;
 	max-width: 300px;
 	height: auto;
-	max-height: 500px;
+	min-height: 500px;
 	border-radius: 10px;
 	color: #5d5d5d;
 	background-color: #fff;
@@ -288,7 +288,6 @@ border-left: 1px solid #f2f2f2;
 }
 
 .main-box:hover{
-	_
 	border-color: rgb(204, 204, 204);
 	-webkit-box-shadow: 2px 2px 2px 0px rgba(204,204,204,0.7);
 	 transition: all 0.6s ease;
