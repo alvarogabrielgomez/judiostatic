@@ -1,7 +1,7 @@
-<?php
+<?php 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-session_start();    
+session_start();   
 if(!isset($_SESSION["client_id"])){
 ?>
 <!DOCTYPE html>
@@ -42,47 +42,23 @@ require 'components/header.php'; // Header php
 
      <div id="main-posts-container">
                <div class="main-post">    
-                 <h1 class="title-login">Inicia sesion</h1>
 
-<?php
+               <h1 class="title-login">Reset my Password</h1>
+               <div class="main-box iforgot-box main-box-simple">
 
-    if(isset($_GET['signup'])){
-    if($_GET['signup']=="success"){
-        echo '<h3 class="success-signup">Listo!</h3>';
-    }
-    }
-
-    if(isset($_GET['login'])){
-        if($_GET['login']=="empty"){
-            echo '<h3 class="error-login">Llena todos los campos</h3>';
-        }
-        else if($_GET['login']=="no-user"){
-            echo '<h3 class="error-login">El usuario no existe</h3>';
-        }
-        else if($_GET['login']=="wrong-pwd"){
-            echo '<h3 class="error-login">Pass es incorrecto</h3>';
-        }
-
-        else if($_GET['login']=="user-unactive"){
-            echo '<h3 class="error-login">El usuario no esta activo</h3>';
-        }
-        else if($_GET['login']=="sqlerror"){
-            echo '<h3 class="error-login">Error desconocido</h3>';
-        }
-    }
-?>
-                    <div class="main-box admin-login main-box-simple" style ="padding: 15px;">
-
-                    <div class="nav-login">
-
-                    <form  action="includes/login-inc.php" method="POST">
-                    <input type="text" name="mailuid" placeholder="Username/email">
-                    <input type="password" name="pwd" placeholder="password">
-                    <button type="submit" class="button red" name="login-submit">Login</button>
+               <div class="nav-signup" >
+               <p>Oh, has olvidado tu password, descuida, te enviaremos un Email con instrucciones para recuperarla rapidamente.</p>
+                    <form action="includes/iforgot-inc.php" method="POST">
+                        <input style="margin: 2px auto 22px; width:65%;" type="text" name="email"  placeholder="E-Mail" autofocus>
+                        <button style="margin: 2px auto 0px; width:65%;" type="submit" class="button red" name="iforgot-submit">Enviame mi email</button>
                     </form>
+                    <a href="login.php">Volver</a>
 
-                    <a href="signup.php">Sign up</a>
-                    <a href="iforgot.php">Olvide el password</a>
+                    </div>
+
+               </div>
+
+
 
                     </div>
 

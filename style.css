@@ -536,6 +536,15 @@ abbr{
     transition-delay:1s;
 }
 
+.iforgot-box{
+	width: 100%;
+	max-width: 470px;
+	min-width: 300px;
+	transition-duration: 170ms;
+    transition-property:visibility, opacity;
+    transition-delay:1s;
+}
+
 .nav-login form{
 	display: flex;
 	flex-direction: column;

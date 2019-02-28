@@ -84,6 +84,6 @@ if($resultsCheck < 1){
 
 
 }else{
-    require 'login.php'; // Main Items php
+    header("Location: login.php");
     exit();
 }

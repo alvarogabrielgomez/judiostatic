@@ -65,7 +65,7 @@ ini_set('display_errors', '1');
                         <input type="password" name="pwd-repeat" placeholder="Repite la Contraseña">
                         <button type="submit" class="button red" name="signup-submit">Signup</button>
                     </form>
-                    <a href="admin.php">Volver</a>
+                    <a href="login.php">Volver</a>
 
                     </div>
 
@@ -74,9 +74,10 @@ ini_set('display_errors', '1');
     </section>
 </div>
 
-<footer>
-    
-</footer>
+<?php
+require 'components/footer.php'; // footer php
+?>
+
 
 </body>
 
