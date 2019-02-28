@@ -1,5 +1,7 @@
 <?php
-
+ error_reporting(E_ALL);
+ ini_set('display_errors', '1');
+ 
 if(isset($_POST["iforgot-submit"])){
 
 $selector = bin2hex(random_bytes(8));
@@ -17,7 +19,7 @@ $sql = "DELETE FROM pwdReset WHERE pwdReset_email=?";
 
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
-    echo "There was an error!";
+    echo "No se pudo limpiar";
     exit();
 }else{
     mysqli_stmt_bind_param($stmt, "s", $userEmail);
@@ -27,7 +29,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 $sql = "INSERT INTO pwdReset(pwdReset_email, pwdReset_selector, pwdReset_token, pwdReset_expires) VALUES (?,?,?,?);";
 $stmt = mysqli_stmt_init($conn);
 if (!mysqli_stmt_prepare($stmt, $sql)) {
-    echo "There was an error!";
+    echo "No se pudo insertar";
     exit();
 }else{
     $hashedToken = password_hash($token, PASSWORD_DEFAULT);
