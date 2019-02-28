@@ -1,7 +1,7 @@
 <?php 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-session_start();   
+
 if(!isset($_SESSION["client_id"])){
 ?>
 <!DOCTYPE html>
@@ -77,6 +77,14 @@ if(!isset($_SESSION["client_id"])){
                <div class="main-post">    
 
                <h1 class="title-login">Reset my Password</h1>
+               <?php
+                    if(isset($_GET["reset"])){
+                        if ($_GET["reset"] == "success") {
+                           echo '<h3 class="error-signup">Muy bien!, revisa tu email para continuar</h3>';
+                        }
+                    }
+                    ?>
+
                <div class="main-box iforgot-box main-box-simple">
 
                <div class="nav-signup" >
@@ -85,13 +93,7 @@ if(!isset($_SESSION["client_id"])){
                         <input style="margin: 2px auto 22px; width:65%;" type="text" name="email"  placeholder="E-Mail" autofocus>
                         <button style="margin: 2px auto 0px; width:65%;" type="submit" class="button red" name="iforgot-submit">Enviame mi email</button>
                     </form>
-                    <?php
-                    if(isset($_GET["reset"])){
-                        if ($_GET["reset"] == "success") {
-                           echo '<p>Check your email!</p>';
-                        }
-                    }
-                    ?>
+
                     <a href="../login.php">Volver</a>
 
                     </div>

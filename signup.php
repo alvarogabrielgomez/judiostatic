@@ -52,6 +52,7 @@ ini_set('display_errors', '1');
                         }
                     }
 
+
                     ?>
                     <div class="main-box admin-signup main-box-simple">
 

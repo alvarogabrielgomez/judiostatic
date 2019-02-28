@@ -35,12 +35,15 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     mysqli_stmt_execute($stmt);
 }
 mysqli_stmt_close($stmt);
-mysqli_close();
-
-$subject = 'Reset you password of Omeleth';
+mysqli_close($conn);
+if(isset($_SESSION["client_id"])){
+session_unset();
+session_destroy();
+}
+$subject = 'Resetear tu password en Omeleth';
 $to_id = $userEmail;
 require 'email-mailer-iforgot.php';
-header("location: reset-password.php?reset=success");
+header("location: ../iforgot/reset-password.php?reset=success");
 }
 else{
     header("location: ../index.php");

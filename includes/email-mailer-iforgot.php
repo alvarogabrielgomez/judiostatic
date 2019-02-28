@@ -54,7 +54,7 @@ $mail_message .= "<style>
 }
 
 .red a{
-	color: #fff;
+	color: #fff!important;
 }
 
 

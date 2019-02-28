@@ -70,6 +70,22 @@ require 'components/header.php'; // Header php
             echo '<h3 class="error-login">Error desconocido</h3>';
         }
     }
+
+    if(isset($_GET['newpwd'])){
+        if($_GET['newpwd']=="success"){
+            echo '<h3 class="error-signup">Has cambiado tu password!</h3>'; 
+        }
+        else if ($_GET['newpwd']=="error") {
+            echo '<h3 class="error-signup">Hubo un error! (d0)</h3>'; 
+        }
+        else if ($_GET['newpwd']=="errord1") {
+            echo '<h3 class="error-signup">Hubo un error! (d1)</h3>'; 
+        }
+        else if ($_GET['newpwd']=="errord2") {
+            echo '<h3 class="error-signup">Hubo un error! (d2)</h3>'; 
+        }
+    }
+
 ?>
                     <div class="main-box admin-login main-box-simple" style ="padding: 15px;">
 
