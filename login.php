@@ -82,7 +82,7 @@ require 'components/header.php'; // Header php
                     </form>
 
                     <a href="signup.php">Sign up</a>
-                    <a href="iforgot.php">Olvide el password</a>
+                    <a href="iforgot/reset-password.php">Olvide el password</a>
 
                     </div>
 
