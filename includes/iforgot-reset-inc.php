@@ -17,7 +17,7 @@ if (isset($_POST["reset-password-submit"])) {
 
     require 'dbh-inc.php';
 
-    $sql = "SELECT * FROM pwdReset WHERE pwdReset_selector=? AND pwdReset_expires >= ?";
+    $sql = "SELECT * FROM pwdreset WHERE pwdReset_selector=? AND pwdReset_expires >= ?";
     
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -63,7 +63,7 @@ if (isset($_POST["reset-password-submit"])) {
                                 mysqli_stmt_bind_param($stmt, "ss", $newHashedPwd, $tokenEmail);
                                 mysqli_stmt_execute($stmt);
 
-                                $sql = "DELETE FROM pwdReset WHERE pwdReset_email=?";
+                                $sql = "DELETE FROM pwdreset WHERE pwdReset_email=?";
                                 $stmt = mysqli_stmt_init($conn);
                                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                                     header("Location: ../login.php?newpwd=errord1");
