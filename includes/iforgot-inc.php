@@ -46,6 +46,9 @@ session_unset();
 session_destroy();
 }
 $subject = 'Resetear tu password en Omeleth';
+$messagebasic = '
+<p>Hola!, lamentamos que no pudieras entrar a tu cuenta</p>
+<p>Pero descuida, rapidamente podras recuperarla haciendo click en el link de abajo</p>';
 $to_id = $userEmail;
 require 'email-mailer-iforgot.php';
 header("location: ../iforgot/reset-password.php?reset=success");

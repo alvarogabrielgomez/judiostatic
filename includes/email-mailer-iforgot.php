@@ -64,9 +64,8 @@ $mail_message .= "<style>
 </head>
 
 <body>
-<div id='email-container'>
-<p>Hola!, lamentamos que no pudieras entrar a tu cuenta</p>
-<p>Pero descuida, rapidamente podras recuperarla haciendo click en el link de abajo</p>
+<div id='email-container'>".
+$messagebasic."
 </br>
 <p><a class='button red' href='".$url."'>Recuperar contrasena</a></p>
 </br>
