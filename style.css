@@ -901,6 +901,7 @@ margin: 0;
     width: 728.6px;
     height: 260.4px;
 	margin: 13px auto;
+	transform:scale(0.8);
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
@@ -969,18 +970,6 @@ margin: 0;
     font-size: 17px;
     font-weight: 400;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .cupon-std-small-vertical{
     background-image: url(img/icons/cupon-std-small-vertical.svg);
@@ -1061,21 +1050,6 @@ margin: 0;
 	font-weight: 400;
 	margin-right: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .carousel{

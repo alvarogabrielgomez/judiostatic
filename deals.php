@@ -8,7 +8,8 @@ require 'includes/deals-inc.php'; // deals php
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=370, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $row['title'] ?> - Omeleth Cupon</title>
 
@@ -156,13 +157,53 @@ require 'components/navbar.php'; // footer php
 <?php 
 require 'modalwindow/modalwindow.php';
 ?>
-<div class="cupon-std">
+
+
+<div id ="principal-small" style = "" class="cupon-std-small-vertical">
+<div class="cupon-col1-small-vertical">
+<div>VÁLIDO PARA UMA VEZ</div>
+</div>
+<div class="cupon-col2-small-vertical">
+<div class="cupon-titulo-small-vertical"><span><?php echo $row['title']; ?></span></div>
+<div class="cupon-desc-small-vertical"><span><?php echo $row['description']; ?></span>
+</div>
+</div>
+<div class="cupon-col3-small-vertical">
+
+<?php
+if($post_offer_end_at > 1){
+if(time() - strtotime($post_offer_end_at) <= 0){
+?>
+<button id="modaltrigger"class="cupon-boton-small-vertical button red"><span>TOMAR OFERTA</span></button>
+<?php
+}else if (time() - strtotime($post_offer_end_at) > 1){
+?>
+<button id="disable-button"class="cupon-boton-small-vertical button b-disabled" disabled="disabled"><span>Oferta concluída</span></button>
+<?php
+}
+}else{
+?>
+<button id="modaltrigger"class="cupon-boton-small-vertical button red"><span>TOMAR OFERTA</span></button>
+<?php
+}
+?>
+
+<div class="cupon-descuento-small-vertical">
+<span class="s-porcentaje-small-vertical">SALVE!</span>
+<div class="porcentaje-small-vertical"><span><?php echo abs(round((($row['price_new']/$row['price_from'])*100)-100)); ?>%</span></div>
+
+</div>
+</div>
+</div>
+
+
+<div id = "principal-std" class="cupon-std">
 <div class="cupon-col1">
 <div>VÁLIDO PARA UMA VEZ</div>
 </div>
 <div class="cupon-col2">
-<div class="cupon-titulo"><span><?php echo $row['title']; ?>'</span></div>
-<div class="cupon-desc"><span><?php echo $row['description']; ?>'</span>
+<div class="cupon-titulo"><span><?php echo $row['title']; ?></span></div>
+<div class="cupon-desc"><span><?php echo $row['description']; ?></span>
 </div>
 <?php
 if($post_offer_end_at > 1){
@@ -203,9 +244,41 @@ require 'includes/related-inc.php';
 require 'components/footer.php'; // footer php
 ?>
 <script>
-window.onload = function() {
-  //funciones a ejecutar
 
+
+var isMobile;
+function widthpx(){
+    if($(document).width() <= 600){
+      isMobile = true;
+      $("#principal-small").css("display", "flex");
+      $("#principal-std").css("display", "none");
+
+    }else if($(document).width() >= 601){
+      isMobile = false;
+      $("#principal-small").css("display", "none");
+      $("#principal-std").css("display", "flex");
+    }
+    var isSmallScreen;
+    if($(document).width() <= 800){
+        isSmallScreen = true;
+        var Screen = $(document).width();
+        var principalStd = $("#principal-std");
+        var offset = 728.6;
+        var translatevar = (Screen/2) - (Screen*0.077) - (offset/2);
+      $(".cupon-std").css("transform", "scale(0.8) translate("+translatevar+"px)");
+
+    }else if($(document).width() >= 801){
+        isSmallScreen = false;
+      $(".cupon-std").css("transform", "scale(1)");
+    }
+
+  }
+widthpx();
+
+window.onload = function() {
+    //funciones a ejecutar
+    
+    window.addEventListener('resize', widthpx);
         // cargamos el icono en el div donde ira el contenido
         $(".modal-body").html("<img src='img/icons/loading.svg' class='loader' border='0' />");
         // cargamos la pagina en el div capa

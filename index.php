@@ -150,22 +150,12 @@ function widthpx(){
     }
 
   }
-
-
 widthpx();
-
-
 window.onload = function() {
   //funciones a ejecutar
   $("#onload-carousel").load("components/carousel.php");
   window.addEventListener('resize', widthpx);
-
-
 }
-
-
-
-
 
 </script>
 

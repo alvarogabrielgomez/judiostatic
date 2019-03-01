@@ -1,6 +1,11 @@
 
 @media (min-width: 800px){
 
+    .cupon-std{
+        margin: 13px auto;
+        transform:scale(1);
+    }
+
     #section-whois-you{
         margin-top: 0;
     }
