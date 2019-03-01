@@ -2,7 +2,7 @@
  error_reporting(E_ALL);
  ini_set('display_errors', '1');
 function error($message){
-    header("Location: ../profile.php?login=".$message);
+    header("Location: ../login.php?login=".$message);
     exit();
 }
 if(isset($_POST['login-submit'])){
@@ -20,9 +20,6 @@ if(isset($_POST['login-submit'])){
             error("sqlerror");
         }
         else{
-
-
-
 
             mysqli_stmt_bind_param($stmt, "ss", $mailuid, $mailuid);
             mysqli_stmt_execute($stmt);
@@ -47,7 +44,8 @@ if(isset($_POST['login-submit'])){
                         $_SESSION['client_first']=$row['client_first'];
                         $_SESSION['client_email']=$row['client_email'];
                         $_SESSION['client_last']  = $row['client_last'];
-                        error("success");
+                        header("Location: ../profile.php?login=success");
+                        exit();
                     }
                 }
 

@@ -1,6 +1,10 @@
 
 @media (min-width: 800px){
 
+    #section-whois-you{
+        margin-top: 0;
+    }
+
     .slick-slide{
         margin: 1px 8px!important;
     }

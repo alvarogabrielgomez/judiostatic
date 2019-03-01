@@ -551,6 +551,15 @@ abbr{
     transition-delay:1s;
 }
 
+.iforgot-box{
+	width: 100%;
+	max-width: 470px;
+	min-width: 300px;
+	transition-duration: 170ms;
+    transition-property:visibility, opacity;
+    transition-delay:1s;
+}
+
 .nav-login form{
 	display: flex;
 	flex-direction: column;
@@ -1822,7 +1831,7 @@ padding: 17px 0px;
 .side-profile-container{
 	flex: 40%;
 	max-width: 400px;
-	background-color: bisque;
+
 }
 .content-profile{
 	max-width: 700px;
@@ -1984,3 +1993,26 @@ padding: 17px 0px;
 .main-post-deals-about a::before:hover{
 	text-decoration: none!important;
 }
+.profile-table-cupons{width:100%;}
+.profile-table-cupons tr{box-sizing:border-box; height:60px; background-color:#f3f3f3;}
+.profile-table-cupons tr:hover{background-color:#e2e2e2;}
+.profile-table-cupons td{ border-radius:4px;}
+.profile-table-cupons span{ margin-left:10px;}
+
+#section-whois-you{
+    margin-top: 55px;
+}
+
+.container-deal-info{width:100%;}
+#deal-info{width:95%; height:240px; background-color:#fff;margin:auto;
+  border-radius: 10px;
+  color: #5d5d5d;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  border-color: rgba(173, 124, 124, 0.19);
+  border-style: solid;
+  border-width: 1px;
+  position: relative;
+  top: 17px;
+}      

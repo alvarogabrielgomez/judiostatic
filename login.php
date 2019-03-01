@@ -1,9 +1,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-
+session_start();    
+if(!isset($_SESSION["client_id"])){
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +42,7 @@ require 'components/header.php'; // Header php
 
      <div id="main-posts-container">
                <div class="main-post">    
-                 <h1 class="title-login">Inicia sesion  </h1>
+                 <h1 class="title-login">Inicia sesion</h1>
 
 <?php
 
@@ -71,38 +71,34 @@ require 'components/header.php'; // Header php
         }
     }
 
-    
+    if(isset($_GET['newpwd'])){
+        if($_GET['newpwd']=="success"){
+            echo '<h3 class="error-signup">Has cambiado tu password!</h3>'; 
+        }
+        else if ($_GET['newpwd']=="error") {
+            echo '<h3 class="error-signup">Hubo un error! (d0)</h3>'; 
+        }
+        else if ($_GET['newpwd']=="errord1") {
+            echo '<h3 class="error-signup">Hubo un error! (d1)</h3>'; 
+        }
+        else if ($_GET['newpwd']=="errord2") {
+            echo '<h3 class="error-signup">Hubo un error! (d2)</h3>'; 
+        }
+    }
 
 ?>
-
                     <div class="main-box admin-login main-box-simple" style ="padding: 15px;">
 
                     <div class="nav-login">
 
-                    <?php
-                     if(isset($_SESSION['client_id'])){
-                         echo '<form  action="includes/logout-inc.php" method="POST">';
-                         echo '<button type="submit" class="button red" name="logout-submit">Logout</button>';
-                         echo '</form>';
-                         echo '<h1>Sesion Iniciada.</h1>';
-                         echo '<a href="signup.php">Crear Cuenta</a>';
-                         echo '<a href="signupbuss.php">Nuevo Buss</a>';
-        
-                    }else{
-                    echo    '<form  action="includes/login-inc.php" method="POST">';
-                    echo    '<input type="text" name="mailuid" placeholder="Username/email">';
-                    echo    '<input type="password" name="pwd" placeholder="password">';
-                    echo    '<button type="submit" class="button red" name="login-submit">Login</button>';
-                    echo    '</form>';
+                    <form  action="includes/login-inc.php" method="POST">
+                    <input type="text" name="mailuid" placeholder="Username/email">
+                    <input type="password" name="pwd" placeholder="password">
+                    <button type="submit" class="button red" name="login-submit">Login</button>
+                    </form>
 
-                    echo '<a href="signup.php">Olvide el password</a>';
-            
-                    }
-
-
-                    
-                    ?>
-
+                    <a href="signup.php">Sign up</a>
+                    <a href="iforgot/reset-password.php">Olvide el password</a>
 
                     </div>
 
@@ -124,3 +120,8 @@ require 'components/header.php'; // Header php
 </body>
 
 </html>
+<?php }
+else{
+    header("Location: profile.php?login=loged");
+    exit();
+} ?>
