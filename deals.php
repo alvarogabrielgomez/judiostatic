@@ -250,21 +250,20 @@ var isMobile;
 function widthpx(){
     if($(document).width() <= 600){
       isMobile = true;
-      $("#principal-small").css("display", "flex");
-      $("#principal-std").css("display", "none");
+      $(".cupon-std-small-vertical").css("display", "flex");
+      $(".cupon-std").css("display", "none");
 
     }else if($(document).width() >= 601){
       isMobile = false;
-      $("#principal-small").css("display", "none");
-      $("#principal-std").css("display", "flex");
+      $(".cupon-std-small-vertical").css("display", "none");
+      $(".cupon-std").css("display", "flex");
     }
     var isSmallScreen;
     if($(document).width() <= 800){
         isSmallScreen = true;
         var Screen = $(document).width();
-        var principalStd = $("#principal-std");
-        var offset = 728.6;
-        var translatevar = (Screen/2) - (Screen*0.077) - (offset/2);
+        var boxWidth = 728.6;
+        var translatevar = (Screen/2) - (Screen*0.080) - (boxWidth/2);
       $(".cupon-std").css("transform", "scale(0.8) translate("+translatevar+"px)");
 
     }else if($(document).width() >= 801){

@@ -28,37 +28,60 @@ if($resultsCheck < 1){
 }else{
 
 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
+?>
 
-
-   echo ' <div id="time-bar">
+<div id="time-bar">
     <div id="time-bar-container">
             <nav>
                 <ul> 
                     <li><i style="font-size: 1.35em;color: #A6A4A4;margin: 8px 0px;" class="far fa-clock" ></i></li>
-                    <li>'.$row['updated_at'].'</li>
+                    <li><?php echo $row['updated_at']; ?></li>
                 </ul>
             </nav>
     </div>
-</div>';
+</div>
 
-    echo '
+<div id ="principal-small" style = "" class="cupon-std-small-vertical">
+<div class="cupon-col1-small-vertical">
+<div>VÁLIDO PARA UMA VEZ</div>
+</div>
+<div class="cupon-col2-small-vertical">
+<div class="cupon-titulo-small-vertical"><span><?php echo $row['title']; ?></span></div>
+<div class="cupon-desc-small-vertical"><span><?php echo $row['description']; ?></span>
+</div>
+</div>
+<div class="cupon-col3-small-vertical">
+
+<div class="cupon-boton-small-vertical button l-grey"><a href="deals.php?id=<?php echo $row['post_id']; ?>">VER OFERTA</a></div>
+
+
+<div class="cupon-descuento-small-vertical">
+<span class="s-porcentaje-small-vertical">SALVE!</span>
+<div class="porcentaje-small-vertical"><span><?php echo abs(round((($row['price_new']/$row['price_from'])*100)-100)); ?>%</span></div>
+
+</div>
+</div>
+</div>
+
     <div class="cupon-std">
     <div class="cupon-col1">
     <div>VÁLIDO PARA UMA VEZ</div>
     </div>
     <div class="cupon-col2">
-    <div class="cupon-titulo"><span><a href="deals.php?id='.$row['post_id'].'">'.$row['title'].'</a></span></div>
-    <div class="cupon-desc"><span>'.$row['description'].'</span>
+    <div class="cupon-titulo"><span><a href="deals.php?id='.$row['post_id'].'"><?php echo $row['title']; ?></a></span></div>
+    <div class="cupon-desc"><span><?php echo $row['description']; ?></span>
     </div>
-    <div class="cupon-boton button l-grey"><a href="deals.php?id='.$row['post_id'].'">VER OFERTA</a></div>
+    <div class="cupon-boton button l-grey"><a href="deals.php?id=<?php echo $row['post_id']; ?>">VER OFERTA</a></div>
     </div>
     <div class="cupon-col3">
     <div class="cupon-descuento">
-    <div class="porcentaje"><span>'. abs(round((($row['price_new']/$row['price_from'])*100)-100))  .'%</span></div>
+    <div class="porcentaje"><span><?php echo abs(round((($row['price_new']/$row['price_from'])*100)-100)); ?>%</span></div>
     <span class="s-porcentaje">SALVE!</span>
     </div>
     </div>
-    </div>';
+    </div>
+    
+    <?php
 }
 }
 ?>
