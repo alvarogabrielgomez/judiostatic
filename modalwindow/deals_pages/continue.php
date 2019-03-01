@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require '../../includes/deals_pages-inc.php';
 ?>
-<div class="animated fadeIn continue">
+<div id="top" class="animated fadeIn continue">
 <div class = "buss-info-container">
         <div class="deal-info-metadata">
         <div class="deal-info-name"><?php echo $post_title; ?></div>
@@ -22,7 +22,7 @@ require '../../includes/deals_pages-inc.php';
         
         <div>
 
-        <div><a class="button blue modal-continue" onClick="cargarContenido('modalwindow/deals_pages/insert.php?id=<?php echo $post_url_id;?>')" >Vou continuar</a></div>
+        <div><a class="button blue modal-continue" onClick="cargarContenido('modalwindow/deals_pages/insert.php?id=<?php echo $post_url_id;?>#top')" >Vou continuar</a></div>
 
         </div>
 </div>

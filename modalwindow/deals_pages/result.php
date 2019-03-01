@@ -24,7 +24,7 @@ SELECT * FROM transactions WHERE transaction_qr = $transqr AND post_id = $post_u
 
     }
 ?>
-<div class="animated fadeIn result">
+<div  id="top"  class="animated fadeIn result">
         <div class="deal-info2" style="margin-top:0px!important;">
         <p> <i style="font-size: 1.5em;color: #7fbf4e;margin-right: 10px;" class="fas fa-check-circle" ></i> Oi, <?php echo $_SESSION['client_first']; ?>!.</p> 
         <p>Aqui está o seu código:</p>

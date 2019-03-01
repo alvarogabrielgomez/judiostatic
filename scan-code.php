@@ -10,8 +10,8 @@ require 'includes/scan-code-inc.php'; // scan code php
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=370, initial-scale=1.5, user-scalable=1.0, maximum-scale=1.0, maximum-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=320, initial-scale=0.86, maximum-scale=0.86, minimum-scale=0.86"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scan Code QR</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">

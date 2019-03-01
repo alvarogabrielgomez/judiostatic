@@ -8,8 +8,8 @@ ini_set('display_errors', '1');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=370, initial-scale=1.5, user-scalable=1.0, maximum-scale=1.0, maximum-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=320, initial-scale=0.86, maximum-scale=0.86, minimum-scale=0.86"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <META NAME="Title" CONTENT="Omeleth Cupon - Cupons online baratos e rápidos.">
     <META NAME="Keywords" CONTENT="Cupon, Barato, Gourmet, Online, Rapido, Prazer">

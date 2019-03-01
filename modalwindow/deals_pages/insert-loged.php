@@ -30,7 +30,7 @@ fas fa-user"></i>
     <input style="display:none;"  id="first" type="email" name="email"  value="<?php echo $_SESSION["client_email"]; ?>">
     <span style='' class="response"></span>
     <div><a class="cancelar">Cancelar</a></div>
-<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Voltar</a></div>
+<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>#top')">Voltar</a></div>
 
 </form>
 
@@ -101,7 +101,7 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
         data: { qruri: qruri },
         success: function(data) {
             console.log("Email Sended, Ckj1");
-            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
+            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>#top');
             
         },
         error: function(data){

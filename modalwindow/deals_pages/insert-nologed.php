@@ -11,7 +11,7 @@
     <button id="btn_send" type="submit" class="button red" name="signup-submit">Ordem completa</button>
     <span style='' class="response"></span>
     <div><a class="cancelar">Cancelar</a></div>
-<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>')">Voltar</a></div>
+<div><a class="volver"onClick="cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>#top')">Voltar</a></div>
 
 </form>
 
@@ -22,7 +22,7 @@
     var cancelar = document.getElementsByClassName("cancelar")[0];
     cancelar.onclick = function() {
      modal.style.display = "none";
-     cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>');
+     cargarContenido('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>#top');
      $('#btn_send', this).removeAttr('disabled', 'disabled');
     }
     $(function(){
@@ -82,7 +82,7 @@ $.ajax({url: 'modalwindow/deals_pages/saveqr.php?id=<?php echo $post_url_id;?>',
         data: { qruri: qruri },
         success: function(data) {
             console.log("Email Sended, Ckj1");
-            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>');
+            cargarContenido('modalwindow/deals_pages/result.php?id=<?php echo $post_url_id;?>#top');
             
         },
         error: function(data){

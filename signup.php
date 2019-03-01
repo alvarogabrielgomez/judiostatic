@@ -8,8 +8,8 @@ ini_set('display_errors', '1');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=370, initial-scale=1.0, user-scalable=no"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=320, initial-scale=0.86, maximum-scale=0.86, minimum-scale=0.86"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Omeleth</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
