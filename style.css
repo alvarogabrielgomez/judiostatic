@@ -198,6 +198,7 @@ width: 100%;
 }	
 
 #main-container{
+	margin-top:54px;
 	width: inherit;
 	height: inherit;
 	display: flex;

@@ -19,7 +19,7 @@ $expires = date("U") + 1800;
 
 $userEmail = $_POST["email"];
 
-$sql = "DELETE FROM pwdreset WHERE pwdReset_email = ?";
+$sql = "SELECT * FROM clients WHERE client_email = ?";
 
 $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -28,30 +28,49 @@ $stmt = mysqli_stmt_init($conn);
 else{
     mysqli_stmt_bind_param($stmt, "s", $userEmail);
     mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    if (!$row = mysqli_fetch_assoc($result)) {
+        header("Location: ../iforgot/reset-password.php?reset=notuser");
+        exit();
+    }else {
+
+
+        $sql = "DELETE FROM pwdreset WHERE pwdReset_email = ?";
+
+        $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql)){
+                error("sqlerror-1");
+            }
+        else{
+            mysqli_stmt_bind_param($stmt, "s", $userEmail);
+            mysqli_stmt_execute($stmt);
+        }
+        
+        $sql = "INSERT INTO pwdreset(pwdReset_email, pwdReset_selector, pwdReset_token, pwdReset_expires) VALUES (?, ?, ?, ?);";
+        $stmt = mysqli_stmt_init($conn);
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            error("sqlerror-2");
+        }else{
+            $hashedToken = password_hash($token, PASSWORD_DEFAULT);
+            mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
+            mysqli_stmt_execute($stmt);
+        }
+        mysqli_stmt_close($stmt);
+        mysqli_close($conn);
+        if(isset($_SESSION["client_id"])){
+        session_unset();
+        session_destroy();
+        }
+        $subject = 'Resetear tu password en Omeleth';
+        $messagebasic = '
+        <p>Hola!, lamentamos que no pudieras entrar a tu cuenta</p>
+        <p>Pero descuida, rapidamente podras recuperarla haciendo click en el link de abajo</p>';
+        $to_id = $userEmail;
+        require 'email-mailer-iforgot.php';
+        header("location: ../iforgot/reset-password.php?reset=success");
+    }
 }
 
-$sql = "INSERT INTO pwdreset(pwdReset_email, pwdReset_selector, pwdReset_token, pwdReset_expires) VALUES (?, ?, ?, ?);";
-$stmt = mysqli_stmt_init($conn);
-if (!mysqli_stmt_prepare($stmt, $sql)) {
-    error("sqlerror-2");
-}else{
-    $hashedToken = password_hash($token, PASSWORD_DEFAULT);
-    mysqli_stmt_bind_param($stmt, "ssss", $userEmail, $selector, $hashedToken, $expires);
-    mysqli_stmt_execute($stmt);
-}
-mysqli_stmt_close($stmt);
-mysqli_close($conn);
-if(isset($_SESSION["client_id"])){
-session_unset();
-session_destroy();
-}
-$subject = 'Resetear tu password en Omeleth';
-$messagebasic = '
-<p>Hola!, lamentamos que no pudieras entrar a tu cuenta</p>
-<p>Pero descuida, rapidamente podras recuperarla haciendo click en el link de abajo</p>';
-$to_id = $userEmail;
-require 'email-mailer-iforgot.php';
-header("location: ../iforgot/reset-password.php?reset=success");
 }
 else{
     header("location: ../index.php");

@@ -1,5 +1,8 @@
 
 @media (min-width: 800px){
+    #main-container{
+        margin-top:0px;
+    }
 
     .cupon-std{
         margin: 13px auto;
@@ -245,10 +248,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
     min-width: initial!important;
 }
 
-.admin-signup {
-
-    min-width: initial;
-}  
+ 
 
 #main-hero{
 	height: 390px

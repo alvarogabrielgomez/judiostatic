@@ -81,7 +81,9 @@ if(!isset($_SESSION["client_id"])){
                     if(isset($_GET["reset"])){
                         if ($_GET["reset"] == "success") {
                            echo '<h3 class="error-signup">Muy bien!, revisa tu email para continuar</h3>';
-                        }
+                        }else if ($_GET["reset"] == "notuser") {
+                            echo '<h3 class="error-signup">Lo sentimos pero no te hemos visto por aqui antes, Seguro que <a style="text-decoration: underline;" href ="../signup.php">tienes cuenta</a> en Omeleth?</h3>';
+                         }
                     }
                     ?>
 
