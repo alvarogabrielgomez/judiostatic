@@ -3,7 +3,6 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 require 'includes/deals-inc.php'; // deals php
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,44 +33,29 @@ require 'includes/deals-inc.php'; // deals php
 <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#bc2b19">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#bc2b19">
-
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="modalwindow/modalwindow.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">    
-    
-    
     <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/regular.css" integrity="sha384-l+NpTtA08hNNeMp0aMBg/cqPh507w3OvQSRoGnHcVoDCS9OtgxqgR7u8mLQv8poF" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/solid.css" integrity="sha384-aj0h5DVQ8jfwc8DA7JiM+Dysv7z+qYrFYZR+Qd/TwnmpDI6UaB3GJRRTdY8jYGS4" crossorigin="anonymous">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"type="text/javascript" charset="utf-8"></script>
-
     <script src="js/qrious.min.js" async="async"></script>
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"> 
 <meta property="og:url"                content="https://omeleth.com/deals.php?id=<?php echo $post_url_id;?>" />
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="<?php echo $row['title']; ?>" />
 <meta property="og:description"        content="<?php echo $row['description']; ?>" />
 <meta property="og:image"              content="https://omeleth.com/<?php echo $post_hero_img; ?>" />
 <meta property="fb:app_id"             content="238563567095772" />
-
-
 </head>
-
 <body>
-    
 <div id="themoderfoquer">
-
 <?php
 require 'components/header.php'; // Header php
 require 'components/navbar.php'; // footer php
  ?>
-
-
-
 <div id="time-bar">
     <div id="time-bar-container">
             <nav>
@@ -104,16 +88,10 @@ require 'components/navbar.php'; // footer php
                         <li>'.$post_updated_at.'</li>';
                     }
                     ?>
-                    
-            
-
-
-
                 </ul>
             </nav>
     </div>
 </div>
-
 <section>
 <div id="main-container">
      <div id="main">
@@ -121,7 +99,6 @@ require 'components/navbar.php'; // footer php
     <div class="hero-deals-color">
         </div>
         <div id="hero-deals">
-
             <div class="col1">
  <?php if(time() - strtotime($row['created_at']) <= 3 * 86400){
           if(strtotime($row['offer_end_at']) > 1){
@@ -137,25 +114,20 @@ require 'components/navbar.php'; // footer php
  ?>
                 <div class="title-hero-deals"><?php echo $row['title'] ?></div>
                 <div class="buss-title-hero-deals"><?php echo  $post_buss_name; ?></div>
-
                 <div class="desc-art">
                     <p class="description-text">
-
                     Aproveite nossos cupons especiais (disponíveis por tempo limitado) para nossos clientes mais fiéis, não perca a oportunidade, você pode comprar em <strong><?php echo $post_buss_name; ?></strong> pagando menos, sabendo que o mais importante é a sua satisfação.<br></p>
                     <div class="buss-dir">
                     <i class="fas fa-map-marker-alt" style="margin-right:16px;"></i><?php echo $post_buss_dir; ?>
                     </div>
                     <div class="buss-phone">
                     <i class="fas fa-phone" style="margin-right:11px;"></i><?php echo $post_buss_phone; ?>
-                    </div>
-                
+                    </div>    
                 </p>
-
                 <div id="b-hero-buss">
                 <div class="buss-button button l-grey"><a href="deals.php?id='.$row['post_id'].'">Ver en Maps</a></div>
                 <div class="buss-button-o button red"><a href="#main-posts-container">Ver Oferta</a></div>
                 </div>
-
                 </div>
             </div>
              <div class="col2">
@@ -163,7 +135,6 @@ require 'components/navbar.php'; // footer php
                 <img src="<?php echo $post_hero_img; ?>" alt="image deals">
                  </div>
             </div>
-
             
         </div>
     
@@ -179,70 +150,58 @@ require 'components/navbar.php'; // footer php
             </div>
          </div>
          
-         
          <div id="main-posts-container">
                 <div class="main-post">    
 
 <?php 
 require 'modalwindow/modalwindow.php';
-echo '<div class="cupon-std">
+?>
+<div class="cupon-std">
 <div class="cupon-col1">
 <div>VÁLIDO PARA UMA VEZ</div>
 </div>
 <div class="cupon-col2">
-<div class="cupon-titulo"><span>'.$row['title'].'</span></div>
-<div class="cupon-desc"><span>'.$row['description'].'</span>
-</div>';
+<div class="cupon-titulo"><span><?php echo $row['title']; ?>'</span></div>
+<div class="cupon-desc"><span><?php echo $row['description']; ?>'</span>
+</div>
+<?php
 if($post_offer_end_at > 1){
 if(time() - strtotime($post_offer_end_at) <= 0){
-    echo'
+?>
 <button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
-';
+<?php
 }else if (time() - strtotime($post_offer_end_at) > 1){
-echo' <button id="disable-button"class="cupon-boton button b-disabled" disabled="disabled"><span>Oferta concluída</span></button>';
+?>
+<button id="disable-button"class="cupon-boton button b-disabled" disabled="disabled"><span>Oferta concluída</span></button>
+<?php
 }
 }else{
-    echo'
-    <button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
-    '; 
+?>
+<button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+<?php
 }
-echo'
+?>
 </div>
 <div class="cupon-col3">
 <div class="cupon-descuento">
-<div class="porcentaje"><span>'. abs(round((($row['price_new']/$row['price_from'])*100)-100))  .'%</span></div>
+<div class="porcentaje"><span><?php echo abs(round((($row['price_new']/$row['price_from'])*100)-100)); ?>%</span></div>
 <span class="s-porcentaje">SALVE!</span>
 </div>
 </div>
 </div>
 
-';
-?>
-
-
-
 <?php
 require 'includes/related-inc.php';
 //ofertas relacionadas
 ?>
-
-
-
-
-            </div>
-
-
-
-    </div> 
-</div> 
-
-</section>
-
 </div>
-        <?php
-            require 'components/footer.php'; // footer php
-        ?>
-
+</div> 
+</div> 
+</section>
+</div>
+<?php
+require 'components/footer.php'; // footer php
+?>
 <script>
 window.onload = function() {
   //funciones a ejecutar
@@ -253,8 +212,6 @@ window.onload = function() {
         $(".modal-body").load('modalwindow/deals_pages/index.php?id=<?php echo $post_url_id;?>');
 
 };
-
-
   function cargarContenido(pagina)
     {
         // cargamos el icono en el div donde ira el contenido
@@ -263,12 +220,6 @@ window.onload = function() {
         $(".modal-body").load(pagina);
     }
 </script>
-
-
 <script type="text/javascript" src="modalwindow/modalwindow.js"></script>
-
-
-
 </body>
-
 </html>
