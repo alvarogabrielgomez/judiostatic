@@ -1,4 +1,7 @@
 <!-- The Modal -->
+<meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=370, initial-scale=1.5, user-scalable=1.0, maximum-scale=1.0, maximum-scale=1.0"/>
+
 <div id="modalwindow" class="modal">
 
   <!-- Modal content -->

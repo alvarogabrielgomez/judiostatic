@@ -9,7 +9,7 @@ require 'includes/deals-inc.php'; // deals php
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=370, initial-scale=1.0"/>
+    <meta name="viewport" content="width=370, initial-scale=1.5, user-scalable=1.0, maximum-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $row['title'] ?> - Omeleth Cupon</title>
 
@@ -174,7 +174,7 @@ require 'modalwindow/modalwindow.php';
 if($post_offer_end_at > 1){
 if(time() - strtotime($post_offer_end_at) <= 0){
 ?>
-<button id="modaltrigger"class="cupon-boton-small-vertical button red"><span>TOMAR OFERTA</span></button>
+<button class="cupon-boton-small-vertical button red modaltrigger"><span>TOMAR OFERTA</span></button>
 <?php
 }else if (time() - strtotime($post_offer_end_at) > 1){
 ?>
@@ -183,7 +183,7 @@ if(time() - strtotime($post_offer_end_at) <= 0){
 }
 }else{
 ?>
-<button id="modaltrigger"class="cupon-boton-small-vertical button red"><span>TOMAR OFERTA</span></button>
+<button class="cupon-boton-small-vertical button red modaltrigger"><span>TOMAR OFERTA</span></button>
 <?php
 }
 ?>
@@ -209,7 +209,7 @@ if(time() - strtotime($post_offer_end_at) <= 0){
 if($post_offer_end_at > 1){
 if(time() - strtotime($post_offer_end_at) <= 0){
 ?>
-<button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+<button class="cupon-boton button red modaltrigger"><span>TOMAR OFERTA</span></button>
 <?php
 }else if (time() - strtotime($post_offer_end_at) > 1){
 ?>
@@ -218,7 +218,7 @@ if(time() - strtotime($post_offer_end_at) <= 0){
 }
 }else{
 ?>
-<button id="modaltrigger"class="cupon-boton button red"><span>TOMAR OFERTA</span></button>
+<button class="cupon-boton button red modaltrigger"><span>TOMAR OFERTA</span></button>
 <?php
 }
 ?>
