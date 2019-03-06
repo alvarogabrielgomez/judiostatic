@@ -29,21 +29,35 @@ if(!isset($_SESSION["client_id"])){
     
 <div id="themoderfoquer">
 
-<?php
-require 'components/header.php'; // Header php
-?>
+<div class="header-light">
+<div class="header-light-container">
 
+    <div class="trans-black-logo"></div>
+</div>
+</div>
 
 
 <!--Final main portada-->
 <section>
-<div id="main-container">
-     <div id='main'>
-    
+<div id="main-container" class="login-img" style="margin-top: 0px;">
+     <div id='main-login-container'>
 
-     <div id="main-posts-container">
-               <div class="main-post">    
-                 <h1 class="title-login">Inicia sesion</h1>
+
+
+     <div id="main-login">   
+     <div class="light-bar-t" id="nav-bar" style="margin-top: 27px;">
+                        <div id="nav-bar-container">
+                                    <nav>
+                                        <ul class="light-bar-text">
+                                            <li><a href="index.php"><div id="home-icon"></div></a></li>
+                                            <li class="navbar-divisor">></li>
+                                            <li>Login</li>
+                                        </ul>
+                                    </nav>
+                        </div>
+                </div>
+
+                 <h1 class="title-login-left">Inicia sesion</h1>
 
 <?php
 
@@ -88,6 +102,7 @@ require 'components/header.php'; // Header php
     }
 
 ?>
+
                     <div class="main-box admin-login main-box-simple" style ="padding: 15px;">
 
                     <div class="nav-login">
@@ -105,7 +120,7 @@ require 'components/header.php'; // Header php
 
             </div>   
                 
-</div> 
+
 
 
     </div>  

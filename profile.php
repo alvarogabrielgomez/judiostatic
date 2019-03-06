@@ -72,7 +72,7 @@ JOIN posts as p
     on t.post_id = p.post_id
 JOIN buss as b
     on t.buss_id = b.buss_id
-WHERE c.client_id = 0
+WHERE c.client_id = $client_id_loged
 AND c.active <> 0
 ORDER BY t.updated_at DESC
 ";

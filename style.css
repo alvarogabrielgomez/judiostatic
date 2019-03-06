@@ -67,6 +67,7 @@ color:#FFF;
 }
 
 header{
+
 	border-top: 4px;
 	border-top-style: solid;
 	border-color: rgb(138, 71, 71);
@@ -81,6 +82,10 @@ header{
 	display: flex;
 	justify-content: center ;
 	align-items: center;
+}
+
+.header-light{
+	background: transparent;
 }
 
 #header-container{
@@ -152,18 +157,43 @@ height: inherit;
 
 .classic-logo{
 	background-image: url(img/omeleth_red.png);
-
 }
 
+.trans-black-logo{
+    width: 158px!important;
+    height: 54px!important;
+    margin: 21px 23px!important;
+background-image: url("img/omeleth_trans_black.png");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+}
+.header-light-container{
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	position: relative;
+}
 nav ul li a{
 	text-decoration: none;
 }
 
-
-#main{
-min-height: 100vh;
-width: 100%;
+#main-login{
+width: 376px;
 }
+#main-login-container{
+	min-height: 70vh;
+	width: 100%;
+    margin: auto;
+    max-width: 1000px;
+    box-sizing: border-box;
+	}
+
+	#main{
+		min-height: 100vh;
+		width: 100%;
+		}
+
 
 #main-hero{
 	width: 100vw;
@@ -199,6 +229,7 @@ width: 100%;
 
 #main-container{
 	margin-top:54px;
+	padding-bottom: 63px;
 	width: inherit;
 	height: inherit;
 	display: flex;
@@ -518,7 +549,17 @@ abbr{
     margin-top: 9px;
 }
 .title-login{
-	margin-bottom: 27px!important;
+    margin-bottom: 35px!important;
+	padding: 1px 28px;
+	margin-top:32px!important;
+}
+
+.title-login-left{
+	margin-bottom: 28px!important;
+	padding: 1px 28px;
+	text-align: left;
+    font-size: 2em;
+	margin-top:8px!important;
 }
 
 .admin-login{
@@ -626,7 +667,6 @@ abbr{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	margin-top: 63px;
 	background-color:rgb(15, 23, 43);
 }
 
@@ -1374,6 +1414,14 @@ position:absolute;
 	margin-bottom: 64px;
 }
 	
+.light-bar-t {
+    background-color: transparent!important;
+	flex: 100%;
+}
+.light-bar-t nav{
+	background-color: transparent!important;
+}
+
 
 .light-bar{
 	background-color: #FFF!important;
@@ -1954,3 +2002,19 @@ padding: 17px 0px;
   position: relative;
   top: 17px;
 }      
+
+.error-login{
+    text-align: left;
+    margin: 2px 0px 24px 28px !important;
+}
+
+.error-login::after{
+    width: 72px!important;
+    margin: 15px 2px 28px!important;
+}
+
+.login-img{
+	background-size: contain;
+    background-position: center;
+    background-image: url(img/Repeating-Triangles.svg);
+}
