@@ -50,7 +50,7 @@ fas fa-user"></i>
 </div>
 </section>
 <section>
-<div id="main-container" class="main-container-profile" >
+<div id="main-container" class="main-container-profile" style = margin-top:0px; >
 <div id='main' class="main-profile">  
 <div class="side-profile-container">
 <div class="container-deal-info">
