@@ -28,14 +28,11 @@ require 'includes/profile-inc.php';
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/fontawesome.css" integrity="sha384-WK8BzK0mpgOdhCxq86nInFqSWLzR5UAsNg0MGX9aDaIIrFWQ38dGdhwnNCAoXFxL" crossorigin="anonymous"> 
 </head>
 
-<body>
-    
+<body>  
 <div id="themoderfoquer">
-
 <?php
 require 'components/header.php'; // Header php
 ?>
-
 <section id="section-whois-you">
 <div id="whoisyou" class="profile-whois">
   <div id="whoisyou-img" class="profile-whois-img">
@@ -52,16 +49,34 @@ fas fa-user"></i>
 </div>
 </div>
 </section>
-
 <section>
 <div id="main-container" class="main-container-profile" >
-     <div id='main' class="main-profile">
-    
-        <div class="content-profile-container">
-        <div class="content-profile">
+<div id='main' class="main-profile">  
+<div class="side-profile-container">
+<div class="container-deal-info">
+<div id="deal-info">
+
+  <div id="optDropdown" class="optDropdown-content dropdown-content">
+    <div id="optDropdown-content-filled">
+      <a href="#">Ver oferta</a>
+      <a href="#">Ocultar oferta</a>
+      <a href="#">Reportar incoveniente</a>
+    </div>
+  </div>
+
+  <div id="opt-deal-info">...</div>
+  <p class="buss_name">Has click en alguna de tus ofertas para ver mas informacion.</p>
+  <a class="buss_url" href=""></a>
+<div class="deal-info-qr">
+<canvas id="qr" style="margin:auto;display:block;margin-top:8px; opacity:0;transition: all 0.6s ease;"></canvas>
+</div>
+</div>
+</div>
+</div>
+  <div class="content-profile-container">
+  <div class="content-profile">
 
 <table class="profile-table-cupons">
-
 <?php
 $sql = "
 SELECT c.client_id, c.client_first, c.client_last, c.client_email, t.post_id, t.transaction_qr, t.updated_at, DATE_FORMAT(t.updated_at, '%Y-%m-%d') as updated_at_date, DATE_FORMAT(t.updated_at, '%H:%i:%s') as updated_at_hour , t.finished, p.post_id , p.title, p.description, p.offer_end_at, p.price_new, p.price_from, p.post_hero_img_url, b.buss_name, b.buss_dir, b.buss_phone, b.cover_url
@@ -81,77 +96,108 @@ $results=mysqli_query($conn, $sql);
 $resultsCheck=mysqli_num_rows($results);
 
 if($resultsCheck < 1){
-
-        require 'components/empty-state-related.php';
-
+ require 'components/empty-state-related.php';
 }else{
 
 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     echo '<tr>
-      <td class="item-profile id-'.$row["post_id"].'" ><span>'.$row["title"].'</span></td>
+    <div>
+    <td class="item-profile id-'.$row["post_id"].'" ><span>'.$row["title"]." ".$row["updated_at_date"]." ".$row["updated_at_hour"].'</span>
+    <span class = "whenis">'; imprimirTiempo($row["updated_at_date"], $row["updated_at_hour"]); echo '  </span>
+    </td>
+      </div>
+      </td>
     </tr>';
+  ?>
+  <script>
+$(".id-<?php echo $row["post_id"]; ?>").on("click", function(){
+var transqr = <?php echo $row["transaction_qr"]; ?>;
+var dataString = JSON.stringify(transqr);
+$.ajax({
+  type: "POST",
+  url: "includes/profile-ajax-inc.php",
+  data: { transqr: dataString },
+  
+  success: function(data){
 
+   makeQr(transqr+"", "L")
+   $(".buss_name").html(data.buss_name);
+   $(".buss_url").html("<a class='buss_url' href='"+data.buss_url+"'>Visitar Web</a>");
+   $("#optDropdown-content-filled").html("<a href='deals.php?id=<?php echo $row["post_id"]; ?>'>Ver oferta</a><a href='#'>Ocultar oferta</a><a href='#'>Reportar Inconveniente</a>");
+   
+   var movingitem = document.getElementById('deal-info');
+   var qrContainer = document.getElementById('qr');
+   var optDealInfo = document.getElementById('opt-deal-info');
+
+   movingitem.style.height = "240px";
+   qrContainer.style.opacity = "1";
+   optDealInfo.style.opacity = "1";
+  },
+  error: function(e){
+     console.log(e.message);
+  }
+
+});
+});
+  </script>
+  <?php 
   }
 }
 ?>
 </table>
-
         </div>
-        </div>
-
-        <div class="side-profile-container">
-
-        <div class="container-deal-info">
-        <div id="deal-info">
-          <p>Valar Vergulis</p>
-          <a href="">Ver en Maps</a>
-        <div class="deal-info-qr">
-        <canvas id="qr" style="margin:auto;display:block;margin-top:8px;"></canvas>
-        </div>
-        </div>
-        </div>
-
         </div>
     </div>  
 </div> 
-
 </section>
-
 </div>
-        <?php
-            require 'components/footer.php'; // footer php
-            ?>
-
-
-
+   <?php
+   require 'components/footer.php'; // footer php
+   ?>
 <script>
   var movingitem = document.getElementById('deal-info');
-
+  var optDropdown = document.getElementById("optDropdown");
   $(".item-profile").on("click", function(){
     var position = $(this).offset();
-
     console.log(position.top);
-    movingitem.style.top = ""+(position.top-235)+"px";     
+    movingitem.style.transform = "translateY("+(position.top-233)+"px)";   
   });
+
+  var optButton = document.getElementById('opt-deal-info');
+  $(optButton).on("click", function(){
+    document.getElementById("optDropdown").classList.toggle("show");
+
+  });
+
+
+
+  window.onclick = function(event) {
+  if (!event.target.matches('#opt-deal-info')) {
+    var dropdowns = document.getElementsByClassName("optDropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+
+      }
+    }
+  }
+}
+
+
 </script>
-
 <script src="./js/qrious.min.js"></script>
-
 <script>
-
-
-
-      (function() {
+function makeQr(value, level) {
         var qr = new QRious({
           element: document.getElementById('qr'),
-          value: '123',
-          level: 'L', // Error correction level of the QR code (L, M, Q, H)
+          value: value,
+          level: level, // Error correction level of the QR code (L, M, Q, H)
           size: 125, // Size of the QR code in pixels.
           padding: null // padding in pixels
         });
-      })();
+      };
 </script>
-
 </body>
-
 </html>

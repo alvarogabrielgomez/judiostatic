@@ -1724,6 +1724,7 @@ padding: 0px 25px;
   }
   
   /* Dropdown Content (Hidden by Default) */
+ 
   .dropdown-content {
 	display: none;
 	position: absolute;
@@ -1770,7 +1771,23 @@ padding: 0px 25px;
 	  background-color: #EDEDED;
 	  border-radius: 4px;
 	}
-  
+
+	.optDropdown-content{
+		margin-top: 0px;
+		right: 0px;
+		min-width: 100px;
+		overflow: hidden;
+
+	}
+	.optDropdown-content::before{
+		content: '';
+		display: none;
+	  }
+
+	  #optDropdown{
+		transition: all 0.6s ease;
+	  }
+
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
 
@@ -1982,16 +1999,21 @@ padding: 17px 0px;
 .profile-table-cupons{width:100%;}
 .profile-table-cupons tr{box-sizing:border-box; height:60px; background-color:#f3f3f3;}
 .profile-table-cupons tr:hover{background-color:#e2e2e2;}
-.profile-table-cupons td{ border-radius:4px;}
-.profile-table-cupons span{ margin-left:10px;}
+.profile-table-cupons td{ border-radius:4px; position: relative;padding-left: 13px;}
+.profile-table-cupons span{ margin-left:0px;cursor: pointer;}
 
 #section-whois-you{
     margin-top: 55px;
 }
 
 .container-deal-info{width:100%;}
-#deal-info{width:95%; height:240px; background-color:#fff;margin:auto;
-  border-radius: 10px;
+#deal-info{
+	width:95%;
+	 /* height:240px; */
+	 height: 88px;
+	  background-color:#fff;
+	  margin:auto;
+  border-radius: 10px 10px 10px 10px;
   color: #5d5d5d;
   box-sizing: border-box;
   text-align: center;
@@ -2001,7 +2023,23 @@ padding: 17px 0px;
   border-width: 1px;
   position: relative;
   top: 17px;
+  transition: all 0.3s ease;
+  
 }      
+
+#deal-info::after{
+    content: '';
+    position: absolute;
+    right: -21px;
+    top: 25px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #01b0ff00;
+    border-left: 10px solid rgba(173, 124, 124, 0.19)	;
+    border-right: 10px solid #ff000000;
+    border-bottom: 10px solid rgba(255, 206, 10, 0);
+    clear: both;
+}
 
 .error-login{
     text-align: left;
@@ -2017,4 +2055,24 @@ padding: 17px 0px;
 	background-size: contain;
     background-position: center;
     background-image: url(img/Repeating-Triangles.svg);
+}
+
+.whenis{
+position: absolute;
+right: 10px;
+font-size: 13px;
+color: rgb(136, 136, 136);
+}
+
+#opt-deal-info{
+	position: absolute;
+	opacity: 0;
+    right: 17px;
+    width: 15px;
+    height: 22px;
+    top: -6px;
+    z-index: 9999;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 28px;
 }
