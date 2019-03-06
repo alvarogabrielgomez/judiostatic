@@ -94,7 +94,7 @@ require 'components/navbar.php'; // footer php
     </div>
 </div>
 <section>
-<div id="main-container">
+<div id="main-container"style = "margin-top:0px;">
      <div id="main">
     <div id="hero-deals-container">
     <div class="hero-deals-color">

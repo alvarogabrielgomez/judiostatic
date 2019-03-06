@@ -72,7 +72,7 @@ require 'components/navbar.php'; // footer php
 ?>
 
 <section>
-<div id="main-container">
+<div id="main-container" style = "margin-top:0px;">
      <div id="main">
      <h1>Aqui estão todas as nossas ofertas</h1>
 <h3>As melhores experiências gastronômicas</h3>

@@ -117,7 +117,7 @@ require 'components/main-hero.php'; // Header php
 
 <!--Final main portada-->
 <section>
-<div id="main-container">
+<div id="main-container" style = "margin-top:0px;">
      <div id='main'>
      <h1>Se você se dá um gosto?</h1>
 <h3>As melhores ofertas online por dia.</h3>
