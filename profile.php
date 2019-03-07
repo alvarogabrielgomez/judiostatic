@@ -65,6 +65,7 @@ fas fa-user"></i>
   </div>
 
   <div id="opt-deal-info">...</div>
+ <div id = "loading-img" style="width: 100%; height: 100%;position: absolute; display: flex;opacity:0;"><img style='float:none!important; display:block;margin:auto;height: 100%;max-height: 100px;' src='img/icons/loading.svg' class='loader' /></div>
   <p class="buss_name">Has click en alguna de tus ofertas para ver mas informacion.</p>
   <a class="buss_url" href=""></a>
 <div class="deal-info-qr">
@@ -110,6 +111,15 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     </tr>';
   ?>
   <script>
+   var movingitem = document.getElementById('deal-info');
+   var loadingImg = document.getElementById('loading-img');
+   var optDropdown = document.getElementById("optDropdown");
+   var qrContainer = document.getElementById('qr');
+   var optDealInfo = document.getElementById('opt-deal-info');
+   var bussName = document.getElementsByClassName('buss_name')[0];
+   var bussUrl = document.getElementsByClassName('buss_url')[0];
+
+
 $(".id-<?php echo $row["post_id"]; ?>").on("click", function(){
 var transqr = <?php echo $row["transaction_qr"]; ?>;
 var dataString = JSON.stringify(transqr);
@@ -124,14 +134,12 @@ $.ajax({
    $(".buss_name").html(data.buss_name);
    $(".buss_url").html("<a class='buss_url' href='"+data.buss_url+"'>Visitar Web</a>");
    $("#optDropdown-content-filled").html("<a href='deals.php?id=<?php echo $row["post_id"]; ?>'>Ver oferta</a><a href='#'>Ocultar oferta</a><a href='#'>Reportar Inconveniente</a>");
-   
-   var movingitem = document.getElementById('deal-info');
-   var qrContainer = document.getElementById('qr');
-   var optDealInfo = document.getElementById('opt-deal-info');
-
    movingitem.style.height = "240px";
    qrContainer.style.opacity = "1";
    optDealInfo.style.opacity = "1";
+   bussName.style.opacity = "1";
+   bussUrl.style.opacity = "1";
+   loadingImg.style.opacity = "0";
   },
   error: function(e){
      console.log(e.message);
@@ -155,12 +163,22 @@ $.ajax({
    require 'components/footer.php'; // footer php
    ?>
 <script>
-  var movingitem = document.getElementById('deal-info');
-  var optDropdown = document.getElementById("optDropdown");
+
   $(".item-profile").on("click", function(){
     var position = $(this).offset();
     console.log(position.top);
-    movingitem.style.transform = "translateY("+(position.top-233)+"px)";   
+    movingitem.style.transform = "translateY("+(position.top-233)+"px)";
+
+    qrContainer.style.opacity = "0";
+    qrContainer.style.transition = "all 0.2s ease";
+
+    bussName.style.opacity = "0";
+    bussName.style.transition = "all 0.2s ease";
+
+    bussUrl.style.opacity = "0";
+    bussUrl.style.transition = "all 0.2s ease";
+
+    loadingImg.style.opacity = "1";
   });
 
   var optButton = document.getElementById('opt-deal-info');
