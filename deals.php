@@ -67,7 +67,7 @@ require 'components/navbar.php'; // footer php
                     if (abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400) {
                         echo '<li><div class="clock-time-deals"></div></li> <li style="color:red;">A oferta está prestes a terminar no dia '.$post_offer_formated.'</li>';
                     }else if(abs(time() - strtotime($post_offer_end_at)) >= 2 * 86400){
-                        if(abs(time() - strtotime($post_offer_end_at)) >= 8 * 86400){
+                        if(abs(time() - strtotime($post_offer_end_at)) > 7 * 86400){
                             echo '<li><div class="clock-time-deals clock-7"></div></li> <li style="">A oferta termina no dia '.$post_offer_formated.'</li>'; 
                         }else if(abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400){
                             echo '<li><div class="clock-time-deals clock-70"></div></li> <li style="">A oferta termina no dia '.$post_offer_formated.'</li>'; 

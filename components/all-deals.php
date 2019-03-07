@@ -115,7 +115,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
           }else if(abs(time() - strtotime($post_offer_end_at)) >= 2 * 86400){
             echo '<div class="badge">
             <span>OFERTA DE ÚLTIMA HORA</span> </div>';
-            if(abs(time() - strtotime($post_offer_end_at)) >= 8 * 86400){
+            if(abs(time() - strtotime($post_offer_end_at)) > 7 * 86400){
                 echo '<div class="clock-tim clock-7"></div>'; 
             }else if(abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400){
                 echo '<div class="clock-time clock-70"></div>'; 
@@ -205,7 +205,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
         if (abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400) {
             echo '<div class="clock-time"></div></li>';
         }else if(abs(time() - strtotime($post_offer_end_at)) >= 2 * 86400){
-            if(abs(time() - strtotime($post_offer_end_at)) >= 8 * 86400){
+            if(abs(time() - strtotime($post_offer_end_at)) > 7 * 86400){
                 echo '<div class="clock-time clock-7"></div>'; 
             }else if(abs(time() - strtotime($post_offer_end_at)) <= 2 * 86400){
                 echo '<div class="clock-time clock-70"></div>'; 
