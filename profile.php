@@ -118,6 +118,7 @@ while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
    var optDealInfo = document.getElementById('opt-deal-info');
    var bussName = document.getElementsByClassName('buss_name')[0];
    var bussUrl = document.getElementsByClassName('buss_url')[0];
+   var qrCanvas = document.getElementById('qr');
 
 
 $(".id-<?php echo $row["post_id"]; ?>").on("click", function(){
@@ -131,6 +132,7 @@ $.ajax({
   success: function(data){
 
    makeQr(transqr+"", "L")
+   console.log(data);
    $(".buss_name").html(data.buss_name);
    $(".buss_url").html("<a class='buss_url' href='"+data.buss_url+"'>Visitar Web</a>");
    $("#optDropdown-content-filled").html("<a href='deals.php?id=<?php echo $row["post_id"]; ?>'>Ver oferta</a><a href='#'>Ocultar oferta</a><a href='#'>Reportar Inconveniente</a>");
@@ -142,7 +144,7 @@ $.ajax({
    loadingImg.style.opacity = "0";
   },
   error: function(e){
-     console.log(e.message);
+     console.log("ERROR");
   }
 
 });
@@ -167,6 +169,7 @@ $.ajax({
   $(".item-profile").on("click", function(){
     var position = $(this).offset();
     console.log(position.top);
+
     movingitem.style.transform = "translateY("+(position.top-233)+"px)";
 
     qrContainer.style.opacity = "0";
@@ -179,6 +182,8 @@ $.ajax({
     bussUrl.style.transition = "all 0.2s ease";
 
     loadingImg.style.opacity = "1";
+    
+    qrCanvas.getContext("2d").clearRect(0, 0, qrCanvas.width, qrCanvas.height);
   });
 
   var optButton = document.getElementById('opt-deal-info');

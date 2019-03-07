@@ -1,16 +1,20 @@
 <?php   
+
 header("Content-type:application/json");
 if(isset($_POST['transqr'])){
     require 'dbh-inc.php';
     $Dtransqr = json_decode($_POST['transqr']);
-    $transqr = "%".$Dtransqr."";
+    $transqr = $Dtransqr;
+
     //some php operation
-    $sql  = "
+    try {
+        $sql  = "
         SELECT b.buss_name, b.buss_dir, t.transaction_qr
         FROM transactions as t
         JOIN buss as b
         on b.buss_id = t.buss_id
-        WHERE t.transaction_qr like ?";
+        WHERE t.transaction_qr = ?
+        LIMIT 1";
 
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
@@ -18,7 +22,7 @@ if(isset($_POST['transqr'])){
         $data['content']  = "SQL ERROR (SEL)";
     }
     else {
-        mysqli_stmt_bind_param($stmt, "s", $transqr);
+        mysqli_stmt_bind_param($stmt, "i", $transqr);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if($row = mysqli_fetch_assoc($result)) {
@@ -30,6 +34,11 @@ if(isset($_POST['transqr'])){
             $data['content']  = "BUSS NOT FOUND (SEL)";
         }
     }
-    
+    } 
+    catch(mysqli_sql_exception $e){
+        $data['response'] = $e;
+    }
+
+
     echo json_encode($data);
    }
