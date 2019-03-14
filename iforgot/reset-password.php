@@ -97,13 +97,8 @@ if(!isset($_SESSION["client_id"])){
                     </form>
 
                     <a href="../login.php">Volver</a>
-
                     </div>
-
                </div>
-
-
-
                     </div>
 
             </div>   

@@ -108,25 +108,29 @@ if(!isset($_SESSION["client_id"])){
                             <?php
                             
                         }
+                        else{
+                            ?>
+                            <img style = "width: 46px; padding: 10px; margin-top: 12px;" src="../img/icons/error.png" alt="">
+                            <p>No se pudo validar de donde vienes!</p>
+                            <?php
+                        }
                     }
 
 
                     }
                     else if (isset($_GET["newpwd"])) {
-                        if (isset($_GET["newpwd"]) == "empty") {
                            ?>
                             <img style = "width: 46px; padding: 10px; margin-top: 12px;" src="../img/icons/error.png" alt="">
-                            <p>Los campos estaban vacios!</p>
+                            <p>Los campos estaban vacios o no coinciden</p>
 
                             <?php
-                        }
-                        else if (isset($_GET["newpwd"]) == "pwdnotsame") {
-                           ?>
-                           <img style = "width: 46px; padding: 10px; margin-top: 12px;" src="../img/icons/error.png" alt="">
-                            <p>Los campos no coinciden!</p>
-                            
-                            <?php
-                        }
+
+                    }else if (isset($_GET["error"])) {
+                        ?>
+                        <img style = "width: 46px; padding: 10px; margin-top: 12px;" src="../img/icons/error.png" alt="">
+                        <p>Hubo un error en el proceso</p>
+
+                        <?php
                     }
                     ?>
                 

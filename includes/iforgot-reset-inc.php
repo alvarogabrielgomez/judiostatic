@@ -5,7 +5,7 @@ if (isset($_POST["reset-password-submit"])) {
     $pwd = $_POST["pwd"];
     $pwd_repeat = $_POST["pwd_repeat"];
 
-    if (empty($pwd || empty($pwd_repeat))) {
+    if (empty($pwd) || empty($pwd_repeat)) {
        header("Location: ../iforgot/create-new-password.php?newpwd=empty");
        exit();
     }else if($pwd != $pwd_repeat){
@@ -29,14 +29,13 @@ if (isset($_POST["reset-password-submit"])) {
         $result = mysqli_stmt_get_result($stmt);
         if (!$row = mysqli_fetch_assoc($result)) {
             echo 'Tu tiempo ha expirado';
-            echo $currentDate;
             exit();
         }else {
             $tokenBin = hex2bin($validator);
             $tokenCheck = password_verify($tokenBin, $row["pwdReset_token"]);
 
             if ($tokenCheck === false) {
-                echo 'Hubo un problema de verificacion de token.';
+                header("Location: ../iforgot/create-new-password.php?error=token");
                 exit();
             }else if ($tokenCheck === true) {
                 $tokenEmail = $row["pwdReset_email"];
